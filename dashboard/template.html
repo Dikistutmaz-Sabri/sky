@@ -1,0 +1,1423 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sky Pano</title>
+<meta name="description" content="Sky eklentisindeki tüm skill, agent, komut ve hook'ların yerel panosu.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237aa7ff'/%3E%3Cstop offset='.55' stop-color='%23a98bff'/%3E%3Cstop offset='1' stop-color='%23ff9e7a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M6 21.5c3.2-5.6 6.8-8.4 10-8.4s6.8 2.8 10 8.4' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='10' r='2.6' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<script>try{var t=localStorage.getItem("sky-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+:root{
+  color-scheme:light;
+  --font-sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-serif:"Instrument Serif",ui-serif,"New York",Georgia,serif;
+  --font-mono:"Geist Mono",ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.75,.15,1);
+  --radius:14px;--radius-l:20px;--side-w:264px;
+
+  --bg:#f6f5f1;--surface:#ffffff;--surface-2:#fbfaf8;--card:#ffffff;
+  --line:rgba(17,20,32,.085);--line-2:rgba(17,20,32,.15);
+  --text:#12141c;--text-2:#454b5b;--text-3:#676d7d;
+  --accent:#2d5bff;--accent-soft:rgba(45,91,255,.09);
+  --dawn-1:#7aa2ff;--dawn-2:#b192ff;--dawn-3:#ffb08a;
+  --grad-text:linear-gradient(95deg,#2d5bff 0%,#7446f0 48%,#d9562f 100%);
+  --field:rgba(17,20,32,.028);--hover:rgba(17,20,32,.045);--active:#ffffff;--track:rgba(17,20,32,.07);
+  --side-bg:rgba(250,249,246,.72);--spot:rgba(45,91,255,.07);
+  --shadow:0 1px 2px rgba(17,20,32,.04),0 6px 20px -12px rgba(17,20,32,.14);
+  --shadow-l:0 24px 70px -24px rgba(17,20,32,.28),0 2px 6px rgba(17,20,32,.05);
+  --scrim:rgba(18,20,28,.32);--code-bg:#f4f3ef;
+  --tip-bg:#12141c;--tip-fg:#ffffff;--tip-ok:#4ade80;
+  --map-bg:#fbfaf7;--map-glow:rgba(45,91,255,.08);--star:#1f2547;--c-line:rgba(31,37,71,.17);
+  --aurora-o:.6;--stars-o:0;--grain-o:.035;
+  --ok:#138a52;--warn:#b35c00;
+  --syn-k:#7438d6;--syn-s:#0d7a52;--syn-n:#b35200;--syn-c:#737989;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#07080c;--surface:#0e1016;--surface-2:#111319;--card:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.014));
+    --line:rgba(255,255,255,.07);--line-2:rgba(255,255,255,.13);
+    --text:#eceef5;--text-2:#a5abbb;--text-3:#7f8596;
+    --accent:#8db4ff;--accent-soft:rgba(141,180,255,.11);
+    --dawn-1:#4d78ff;--dawn-2:#9466ff;--dawn-3:#ff8f66;
+    --grad-text:linear-gradient(95deg,#a8c6ff 0%,#c9b0ff 50%,#ffb896 100%);
+    --field:rgba(255,255,255,.03);--hover:rgba(255,255,255,.05);--active:rgba(255,255,255,.07);--track:rgba(255,255,255,.07);
+    --side-bg:rgba(8,9,13,.62);--spot:rgba(141,180,255,.1);
+    --shadow:inset 0 1px 0 rgba(255,255,255,.035),0 10px 30px -18px rgba(0,0,0,.7);
+    --shadow-l:0 40px 120px -30px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.03);
+    --scrim:rgba(2,3,6,.6);--code-bg:#0a0c11;
+    --tip-bg:#f1f2f6;--tip-fg:#0b0d12;--tip-ok:#138a52;
+    --map-bg:#080a10;--map-glow:rgba(92,112,255,.2);--star:#e9edff;--c-line:rgba(200,210,255,.16);
+    --aurora-o:1;--stars-o:.7;--grain-o:.05;
+    --ok:#4ade80;--warn:#fbbf24;
+    --syn-k:#c4a9ff;--syn-s:#8fd8b2;--syn-n:#ffb38f;--syn-c:#7f8596;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#07080c;--surface:#0e1016;--surface-2:#111319;--card:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.014));
+  --line:rgba(255,255,255,.07);--line-2:rgba(255,255,255,.13);
+  --text:#eceef5;--text-2:#a5abbb;--text-3:#7f8596;
+  --accent:#8db4ff;--accent-soft:rgba(141,180,255,.11);
+  --dawn-1:#4d78ff;--dawn-2:#9466ff;--dawn-3:#ff8f66;
+  --grad-text:linear-gradient(95deg,#a8c6ff 0%,#c9b0ff 50%,#ffb896 100%);
+  --field:rgba(255,255,255,.03);--hover:rgba(255,255,255,.05);--active:rgba(255,255,255,.07);--track:rgba(255,255,255,.07);
+  --side-bg:rgba(8,9,13,.62);--spot:rgba(141,180,255,.1);
+  --shadow:inset 0 1px 0 rgba(255,255,255,.035),0 10px 30px -18px rgba(0,0,0,.7);
+  --shadow-l:0 40px 120px -30px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.03);
+  --scrim:rgba(2,3,6,.6);--code-bg:#0a0c11;
+  --tip-bg:#f1f2f6;--tip-fg:#0b0d12;--tip-ok:#138a52;
+  --map-bg:#080a10;--map-glow:rgba(92,112,255,.2);--star:#e9edff;--c-line:rgba(200,210,255,.16);
+  --aurora-o:1;--stars-o:.7;--grain-o:.05;
+  --ok:#4ade80;--warn:#fbbf24;
+  --syn-k:#c4a9ff;--syn-s:#8fd8b2;--syn-n:#ffb38f;--syn-c:#7f8596;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scrollbar-gutter:stable}
+html.lock{overflow:hidden}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font:400 15px/1.55 var(--font-sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+::selection{background:color-mix(in oklab,var(--accent) 28%,transparent)}
+a{color:inherit}
+button{font:inherit;color:inherit}
+code,kbd,pre{font-family:var(--font-mono)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+.i{width:16px;height:16px;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-60px;z-index:90;padding:10px 14px;border-radius:10px;border:1px solid var(--line-2);background:var(--surface);cursor:pointer}
+.skip:focus{top:12px}
+
+/* gökyüzü arka planı */
+.sky-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.sky-bg::before{content:"";position:absolute;left:-10%;right:-10%;top:-25%;height:95vh;opacity:var(--aurora-o);
+  background:
+    radial-gradient(40% 55% at 78% 22%,color-mix(in oklab,var(--dawn-2) 32%,transparent),transparent 70%),
+    radial-gradient(38% 50% at 24% 10%,color-mix(in oklab,var(--dawn-1) 30%,transparent),transparent 70%),
+    radial-gradient(30% 34% at 58% 2%,color-mix(in oklab,var(--dawn-3) 20%,transparent),transparent 70%);
+  filter:blur(8px);animation:drift 28s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(-3%,2.5%,0) scale(1.07)}}
+.sky-bg::after{content:"";position:absolute;inset:0;opacity:var(--grain-o);mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.starfield{position:absolute;inset:0;opacity:var(--stars-o);
+  -webkit-mask-image:linear-gradient(to bottom,#000,transparent 75%);mask-image:linear-gradient(to bottom,#000,transparent 75%);
+  background-image:
+    radial-gradient(1px 1px at 20px 30px,rgba(255,255,255,.75),transparent),
+    radial-gradient(1px 1px at 140px 90px,rgba(255,255,255,.5),transparent),
+    radial-gradient(1.5px 1.5px at 310px 210px,rgba(255,255,255,.6),transparent),
+    radial-gradient(1px 1px at 430px 50px,rgba(255,255,255,.45),transparent),
+    radial-gradient(1px 1px at 530px 330px,rgba(255,255,255,.5),transparent),
+    radial-gradient(1px 1px at 90px 270px,rgba(255,255,255,.35),transparent),
+    radial-gradient(1.2px 1.2px at 250px 370px,rgba(255,255,255,.45),transparent),
+    radial-gradient(1px 1px at 380px 150px,rgba(255,255,255,.3),transparent);
+  background-size:600px 400px}
+
+/* yerleşim */
+.app{display:grid;grid-template-columns:var(--side-w) minmax(0,1fr);min-height:100vh}
+.side{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:18px;padding:22px 16px 18px;border-right:1px solid var(--line);background:var(--side-bg);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);z-index:20;overflow-y:auto;scrollbar-width:none}
+.side-top{display:flex;align-items:center;gap:6px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;padding:4px 8px;flex:1;min-width:0}
+.brand svg{width:30px;height:30px;border-radius:9px;flex:none;box-shadow:0 8px 22px -8px rgba(120,110,255,.65)}
+.brand-name{font-family:var(--font-serif);font-size:29px;line-height:1;letter-spacing:-.01em}
+.ver{margin-left:auto;font:500 11px/1 var(--font-mono);color:var(--text-3);padding:4px 7px;border:1px solid var(--line);border-radius:99px}
+.search-trigger{display:flex;align-items:center;gap:10px;width:100%;padding:9px 9px 9px 12px;border-radius:11px;border:1px solid var(--line);background:var(--field);color:var(--text-3);cursor:pointer;font-size:14px;transition:border-color .2s,color .2s}
+.search-trigger:hover{border-color:var(--line-2);color:var(--text-2)}
+.search-trigger kbd{margin-left:auto}
+kbd{display:inline-flex;align-items:center;font:500 11px/1 var(--font-mono);padding:3px 6px;border-radius:6px;border:1px solid var(--line-2);border-bottom-width:2px;color:var(--text-3);background:var(--surface)}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav-label{margin:0;padding:14px 10px 6px;font:500 10.5px/1 var(--font-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--text-3)}
+.nav a{display:flex;align-items:center;gap:11px;padding:8px 10px;border-radius:9px;text-decoration:none;color:var(--text-2);font-size:14px;font-weight:450;transition:background .15s,color .15s}
+.nav a:hover{background:var(--hover);color:var(--text)}
+.nav a[aria-current="page"]{background:var(--active);color:var(--text);box-shadow:inset 0 0 0 1px var(--line),var(--shadow)}
+.nav a[aria-current="page"] .i{color:var(--accent)}
+.nav .n{margin-left:auto;font:500 11.5px/1 var(--font-mono);color:var(--text-3);font-variant-numeric:tabular-nums}
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.status{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border-radius:11px;border:1px solid var(--line);background:var(--field);font-size:12.5px;color:var(--text-2);text-align:left;cursor:pointer}
+.status small{display:block;font:500 10.5px/1.3 var(--font-mono);color:var(--text-3)}
+.led{width:7px;height:7px;border-radius:50%;flex:none;background:var(--warn);box-shadow:0 0 0 3px color-mix(in oklab,var(--warn) 20%,transparent)}
+.status.ok .led{background:var(--ok);box-shadow:0 0 0 3px color-mix(in oklab,var(--ok) 20%,transparent)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);padding:3px;border-radius:11px;background:var(--field);border:1px solid var(--line)}
+.seg button{border:0;background:none;padding:6px 0;border-radius:8px;font-size:12px;color:var(--text-3);cursor:pointer;transition:color .15s,background .15s}
+.seg button:hover{color:var(--text)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:var(--shadow),inset 0 0 0 1px var(--line)}
+.built{margin:0;padding:0 4px;font-size:11.5px;color:var(--text-3)}
+.live{display:inline-flex;align-items:center;gap:6px;color:var(--ok);font-weight:550}
+.live i{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px color-mix(in oklab,currentColor 22%,transparent);animation:pulse 2.4s ease-in-out infinite}
+main{min-width:0;width:100%;max-width:1240px;margin:0 auto;padding:40px clamp(20px,4vw,56px) 56px;outline:none}
+.view{animation:viewIn .55s var(--ease) both}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* butonlar */
+.btn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 16px;border-radius:12px;font-size:14px;font-weight:500;text-decoration:none;cursor:pointer;border:1px solid transparent;white-space:nowrap;transition:transform .2s var(--ease),background .2s,border-color .2s,box-shadow .2s}
+.btn-primary{background:var(--text);color:var(--bg);box-shadow:0 12px 32px -14px color-mix(in oklab,var(--accent) 70%,transparent)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-ghost{background:var(--field);border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--line-2);background:var(--hover)}
+.btn kbd{margin-left:4px}
+.btn-sm{height:36px;padding:0 12px;font-size:13px;border-radius:10px}
+.btn code{color:inherit;font-size:12px;opacity:.7;max-width:260px;overflow:hidden;text-overflow:ellipsis}
+.icon-btn{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;border:1px solid transparent;background:none;color:var(--text-3);cursor:pointer;flex:none;transition:color .15s,background .15s,border-color .15s}
+.icon-btn:hover{color:var(--text);background:var(--hover);border-color:var(--line)}
+.icon-btn.sm{width:30px;height:30px;border-radius:8px}
+.i.ok{color:var(--ok)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:40px;align-items:center;padding:20px 0 40px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0 0 20px;font:500 11.5px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+.dot-live{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);animation:pulse 2.8s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px transparent}}
+.display{font-family:var(--font-serif);font-weight:400;font-size:clamp(48px,6.4vw,88px);line-height:.94;letter-spacing:-.028em;margin:0 0 24px}
+.display em{font-style:italic;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.lede{font-size:17px;line-height:1.62;color:var(--text-2);max-width:50ch;margin:0 0 30px}
+.lede b{color:var(--text);font-weight:550}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px}
+.sky-map{position:relative;aspect-ratio:600/430;border-radius:24px;border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow-l);
+  background:radial-gradient(120% 90% at 50% 0%,var(--map-glow),transparent 70%),var(--map-bg)}
+.sky-map::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.sky-map svg{position:absolute;inset:0;width:100%;height:100%}
+.map-fig{margin:0;min-width:0}
+.map-fig figcaption{margin:12px 4px 0;font:500 11.5px/1.4 var(--font-mono);color:var(--text-3)}
+.cg{transition:opacity .3s}
+.cg line{stroke:var(--c-line);stroke-width:.7;transition:stroke .3s}
+.cg text{font:500 10.5px var(--font-mono);letter-spacing:.08em;fill:var(--text-3);transition:fill .3s}
+.sky-map svg.dim .cg:not(.lit){opacity:.22}
+.cg.lit line{stroke:color-mix(in oklab,var(--accent) 70%,transparent)}
+.cg.lit text{fill:var(--text)}
+.star{cursor:pointer}
+.star .s{fill:var(--star);transform-box:fill-box;transform-origin:center;transition:transform .3s var(--ease),fill .2s;animation:twinkle 5.5s ease-in-out infinite;animation-delay:var(--d)}
+.star .hit{fill:transparent}
+.star:hover .s{fill:var(--accent);transform:scale(2.3);animation:none}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.32}}
+.star-tip{position:absolute;z-index:2;pointer-events:none;transform:translate(-50%,calc(-100% - 12px));padding:7px 10px;border-radius:9px;background:var(--tip-bg);color:var(--tip-fg);font:550 12.5px/1.2 var(--font-sans);white-space:nowrap;box-shadow:var(--shadow-l)}
+.star-tip small{display:block;margin-bottom:3px;font:500 9.5px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;opacity:.6}
+
+/* istatistik */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-l);overflow:hidden;box-shadow:var(--shadow);margin-bottom:16px}
+.stat{display:flex;flex-direction:column;gap:8px;padding:22px 22px 20px;background:var(--surface);text-decoration:none;transition:background .2s}
+a.stat:hover{background:var(--surface-2)}
+.stat-num{font:300 46px/1 var(--font-sans);letter-spacing:-.05em;font-variant-numeric:tabular-nums;color:var(--text)}
+.stat-num small{font-size:17px;font-weight:400;letter-spacing:-.01em;color:var(--text-2);margin-left:5px}
+.stat-label{font-size:13px;color:var(--text-3)}
+
+/* paneller */
+.split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;margin-bottom:16px}
+.panel{border:1px solid var(--line);border-radius:var(--radius-l);background:var(--card);box-shadow:var(--shadow);padding:22px}
+.panel+.panel{margin-top:16px}
+.split .panel+.panel{margin-top:0}
+.panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px}
+.panel h2{margin:0;font-size:15px;font-weight:600;letter-spacing:-.01em}
+.more{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-3);text-decoration:none;transition:color .15s}
+.more:hover{color:var(--text)}
+.more .i{width:14px;height:14px}
+.bars{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:1px}
+.bar-row{display:grid;grid-template-columns:150px minmax(0,1fr) 30px;align-items:center;gap:14px;padding:7px 8px;margin:0 -8px;border-radius:9px;text-decoration:none;font-size:13.5px;color:var(--text-2);transition:background .15s,color .15s}
+.bar-row:hover{background:var(--hover);color:var(--text)}
+.bar-label{display:flex;align-items:center;gap:9px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar{height:6px;border-radius:99px;background:var(--track);overflow:hidden}
+.bar span{display:block;height:100%;width:var(--w);border-radius:inherit;background:linear-gradient(90deg,oklch(.72 .14 var(--g)),color-mix(in oklab,oklch(.72 .14 var(--g)) 55%,var(--accent)));transform-origin:left;animation:grow 1.1s var(--ease) both}
+@keyframes grow{from{transform:scaleX(0)}}
+.bar-num{text-align:right;font:500 12px/1 var(--font-mono);color:var(--text-3);font-variant-numeric:tabular-nums}
+.gdot{width:7px;height:7px;border-radius:50%;flex:none;background:oklch(.72 .14 var(--g,250));box-shadow:0 0 0 3px color-mix(in oklab,oklch(.72 .14 var(--g,250)) 18%,transparent)}
+.quick{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.quick li{display:flex;align-items:center;gap:6px;padding:4px 6px 4px 4px;border:1px solid var(--line);border-radius:12px;background:var(--field);transition:border-color .15s}
+.quick li:hover{border-color:var(--line-2)}
+.quick a{flex:1;min-width:0;padding:8px 10px;text-decoration:none}
+.q-name{display:block;font:500 13.5px/1.2 var(--font-mono);color:var(--text)}
+.q-desc{display:block;margin-top:4px;font-size:12.5px;color:var(--text-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.team-grid{display:flex;flex-wrap:wrap;gap:8px}
+.mate{display:inline-flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:99px;border:1px solid var(--line);background:var(--field);text-decoration:none;font-size:13px;color:var(--text-2);transition:border-color .2s,color .2s,transform .2s var(--ease)}
+.mate:hover{border-color:var(--line-2);color:var(--text);transform:translateY(-1px)}
+.avatar{--s:40px;position:relative;display:grid;place-items:center;width:var(--s);height:var(--s);border-radius:50%;flex:none;background:conic-gradient(from var(--h),var(--dawn-1),var(--dawn-2),var(--dawn-3),var(--dawn-1))}
+.avatar::after{content:"";position:absolute;inset:1.5px;border-radius:50%;background:var(--surface)}
+.avatar b{position:relative;z-index:1;font:600 calc(var(--s)*.31)/1 var(--font-mono);letter-spacing:.02em;color:var(--text)}
+.avatar.sm{--s:26px}
+.avatar.lg{--s:64px}
+.avatar.lg::after{inset:2px}
+.install{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:28px;align-items:center}
+.install p{margin:8px 0 0;color:var(--text-2);font-size:14px;max-width:46ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px;counter-reset:s}
+.steps li{display:flex;align-items:center;gap:12px;min-width:0;padding:6px 6px 6px 12px;min-height:44px;border-radius:12px;background:var(--code-bg);border:1px solid var(--line);font-size:13.5px;color:var(--text-2)}
+.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:22px;height:22px;border-radius:50%;flex:none;font:600 11px/1 var(--font-mono);color:var(--text-2);border:1px solid var(--line-2)}
+.steps li>code{flex:1;min-width:0;overflow-x:auto;white-space:nowrap;font-size:12.5px;color:var(--text);scrollbar-width:none}
+.steps li>span{flex:1;min-width:0;padding:6px 0}
+
+/* sayfa başlığı ve araç çubuğu */
+.page-head{padding:10px 0 22px}
+.title{display:flex;align-items:baseline;flex-wrap:wrap;gap:14px;margin:0 0 12px;font-family:var(--font-serif);font-weight:400;font-size:clamp(42px,5vw,62px);line-height:1;letter-spacing:-.022em}
+.title .count{font:400 15px/1 var(--font-mono);letter-spacing:0;color:var(--text-3)}
+.sub{margin:0;max-width:66ch;font-size:15.5px;color:var(--text-2)}
+.sub q{color:var(--text)}
+.toolbar{position:sticky;top:0;z-index:10;display:flex;flex-direction:column;gap:12px;margin:0 -14px 6px;padding:14px;border-radius:0 0 18px 18px;background:color-mix(in oklab,var(--bg) 78%,transparent);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%)}
+.field{position:relative;display:flex;align-items:center}
+.field>.i{position:absolute;left:15px;color:var(--text-3);pointer-events:none}
+.field input{width:100%;height:48px;padding:0 54px 0 44px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:400 15px var(--font-sans);outline:none;box-shadow:var(--shadow);-webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s}
+.field input::placeholder{color:var(--text-3)}
+.field input:focus{border-color:color-mix(in oklab,var(--accent) 55%,var(--line));box-shadow:0 0 0 4px var(--accent-soft),var(--shadow)}
+.field input::-webkit-search-cancel-button{display:none}
+.field kbd{position:absolute;right:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 12px;border-radius:99px;border:1px solid var(--line);background:var(--field);font-size:13px;color:var(--text-2);cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s,background .15s}
+.chip:hover{color:var(--text);border-color:var(--line-2)}
+.chip[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:transparent}
+.chip .n{font:500 11px/1 var(--font-mono);opacity:.6}
+.result-meta{margin:14px 0 12px;font:500 12px/1 var(--font-mono);color:var(--text-3)}
+.group{margin:22px 0 6px}
+.group-head{display:flex;align-items:center;gap:12px;margin:0 0 12px}
+.group-head h2{display:flex;align-items:center;gap:10px;margin:0;font-size:13.5px;font-weight:600;letter-spacing:-.005em;white-space:nowrap}
+.group-head .n{font:500 12px/1 var(--font-mono);color:var(--text-3)}
+.group-head::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* kartlar */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:12px}
+.card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;gap:9px;min-height:168px;padding:17px 18px 15px;border-radius:var(--radius);border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow);color:inherit;text-decoration:none;transition:border-color .25s,transform .3s var(--ease),box-shadow .3s}
+.card::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(380px circle at var(--mx,50%) var(--my,-60%),var(--spot),transparent 45%);opacity:0;transition:opacity .3s}
+.card:hover{border-color:var(--line-2);transform:translateY(-2px);box-shadow:var(--shadow-l)}
+.card:hover::before{opacity:1}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.tag{display:inline-flex;align-items:center;gap:8px;min-width:0;font-size:12px;font-weight:500;color:var(--text-3)}
+.meta{font:500 11px/1 var(--font-mono);color:var(--text-3);white-space:nowrap}
+.card-title{margin:2px 0 0;font-size:16.5px;font-weight:600;letter-spacing:-.018em;line-height:1.25}
+.card-desc{margin:0;font-size:13.5px;line-height:1.52;color:var(--text-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-foot{margin-top:auto;padding-top:6px;display:flex;align-items:center;justify-content:space-between;gap:8px;font:500 11.5px/1 var(--font-mono);color:var(--text-3)}
+.card-foot .tools{display:flex;flex-wrap:wrap;gap:4px}
+.tool{padding:4px 6px;border-radius:6px;background:var(--field);border:1px solid var(--line);font:500 10.5px/1 var(--font-mono);color:var(--text-2)}
+.agent-top{display:flex;align-items:center;gap:12px}
+.agent-top .card-title{margin:0}
+.model{display:inline-block;margin-top:5px;font:500 10.5px/1 var(--font-mono);letter-spacing:.04em;padding:3px 7px;border-radius:6px;background:var(--accent-soft);color:var(--accent)}
+mark{background:color-mix(in oklab,var(--accent) 24%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+.empty{display:grid;justify-items:center;gap:10px;text-align:center;padding:64px 16px}
+.empty-orb{width:56px;height:56px;border-radius:50%;background:conic-gradient(from 200deg,var(--dawn-1),var(--dawn-2),var(--dawn-3),var(--dawn-1));opacity:.8;filter:blur(.3px);box-shadow:0 20px 50px -18px var(--dawn-2)}
+.empty h3{margin:8px 0 0;font-size:18px;font-weight:600}
+.empty p{margin:0 0 6px;color:var(--text-2);max-width:42ch}
+
+/* komut listesi */
+.cmds{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:var(--radius-l);background:var(--card);box-shadow:var(--shadow);overflow:hidden}
+.cmd{display:flex;align-items:center;gap:6px;padding:5px 12px 5px 5px;border-top:1px solid var(--line)}
+.cmd:first-child{border-top:0}
+.cmd-main{flex:1;min-width:0;display:grid;grid-template-columns:minmax(150px,230px) minmax(0,1fr);column-gap:24px;row-gap:5px;padding:13px 13px;border-radius:12px;text-decoration:none;transition:background .15s}
+.cmd-main:hover{background:var(--hover)}
+.cmd-name{font:500 14px/1.3 var(--font-mono);color:var(--text)}
+.cmd-hint{grid-column:1;font:400 11.5px/1.3 var(--font-mono);color:var(--text-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cmd-desc{grid-column:2;grid-row:1/span 2;align-self:center;font-size:14px;line-height:1.5;color:var(--text-2)}
+
+/* hook zaman çizelgesi */
+.timeline{position:relative;list-style:none;margin:6px 0 0;padding:0}
+.timeline::before{content:"";position:absolute;left:19.5px;top:10px;bottom:40px;width:1px;background:linear-gradient(var(--dawn-1),var(--dawn-2),var(--dawn-3));opacity:.55}
+.tl-item{display:grid;grid-template-columns:40px minmax(0,1fr);gap:22px;padding-bottom:30px}
+.tl-node{position:relative;z-index:1;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--line-2);font:500 12px/1 var(--font-mono);color:var(--text-2);box-shadow:0 0 0 6px var(--bg)}
+.tl-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:6px 0 14px}
+.tl-head h2{margin:0;font-family:var(--font-serif);font-weight:400;font-size:30px;line-height:1;letter-spacing:-.012em}
+.tl-head code{font-size:12px;color:var(--text-3)}
+.tl-head .muted{font-size:13px;color:var(--text-3)}
+.hook-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.kvs{display:flex;flex-wrap:wrap;gap:5px}
+.kv{display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border-radius:7px;background:var(--field);border:1px solid var(--line);font:500 10.5px/1 var(--font-mono);color:var(--text-2)}
+
+/* ilkeler */
+.flow{list-style:none;margin:0 0 44px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.flow li{padding:20px;border:1px solid var(--line);border-radius:var(--radius-l);background:var(--card);box-shadow:var(--shadow)}
+.flow-n{display:inline-block;font-family:var(--font-serif);font-style:italic;font-size:44px;line-height:1;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.1em}
+.flow h3{margin:14px 0 8px;font-size:15px;font-weight:600}
+.flow p,.rule p{margin:0;font-size:13.5px;line-height:1.58;color:var(--text-2)}
+.section-title{margin:0 0 16px;font-family:var(--font-serif);font-weight:400;font-size:34px;letter-spacing:-.012em}
+.rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.rule{padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+.rule h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:14.5px;font-weight:600}
+.rule h3::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--accent);transform:rotate(45deg);flex:none}
+
+/* çekmece */
+.scrim{position:fixed;inset:0;z-index:40;background:var(--scrim);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .35s,visibility 0s linear .35s}
+.scrim.on{opacity:1;visibility:visible;transition:opacity .35s}
+.drawer{position:fixed;top:10px;right:10px;bottom:10px;z-index:50;width:min(800px,calc(100vw - 20px));display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line-2);border-radius:22px;box-shadow:var(--shadow-l);transform:translateX(calc(100% + 30px));visibility:hidden;transition:transform .5s var(--ease),visibility 0s linear .5s}
+.drawer:focus{outline:none}
+.drawer.open{transform:none;visibility:visible;transition:transform .5s var(--ease)}
+.d-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 24px;border-bottom:1px solid var(--line)}
+.crumbs{margin:0;font:500 12px/1 var(--font-mono);letter-spacing:.02em;color:var(--text-3)}
+.crumbs i{font-style:normal;opacity:.5;margin:0 4px}
+.d-scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:30px 34px 44px}
+.d-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border-top:1px solid var(--line);font:500 11.5px/1 var(--font-mono);color:var(--text-3)}
+.d-step{display:inline-flex;align-items:center;gap:8px;max-width:40%;min-height:36px;padding:0 10px;border-radius:9px;text-decoration:none;color:var(--text-2);transition:background .15s,color .15s}
+.d-step span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.d-step:hover{background:var(--hover);color:var(--text)}
+.d-step.next{justify-content:flex-end}
+.d-title{margin:14px 0 8px;font-family:var(--font-serif);font-weight:400;font-size:clamp(40px,5vw,58px);line-height:1;letter-spacing:-.022em;overflow-wrap:anywhere}
+.d-title.mono{font-family:var(--font-mono);font-weight:500;font-size:clamp(28px,3.6vw,38px);letter-spacing:-.035em}
+.d-id{margin:0 0 16px;font:500 12.5px/1.4 var(--font-mono);color:var(--text-3)}
+.d-desc{margin:0 0 22px;font-size:15.5px;line-height:1.62;color:var(--text-2);max-width:64ch}
+.d-actions{display:flex;flex-wrap:wrap;gap:8px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:26px 0 6px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.facts>div{padding:14px 16px;background:var(--surface-2);min-width:0}
+.facts dt{margin-bottom:8px;font:500 10.5px/1 var(--font-mono);letter-spacing:.07em;text-transform:uppercase;color:var(--text-3)}
+.facts dd{margin:0;font-size:15px;font-weight:550;color:var(--text);overflow-wrap:anywhere}
+.facts dd.mono{font:500 13px/1.3 var(--font-mono)}
+.d-sec{margin-top:32px}
+.d-sec>h3{display:flex;align-items:center;gap:12px;margin:0 0 14px;font:500 11px/1 var(--font-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--text-3)}
+.d-sec>h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.hint{margin:0 0 10px;font-size:13px;color:var(--text-3)}
+.hint+.xrefs{margin-bottom:16px}
+.pills,.xrefs{display:flex;flex-wrap:wrap;gap:6px}
+.pill{padding:5px 10px;border-radius:99px;background:var(--field);border:1px solid var(--line);font-size:12.5px;color:var(--text-2)}
+.pill.mono{font:500 12px/1.2 var(--font-mono)}
+.xref-chip{display:inline-flex;align-items:center;gap:7px;padding:5px 10px 5px 5px;border-radius:9px;border:1px solid var(--line);background:var(--field);font:500 12.5px/1 var(--font-mono);color:var(--text);text-decoration:none;transition:border-color .15s,transform .15s var(--ease)}
+.xref-chip:hover{border-color:color-mix(in oklab,var(--accent) 60%,var(--line));transform:translateY(-1px)}
+.xt{padding:3px 6px;border-radius:5px;background:var(--accent-soft);color:var(--accent);font:600 10px/1 var(--font-sans);letter-spacing:.02em}
+.signals{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+.signals li{padding:11px 14px;border-radius:11px;background:var(--field);border:1px solid var(--line);font-size:14px;color:var(--text-2)}
+details.ref{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;overflow:hidden}
+details.ref summary{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;list-style:none;font:500 13px/1 var(--font-mono)}
+details.ref summary::-webkit-details-marker{display:none}
+details.ref summary span{margin-left:auto;color:var(--text-3);font-size:11.5px}
+details.ref .codeblock{margin:0;border:0;border-top:1px solid var(--line);border-radius:0}
+
+/* metin içeriği */
+.prose{max-width:72ch;font-size:15px;line-height:1.72;color:var(--text-2)}
+.prose>:first-child{margin-top:0}
+.prose h3,.prose h4,.prose h5,.prose h6{margin:2em 0 .65em;color:var(--text);font-weight:600;letter-spacing:-.012em;line-height:1.3}
+.prose h3{font-size:21px}.prose h4{font-size:17px}.prose h5,.prose h6{font-size:15px}
+.prose p{margin:0 0 1em}
+.prose strong{color:var(--text);font-weight:600}
+.prose a:not(.code){color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.prose ul,.prose ol{margin:0 0 1.1em;padding-left:1.35em}
+.prose li{margin:.32em 0}
+.prose li::marker{color:var(--text-3)}
+.prose blockquote{margin:0 0 1.1em;padding:.1em 0 .1em 1.1em;border-left:2px solid var(--accent)}
+.prose hr{height:1px;margin:2em 0;border:0;background:var(--line)}
+code,a.code{font-size:.86em;padding:.12em .42em;border-radius:6px;background:var(--code-bg);border:1px solid var(--line);color:var(--text);overflow-wrap:anywhere}
+a.code{text-decoration:none;color:var(--accent);border-color:color-mix(in oklab,var(--accent) 30%,var(--line));transition:background .15s}
+a.code:hover{background:var(--accent-soft)}
+pre code,.steps code,.btn code,.d-id code,.tl-head code,.foot code{padding:0;border:0;background:none}
+.table-wrap{overflow-x:auto;margin:0 0 1.2em;border:1px solid var(--line);border-radius:12px}
+.prose table{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.5}
+.prose th{padding:10px 12px;text-align:left;font:500 11.5px/1.3 var(--font-mono);color:var(--text-3);background:var(--surface-2);border-bottom:1px solid var(--line)}
+.prose td{padding:9px 12px;vertical-align:top;border-top:1px solid var(--line)}
+.prose tbody tr:first-child td{border-top:0}
+.task{display:inline-grid;place-items:center;width:15px;height:15px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line-2);border-radius:4px;font-size:10px;color:var(--accent)}
+.codeblock{margin:0 0 1.2em;border:1px solid var(--line);border-radius:12px;background:var(--code-bg);overflow:hidden}
+.codeblock-head{display:flex;align-items:center;justify-content:space-between;min-height:34px;padding:0 5px 0 14px;border-bottom:1px solid var(--line);font:500 10.5px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--text-3)}
+.codeblock pre{margin:0;padding:14px 16px;overflow-x:auto;font-size:12.8px;line-height:1.65;color:var(--text);tab-size:2}
+.copy-mini{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 9px;border-radius:7px;border:1px solid transparent;background:none;color:var(--text-3);cursor:pointer;font:500 11px/1 var(--font-sans);letter-spacing:0;text-transform:none}
+.copy-mini:hover{background:var(--hover);color:var(--text);border-color:var(--line)}
+.copy-mini .i{width:13px;height:13px}
+.tk-c{color:var(--syn-c);font-style:italic}.tk-s{color:var(--syn-s)}.tk-n{color:var(--syn-n)}.tk-k{color:var(--syn-k)}
+
+/* arama paleti */
+.palette{position:fixed;inset:0;z-index:60;display:flex;justify-content:center;align-items:flex-start;padding:12vh 16px 16px;background:var(--scrim);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .2s,visibility 0s linear .2s}
+.palette.open{opacity:1;visibility:visible;transition:opacity .2s}
+.pal-box{display:flex;flex-direction:column;width:min(660px,100%);max-height:72vh;background:var(--surface);border:1px solid var(--line-2);border-radius:18px;box-shadow:var(--shadow-l);overflow:hidden;transform:translateY(-10px) scale(.98);transition:transform .3s var(--ease)}
+.palette.open .pal-box{transform:none}
+.pal-input{display:flex;align-items:center;gap:12px;padding:0 14px 0 18px;border-bottom:1px solid var(--line);color:var(--text-3)}
+.pal-input .i{width:18px;height:18px}
+.pal-input input{flex:1;min-width:0;height:60px;border:0;outline:none;background:none;font:400 17px var(--font-sans);color:var(--text)}
+.pal-input input::placeholder{color:var(--text-3)}
+.pal-list{list-style:none;margin:0;padding:6px 8px 8px;overflow-y:auto;overscroll-behavior:contain}
+.po-head{padding:12px 10px 6px;font:500 11.5px/1 var(--font-mono);color:var(--text-3)}
+.pal-list a{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:11px;text-decoration:none}
+.pal-list li[aria-selected="true"] a{background:var(--hover);box-shadow:inset 0 0 0 1px var(--line)}
+.po-ic{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;flex:none;background:var(--field);border:1px solid var(--line);color:var(--text-2)}
+.pal-list li[aria-selected="true"] .po-ic{color:var(--accent)}
+.po-main{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.po-name{font-size:14px;font-weight:500;color:var(--text)}
+.po-desc{font-size:12.5px;color:var(--text-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.po-type{font:500 11px/1 var(--font-mono);color:var(--text-3)}
+.po-empty{padding:36px 12px;text-align:center;color:var(--text-3)}
+.pal-foot{display:flex;flex-wrap:wrap;gap:16px;padding:10px 16px;border-top:1px solid var(--line);font-size:12px;color:var(--text-3)}
+.pal-foot span{display:inline-flex;align-items:center;gap:5px}
+
+/* bildirim ve alt bilgi */
+.toast{position:fixed;left:50%;bottom:24px;z-index:80;display:flex;align-items:center;gap:9px;max-width:calc(100vw - 32px);padding:10px 15px 10px 12px;border-radius:12px;background:var(--tip-bg);color:var(--tip-fg);font-size:13.5px;font-weight:500;box-shadow:var(--shadow-l);opacity:0;pointer-events:none;transform:translate(-50%,16px);transition:opacity .2s,transform .35s var(--ease)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast .i{color:var(--tip-ok)}
+.toast span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.foot{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:52px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--text-3)}
+
+@media (max-width:1180px){.hero{grid-template-columns:minmax(0,1fr);gap:32px}.map-fig{max-width:720px}}
+@media (max-width:1100px){:root{--side-w:232px}.stat-num{font-size:40px}}
+@media (min-width:861px){.mobile-only{display:none!important}}
+@media (max-width:860px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .side{height:auto;gap:10px;padding:10px 16px 0;border-right:0;border-bottom:1px solid var(--line);overflow:visible}
+  .brand{padding:4px 0}
+  .brand .ver{margin-left:6px}
+  .nav{flex-direction:row;overflow-x:auto;scrollbar-width:none;gap:4px;margin:0 -16px;padding:0 16px 10px}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{flex:none;padding:7px 11px;font-size:13.5px}
+  .nav a .n{margin-left:2px}
+  .nav-label,.desktop-only{display:none!important}
+  main{padding:22px 16px 44px}
+  .hero{grid-template-columns:minmax(0,1fr);padding:6px 0 28px}
+  .display{font-size:clamp(44px,12vw,60px)}
+  .lede{font-size:16px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats .stat:last-child{grid-column:span 2}
+  .stat{padding:18px}
+  .stat-num{font-size:36px}
+  .split,.install{grid-template-columns:minmax(0,1fr)}
+  .bar-row{grid-template-columns:118px minmax(0,1fr) 26px;gap:10px}
+  .toolbar{position:static;margin:0 0 6px;padding:0 0 10px;background:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 2px}
+  .chips::-webkit-scrollbar{display:none}
+  .grid,.hook-grid,.rules{grid-template-columns:minmax(0,1fr)}
+  .cmd-main{grid-template-columns:minmax(0,1fr)}
+  .cmd-desc{grid-column:1;grid-row:auto}
+  .tl-item{grid-template-columns:32px minmax(0,1fr);gap:14px}
+  .tl-node{width:32px;height:32px;font-size:11px}
+  .timeline::before{left:15.5px}
+  .tl-head h2{font-size:25px}
+  .drawer{top:0;right:0;bottom:0;width:100vw;border-radius:0;border:0}
+  .d-scroll{padding:22px 18px 32px}
+  .d-bar{padding-left:18px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .palette{padding-top:8vh}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<button class="skip" type="button" data-skip>İçeriğe geç</button>
+<div class="sky-bg" aria-hidden="true"><div class="starfield"></div></div>
+
+<div class="app" id="app">
+  <aside class="side" aria-label="Sky gezinme">
+    <div class="side-top">
+      <a class="brand" href="#/" aria-label="Sky genel bakış">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="sky-logo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7aa7ff"/><stop offset=".55" stop-color="#a98bff"/><stop offset="1" stop-color="#ff9e7a"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#sky-logo)"/><path d="M6 21.5c3.2-5.6 6.8-8.4 10-8.4s6.8 2.8 10 8.4" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/><circle cx="16" cy="10" r="2.5" fill="#fff"/></svg>
+        <span class="brand-name">Sky</span>
+        <span class="ver" id="ver"></span>
+      </a>
+      <button class="icon-btn mobile-only" type="button" data-palette aria-label="Ara"></button>
+      <button class="icon-btn mobile-only" type="button" data-theme-cycle aria-label="Temayı değiştir"></button>
+    </div>
+    <button class="search-trigger desktop-only" type="button" data-palette><span id="st-icon"></span>Ara…<kbd id="st-kbd"></kbd></button>
+    <nav class="nav" id="nav" aria-label="Bölümler"></nav>
+    <div class="side-foot desktop-only">
+      <div id="install-pill"></div>
+      <div class="seg" role="group" aria-label="Tema">
+        <button type="button" data-theme-set="system">Sistem</button>
+        <button type="button" data-theme-set="light">Açık</button>
+        <button type="button" data-theme-set="dark">Koyu</button>
+      </div>
+      <p class="built" id="built"></p>
+    </div>
+  </aside>
+  <main id="main" tabindex="-1"></main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+  <header class="d-bar">
+    <p class="crumbs" id="d-crumbs"></p>
+    <button class="icon-btn" type="button" data-close-drawer aria-label="Kapat"></button>
+  </header>
+  <div class="d-scroll" id="d-body"></div>
+  <footer class="d-foot" id="d-foot"></footer>
+</aside>
+
+<div class="palette" id="palette">
+  <div class="pal-box" role="dialog" aria-modal="true" aria-label="Sky'da ara">
+    <div class="pal-input"><span id="pal-icon"></span>
+      <input id="pq" type="text" role="combobox" aria-expanded="true" aria-controls="pres" aria-autocomplete="list" placeholder="Skill, agent, komut ya da hook ara…" autocomplete="off" spellcheck="false">
+      <kbd>esc</kbd>
+    </div>
+    <ul class="pal-list" id="pres" role="listbox" aria-label="Sonuçlar"></ul>
+    <footer class="pal-foot"><span><kbd>↑</kbd><kbd>↓</kbd> gez</span><span><kbd>↵</kbd> aç</span><span><kbd>esc</kbd> kapat</span><span><kbd>T</kbd> tema</span></footer>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="application/json" id="sky-data">__SKY_DATA__</script>
+<script>
+(() => {
+"use strict";
+let DATA;
+try { DATA = JSON.parse(document.getElementById("sky-data").textContent); }
+catch (e) {
+  document.getElementById("main").innerHTML = '<div class="empty"><div class="empty-orb"></div><h3>Pano henüz derlenmedi</h3><p>Eklenti klasöründe <code>npm start</code> komutunu çalıştır.</p></div>';
+  return;
+}
+
+/* ---------- yardımcılar ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ESC[c]);
+const fold = (s) => String(s ?? "").toLocaleLowerCase("tr-TR").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ı/g, "i");
+const nf = new Intl.NumberFormat("tr-TR");
+const short = (n) => String(n).replace(/^sky-/, "") || n;
+const readMin = (w) => Math.max(1, Math.round(w / 200));
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+const darkQuery = matchMedia("(prefers-color-scheme: dark)");
+const MOD = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent) ? "⌘" : "Ctrl ";
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* depolama yok */ } },
+};
+
+const ICONS = {
+  grid: '<rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/>',
+  book: '<path d="M3 5.5h5.5A3.5 3.5 0 0 1 12 9v11a2.8 2.8 0 0 0-2.8-2.8H3z"/><path d="M21 5.5h-5.5A3.5 3.5 0 0 0 12 9v11a2.8 2.8 0 0 1 2.8-2.8H21z"/>',
+  bot: '<rect x="4" y="8" width="16" height="12" rx="3.5"/><path d="M12 8V4.5"/><circle cx="12" cy="3.5" r="1"/><path d="M9 13.5v1.5M15 13.5v1.5"/>',
+  term: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7.5 9.5l3 2.5-3 2.5M12.5 15h4"/>',
+  zap: '<path d="M13 2.5L4.5 13.5h6.5l-1 8 8.5-11h-6.5z"/>',
+  compass: '<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',
+  search: '<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/>',
+  copy: '<rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5.5 15H5a1.5 1.5 0 0 1-1.5-1.5V5A1.5 1.5 0 0 1 5 3.5h8.5A1.5 1.5 0 0 1 15 5v.5"/>',
+  check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/>',
+  moon: '<path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a6.6 6.6 0 0 0 9.7 9.7z"/>',
+  x: '<path d="M6 6l12 12M18 6L6 18"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  left: '<path d="M15 6l-6 6 6 6"/>',
+  right: '<path d="M9 6l6 6-6 6"/>',
+  file: '<path d="M14 3.5H7.5A2 2 0 0 0 5.5 5.5v13a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V8z"/><path d="M14 3.5V8h4.5"/>',
+};
+const icon = (n, cls = "") => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICONS[n] || ""}</svg>`;
+
+/* ---------- veri dizinleri ---------- */
+const SK = new Map(DATA.skills.map((s) => [s.name, s]));
+const AG = new Map(DATA.agents.map((a) => [a.name, a]));
+const CM = new Map(DATA.commands.map((c) => [c.name, c]));
+const HK = new Map(DATA.hooks.map((h) => [h.name, h]));
+const TYPE = {
+  skill: { view: "skills", label: "Skill", plural: "Skill'ler", icon: "book" },
+  agent: { view: "agents", label: "Agent", plural: "Agent'lar", icon: "bot" },
+  command: { view: "commands", label: "Komut", plural: "Komutlar", icon: "term" },
+  hook: { view: "hooks", label: "Hook", plural: "Hook'lar", icon: "zap" },
+  page: { view: "", label: "Sayfa", plural: "Sayfalar", icon: "arrow" },
+};
+const EVENTS = new Map(DATA.events.map((e) => [e.name, e]));
+const GROUP_NAMES = DATA.groups.map((g) => g.name);
+const groupHue = (g) => Math.round((215 + Math.max(0, GROUP_NAMES.indexOf(g)) * (360 / Math.max(1, GROUP_NAMES.length))) % 360);
+const displayName = (it) => it.type === "command" ? "/" + it.name : it.type === "hook" ? it.title : it.type === "page" ? it.name : short(it.name);
+const hrefOf = (it) => it.type === "page" ? it.href : `#/${TYPE[it.type].view}/${encodeURIComponent(it.name)}`;
+const resolveName = (n) => SK.get(n) || AG.get(n) || CM.get(n) || null;
+const hashStr = (s) => { let h = 2166136261; for (const ch of s) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
+const initials = (n) => short(n).split("-").filter(Boolean).slice(0, 2).map((p) => p[0]).join("").toUpperCase();
+const avatar = (n, size = "") => `<span class="avatar ${size}" style="--h:${hashStr(n) % 360}deg" aria-hidden="true"><b>${esc(initials(n))}</b></span>`;
+const builtLabel = new Date(DATA.builtAt).toLocaleString("tr-TR", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
+
+const ALL = [...DATA.skills, ...DATA.agents, ...DATA.commands, ...DATA.hooks];
+for (const it of ALL) {
+  it._n = fold(displayName(it));
+  it._t = fold((it.triggers || []).join(" | "));
+  it._d = fold(it.type === "agent" ? it.use || it.desc : it.desc);
+  it._h = fold([it.name, it.desc, it.use, it.hint, it.group, it.cat, it.title, it.event, it.model, it.key, ...(it.signals || []), ...(it.tools || [])].filter(Boolean).join(" | "));
+}
+const tokenize = (q) => fold(q).split(/[\s,]+/).map((t) => t.replace(/^\//, "").replace(/^sky:/, "").replace(/^sky-(?=.)/, "")).filter(Boolean);
+function score(it, tokens) {
+  let s = 0;
+  for (const t of tokens) {
+    if (it._n === t) s += 120;
+    else if (it._n.startsWith(t)) s += 70;
+    else if (it._n.includes(t)) s += 45;
+    else if (it._t.includes(t)) s += 28;
+    else if (it._d.startsWith(t)) s += 32;
+    else if (it._h.includes(t)) s += 12;
+    else return 0;
+  }
+  return s;
+}
+function hl(text, tokens) {
+  text = String(text ?? "");
+  if (!tokens || !tokens.length) return esc(text);
+  const f = fold(text);
+  if (f.length !== text.length) return esc(text);
+  const on = new Array(text.length).fill(false);
+  for (const t of tokens) { let i = 0; while (t && (i = f.indexOf(t, i)) !== -1) { for (let k = i; k < i + t.length; k++) on[k] = true; i += t.length; } }
+  let out = "", open = false;
+  for (let i = 0; i < text.length; i++) {
+    if (on[i] !== open) { out += on[i] ? "<mark>" : "</mark>"; open = on[i]; }
+    out += esc(text[i]);
+  }
+  return out + (open ? "</mark>" : "");
+}
+
+/* ---------- markdown ---------- */
+const CODE_LANGS = /^(js|jsx|ts|tsx|mjs|cjs|javascript|typescript|json|jsonc|css|scss|html|xml|vue|svelte|astro|sh|bash|zsh|shell|console|py|python|go|rs|rust|php|rb|ruby|sql|ya?ml|toml|dockerfile|docker|kotlin|kt|swift|dart|java|cs|csharp|c|cpp|ex|exs|elixir|sol|solidity|graphql|gql|prisma|tf|hcl|ini|env|nginx|lua|r|blade|liquid)$/i;
+const HASH_LANGS = /^(sh|bash|zsh|shell|console|py|python|rb|ruby|ya?ml|toml|dockerfile|docker|ex|exs|elixir|tf|hcl|ini|env|nginx|r)$/i;
+const KW = "const|let|var|function|return|import|from|export|default|async|await|if|else|elif|for|while|do|class|new|type|interface|extends|implements|def|fn|pub|use|mod|impl|struct|enum|trait|package|func|defer|go|select|case|switch|break|continue|try|catch|except|finally|throw|raise|with|as|in|of|null|undefined|true|false|None|True|False|nil|self|this|public|private|protected|static|readonly|override|val|fun|where|match|lambda|yield|SELECT|FROM|WHERE|INSERT|UPDATE|DELETE|CREATE|TABLE|INDEX|ALTER|JOIN|LEFT|ON|AND|OR|NOT|ORDER|BY|GROUP|LIMIT|VALUES|INTO|PRIMARY|KEY|REFERENCES|RUN|COPY|CMD|ENV|ARG|WORKDIR|EXPOSE|USER|ENTRYPOINT";
+const STR_RE = String.raw`"(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*'|` + "`(?:[^`\\\\]|\\\\.)*`";
+function highlight(code, lang) {
+  if (!CODE_LANGS.test(lang || "")) return esc(code);
+  const hash = HASH_LANGS.test(lang);
+  const comments = [String.raw`\/\*[\s\S]*?\*\/`, String.raw`<!--[\s\S]*?-->`];
+  if (hash) comments.push(String.raw`(?<=^|\s)#[^\n]*`); else comments.push(String.raw`\/\/[^\n]*`);
+  if (/^sql$/i.test(lang)) comments.push(String.raw`--[^\n]*`);
+  const re = new RegExp(`(${comments.join("|")})|(${STR_RE})|(\\b\\d+(?:\\.\\d+)?\\b)|(\\b(?:${KW})\\b)`, "gm");
+  let out = "", last = 0, m;
+  while ((m = re.exec(code))) {
+    if (!m[0]) { re.lastIndex++; continue; }
+    out += esc(code.slice(last, m.index));
+    const cls = m[1] ? "c" : m[2] ? "s" : m[3] ? "n" : "k";
+    out += `<span class="tk-${cls}">${esc(m[0])}</span>`;
+    last = m.index + m[0].length;
+  }
+  return out + esc(code.slice(last));
+}
+function codeBlock(code, lang) {
+  return `<div class="codeblock"><div class="codeblock-head"><span>${esc(lang || "")}</span><button type="button" class="copy-mini" data-copy-code>${icon("copy")}Kopyala</button></div><pre><code>${highlight(code, lang)}</code></pre></div>`;
+}
+function codeSpan(c) {
+  const t = c.trim();
+  let it = null;
+  if (/^\/sky-[\w-]+/.test(t)) it = CM.get(t.slice(1).split(/\s/)[0]) || null;
+  else if (/^sky:sky-[\w-]+$/.test(t)) it = SK.get(t.slice(4)) || null;
+  else if (/^sky-[\w-]+$/.test(t)) it = resolveName(t) || HK.get(t + ".js") || null;
+  else if (/^(?:hooks\/)?[\w-]+\.js$/.test(t)) it = HK.get(t.replace(/^hooks\//, "")) || null;
+  return it ? `<a class="code" href="${hrefOf(it)}">${esc(c)}</a>` : `<code>${esc(c)}</code>`;
+}
+function inline(s) {
+  const codes = [];
+  let out = String(s ?? "").replace(/`([^`]+)`/g, (_, c) => { codes.push(c); return `\u0000${codes.length - 1}\u0000`; });
+  out = esc(out)
+    .replace(/\*\*([^*]+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/(^|[^\w*])\*(?![\s*])([^*]+?)(?<!\s)\*(?![\w*])/g, "$1<em>$2</em>")
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, t, u) => /^https?:\/\//i.test(u) ? `<a href="${u}" target="_blank" rel="noopener noreferrer">${t}</a>` : t);
+  return out.replace(/\u0000(\d+)\u0000/g, (_, n) => codeSpan(codes[+n]));
+}
+function mdTable(rows) {
+  const cells = (r) => r.trim().replace(/^\|/, "").replace(/\|\s*$/, "").split(/(?<!\\)\|/).map((c) => c.trim().replace(/\\\|/g, "|"));
+  const head = cells(rows[0]);
+  const body = rows.slice(2).map(cells);
+  return `<div class="table-wrap"><table><thead><tr>${head.map((c) => `<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${body.map((r) => `<tr>${r.map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+function mdList(items) {
+  let html = "";
+  const stack = [];
+  for (const it of items) {
+    const top = stack[stack.length - 1];
+    if (!top || it.ind > top.ind) {
+      const tag = it.ord ? "ol" : "ul";
+      html += `<${tag}${it.ord && it.start !== 1 ? ` start="${it.start}"` : ""}>`;
+      stack.push({ ind: it.ind, tag });
+    } else {
+      while (stack.length > 1 && it.ind < stack[stack.length - 1].ind) html += `</li></${stack.pop().tag}>`;
+      html += "</li>";
+    }
+    const body = inline(it.text).replace(/^\[([ xX])\]\s+/, (_, c) => `<span class="task">${c.trim() ? "✓" : ""}</span>`);
+    html += `<li>${body}`;
+  }
+  while (stack.length) html += `</li></${stack.pop().tag}>`;
+  return html;
+}
+function md(src) {
+  const lines = String(src || "").replace(/\r\n?/g, "\n").split("\n");
+  let i = 0;
+  while (i < lines.length && !lines[i].trim()) i++;
+  if (i < lines.length && /^#\s/.test(lines[i])) i++;
+  let html = "";
+  const para = [];
+  const flush = () => { if (para.length) { html += `<p>${inline(para.join(" "))}</p>`; para.length = 0; } };
+  while (i < lines.length) {
+    const line = lines[i];
+    const fence = line.match(/^(\s*)(`{3,}|~{3,})\s*([^\s`]*)/);
+    if (fence) {
+      flush();
+      const ind = fence[1].length, mark = fence[2], lang = fence[3] || "";
+      const buf = [];
+      i++;
+      while (i < lines.length && !lines[i].trimStart().startsWith(mark)) {
+        const l = lines[i];
+        const lead = l.length - l.trimStart().length;
+        buf.push(l.slice(Math.min(ind, lead)));
+        i++;
+      }
+      i++;
+      html += codeBlock(buf.join("\n"), lang);
+      continue;
+    }
+    if (!line.trim()) { flush(); i++; continue; }
+    const h = line.match(/^(#{1,6})\s+(.*?)\s*#*\s*$/);
+    if (h) { flush(); const lv = Math.min(6, h[1].length + 2); html += `<h${lv}>${inline(h[2])}</h${lv}>`; i++; continue; }
+    if (/^\s{0,3}([-*_])(\s*\1){2,}\s*$/.test(line)) { flush(); html += "<hr>"; i++; continue; }
+    if (/^\s*\|/.test(line) && i + 1 < lines.length && /^\s*\|?\s*:?-{2,}/.test(lines[i + 1])) {
+      flush();
+      const rows = [];
+      while (i < lines.length && /^\s*\|/.test(lines[i])) rows.push(lines[i++]);
+      html += mdTable(rows);
+      continue;
+    }
+    if (/^\s*>/.test(line)) {
+      flush();
+      const buf = [];
+      while (i < lines.length && /^\s*>/.test(lines[i])) buf.push(lines[i++].replace(/^\s*>\s?/, ""));
+      html += `<blockquote>${md(buf.join("\n"))}</blockquote>`;
+      continue;
+    }
+    if (/^\s*(?:[-*+]|\d+[.)])\s+/.test(line)) {
+      flush();
+      const items = [];
+      while (i < lines.length) {
+        const l = lines[i];
+        const m = l.match(/^(\s*)([-*+]|\d+[.)])\s+(.*)$/);
+        if (m) { items.push({ ind: m[1].replace(/\t/g, "    ").length, ord: /\d/.test(m[2]), start: parseInt(m[2], 10) || 1, text: m[3] }); i++; continue; }
+        if (items.length && l.trim() && /^\s+\S/.test(l) && !/^\s*(`{3,}|~{3,})/.test(l)) { items[items.length - 1].text += " " + l.trim(); i++; continue; }
+        break;
+      }
+      html += mdList(items);
+      continue;
+    }
+    para.push(line.trim());
+    i++;
+  }
+  flush();
+  return html;
+}
+
+/* ---------- durum ---------- */
+const state = { skills: { q: "", g: "" }, agents: { q: "", m: "" }, commands: { q: "" } };
+const lastResults = { skills: [], agents: [], commands: [], hooks: DATA.hooks.map((h) => h.name) };
+
+const VIEWS = {
+  overview: { label: "Genel bakış", icon: "grid", render: viewOverview, mount: mountOverview },
+  skills: { label: "Skill'ler", icon: "book", count: DATA.skills.length, render: viewSkills, mount: () => refresh("skills"), map: SK },
+  agents: { label: "Agent'lar", icon: "bot", count: DATA.agents.length, render: viewAgents, mount: () => refresh("agents"), map: AG },
+  commands: { label: "Komutlar", icon: "term", count: DATA.commands.length, render: viewCommands, mount: () => refresh("commands"), map: CM },
+  hooks: { label: "Hook'lar", icon: "zap", count: DATA.hooks.length, render: viewHooks, map: HK },
+  rules: { label: "İlkeler", icon: "compass", render: viewRules },
+};
+
+/* ---------- parçalar ---------- */
+const section = (title, html) => `<section class="d-sec"><h3>${title}</h3>${html}</section>`;
+const fact = (label, value, mono) => `<div><dt>${label}</dt><dd${mono ? ' class="mono"' : ""}>${value}</dd></div>`;
+const copyBtn = (text, label, primary) => `<button type="button" class="btn btn-sm ${primary ? "btn-primary" : "btn-ghost"}" data-copy="${esc(text)}" data-copy-label="Kopyalandı: ${esc(text.trim())}">${icon("copy")}<span>${esc(label)}</span><code>${esc(text.trim())}</code></button>`;
+const pageHead = (eyebrow, title, count, sub) => `<header class="page-head"><p class="eyebrow">${esc(eyebrow)}</p><h1 class="title">${esc(title)}${count != null ? `<span class="count">${count}</span>` : ""}</h1><p class="sub">${sub}</p></header>`;
+const searchBox = (v, ph) => `<label class="field"><span class="sr">Ara</span>${icon("search")}<input type="search" id="q" data-view="${v}" value="${esc(state[v].q)}" placeholder="${esc(ph)}" autocomplete="off" spellcheck="false"><kbd class="desktop-only">/</kbd></label>`;
+const chip = (v, key, value, label, n, hue) => `<button type="button" class="chip" data-filter="${v}" data-key="${key}" data-value="${esc(value)}" aria-pressed="${state[v][key] === value}">${hue != null ? `<i class="gdot" style="--g:${hue}"></i>` : ""}${esc(label)}<span class="n">${n}</span></button>`;
+const emptyState = () => `<div class="empty"><div class="empty-orb"></div><h3>Eşleşen sonuç yok</h3><p>Daha kısa bir kelime dene ya da filtreyi kaldır. Arama Türkçe karakterlere duyarlı değil: “odeme” de “ödeme”yi bulur.</p><button class="btn btn-ghost btn-sm" type="button" data-clear>Filtreleri temizle</button></div>`;
+const footer = () => `<footer class="foot"><span>Sky v${esc(DATA.plugin.version)}${DATA.plugin.license ? " · " + esc(DATA.plugin.license) : ""}</span><span>Derlendi: ${esc(builtLabel)}</span>${DATA.live ? "<span>Canlı mod: dosyaları değiştirdikçe sayfa kendini yeniler</span>" : "<span>Canlı sürüm için eklenti klasöründe <code>npm start</code></span>"}</footer>`;
+
+function skillCard(s, tokens) {
+  return `<a class="card" href="${hrefOf(s)}" style="--g:${groupHue(s.group)}">
+    <div class="card-top"><span class="tag"><i class="gdot"></i>${esc(s.group)}</span><span class="meta">${readMin(s.words)} dk</span></div>
+    <h3 class="card-title">${hl(short(s.name), tokens)}</h3>
+    <p class="card-desc">${hl(s.desc, tokens)}</p>
+    <div class="card-foot"><span>/sky:${esc(s.name)}</span>${s.refs.length ? `<span>+${s.refs.length} dosya</span>` : ""}</div>
+  </a>`;
+}
+function agentCard(a, tokens) {
+  return `<a class="card" href="${hrefOf(a)}">
+    <div class="agent-top">${avatar(a.name)}<div><h3 class="card-title">${hl(short(a.name), tokens)}</h3><span class="model">${esc(a.model)}</span></div></div>
+    <p class="card-desc">${hl(a.use || a.desc, tokens)}</p>
+    <div class="card-foot"><span class="tools">${a.tools.map((t) => `<span class="tool">${esc(t)}</span>`).join("")}</span></div>
+  </a>`;
+}
+function cmdRow(c, tokens) {
+  return `<li class="cmd">
+    <a class="cmd-main" href="${hrefOf(c)}"><span class="cmd-name">/${hl(c.name, tokens)}</span>${c.hint ? `<span class="cmd-hint">${esc(c.hint)}</span>` : ""}<span class="cmd-desc">${hl(c.desc, tokens)}</span></a>
+    <button class="icon-btn" type="button" data-copy="/${esc(c.name)} " data-copy-label="Kopyalandı: /${esc(c.name)}" aria-label="/${esc(c.name)} komutunu kopyala">${icon("copy")}</button>
+  </li>`;
+}
+function hookCard(h) {
+  return `<a class="card" href="${hrefOf(h)}">
+    <div class="card-top"><span class="tag">${icon("zap")}${esc(h.name)}</span><span class="meta">${h.lines} satır</span></div>
+    <h3 class="card-title">${esc(h.title)}</h3>
+    <p class="card-desc">${esc(h.desc)}</p>
+    <div class="card-foot"><span class="kvs">${h.matcher ? `<span class="kv">${esc(h.matcher.split("|").join(" · "))}</span>` : ""}${h.timeout ? `<span class="kv">≤ ${h.timeout} sn</span>` : ""}${h.key ? `<span class="kv">${esc(h.key)}</span>` : ""}</span></div>
+  </a>`;
+}
+
+/* ---------- takımyıldız ---------- */
+function rng(seed) {
+  let a = seed;
+  return () => { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+function constellation() {
+  const W = 600, H = 430, PAD_B = 14, rnd = rng(11);
+  const groups = DATA.groups, cols = 4, rows = Math.ceil(groups.length / cols);
+  const cw = W / cols, ch = (H - PAD_B) / rows;
+  const maxW = Math.max(1, ...DATA.skills.map((s) => s.words));
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  let out = "";
+  groups.forEach((g, gi) => {
+    const col = gi % cols, row = Math.floor(gi / cols);
+    const cx = cw * (col + 0.5) + (row % 2 ? cw * 0.12 : -cw * 0.06) + (rnd() - 0.5) * 18;
+    const cy = ch * (row + 0.5) + 14 + (rnd() - 0.5) * 14;
+    const items = DATA.skills.filter((s) => s.group === g.name);
+    const R = Math.min(cw, ch) * 0.4 * Math.min(1, 0.42 + Math.sqrt(items.length) / 7);
+    const pts = [];
+    let lines = "", stars = "";
+    for (const s of items) {
+      let x = cx, y = cy;
+      for (let tries = 0; tries < 14; tries++) {
+        const a = rnd() * Math.PI * 2, r = R * Math.sqrt(rnd());
+        x = clamp(cx + Math.cos(a) * r, 10, W - 10);
+        y = clamp(cy + Math.sin(a) * r * 0.8, 22, H - PAD_B);
+        if (pts.every((p) => (p.x - x) ** 2 + (p.y - y) ** 2 > 110)) break;
+      }
+      let best = null, bd = Infinity;
+      for (const p of pts) { const d = (p.x - x) ** 2 + (p.y - y) ** 2; if (d < bd) { bd = d; best = p; } }
+      if (best) lines += `<line x1="${best.x.toFixed(1)}" y1="${best.y.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>`;
+      pts.push({ x, y });
+      const r = 1.25 + (s.words / maxW) * 2.5;
+      stars += `<a class="star" href="${hrefOf(s)}" tabindex="-1" data-name="${esc(short(s.name))}"><circle class="hit" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9"/><circle class="s" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(2)}" style="--d:${(rnd() * -6).toFixed(2)}s"/></a>`;
+    }
+    const ly = clamp(cy - R * 0.8 - 13, 14, H);
+    out += `<g class="cg" data-group="${esc(g.name)}"><g>${lines}</g><text x="${cx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle">${esc(g.name.toLocaleUpperCase("tr-TR"))}</text>${stars}</g>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true">${out}</svg>`;
+}
+
+/* ---------- görünümler ---------- */
+function viewOverview() {
+  const s = DATA.stats;
+  const featured = ["sky-new", "sky-page", "sky-polish", "sky-review", "sky-debug", "sky-check"].map((n) => CM.get(n)).filter(Boolean);
+  const maxG = Math.max(1, ...DATA.groups.map((g) => g.count));
+  const words = s.words >= 10000 ? [Math.round(s.words / 1000), "bin"] : [s.words, ""];
+  const ins = DATA.install;
+  const stat = (n, suf, label, href) => {
+    const tag = href ? "a" : "div";
+    return `<${tag} class="stat"${href ? ` href="${href}"` : ""}><span class="stat-num"><span data-count="${n}">${nf.format(n)}</span>${suf ? `<small>${suf}</small>` : ""}</span><span class="stat-label">${label}</span></${tag}>`;
+  };
+  const step = (cmd) => `<li><code>${esc(cmd)}</code><button class="icon-btn sm" type="button" data-copy="${esc(cmd)}" data-copy-label="Komut kopyalandı" aria-label="Komutu kopyala">${icon("copy")}</button></li>`;
+  return `
+  <section class="hero">
+    <div>
+      <p class="eyebrow"><span class="dot-live"></span>Claude Code eklentisi · v${esc(DATA.plugin.version)}</p>
+      <h1 class="display">Her şey dahil.<br><em>Başka bir şey arama.</em></h1>
+      <p class="lede">Web, mobil, backend, altyapı, yapay zekâ ve tasarım için <b>${s.skills} skill</b>, <b>${s.agents} uzman agent</b>, <b>${s.commands} komut</b> ve arkanı kollayan <b>${s.hooks} hook</b>. Tamamı Türkçe, tamamı tek kurulumda.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#/skills">Skill'leri keşfet ${icon("arrow")}</a>
+        <button class="btn btn-ghost" type="button" data-palette>${icon("search")}Her şeyi ara<kbd>${MOD}K</kbd></button>
+      </div>
+    </div>
+    <figure class="map-fig">
+      <div class="sky-map" role="img" aria-label="Skill takımyıldızı: her yıldız bir skill, her küme bir alan">
+        ${constellation()}
+        <div class="star-tip" hidden></div>
+      </div>
+      <figcaption>Her yıldız bir skill, her takımyıldız bir alan. Üstüne gel, tıkla.</figcaption>
+    </figure>
+  </section>
+  <section class="stats" aria-label="Özet">
+    ${stat(s.skills, "", "skill", "#/skills")}
+    ${stat(s.agents, "", "uzman agent", "#/agents")}
+    ${stat(s.commands, "", "komut", "#/commands")}
+    ${stat(s.hooks, "", "koruyucu hook", "#/hooks")}
+    ${stat(words[0], words[1], "kelimelik rehber", "")}
+  </section>
+  <div class="split">
+    <section class="panel">
+      <header class="panel-head"><h2>Alanlar</h2><a class="more" href="#/skills">Tüm skill'ler ${icon("arrow")}</a></header>
+      <ul class="bars">${DATA.groups.map((g) => `<li><a class="bar-row" href="#/skills?g=${encodeURIComponent(g.name)}" style="--g:${groupHue(g.name)}"><span class="bar-label"><i class="gdot"></i>${esc(g.name)}</span><span class="bar"><span style="--w:${((g.count / maxG) * 100).toFixed(1)}%"></span></span><span class="bar-num">${g.count}</span></a></li>`).join("")}</ul>
+    </section>
+    <section class="panel">
+      <header class="panel-head"><h2>Hızlı başlangıç</h2><a class="more" href="#/commands">Tüm komutlar ${icon("arrow")}</a></header>
+      <ul class="quick">${featured.map((c) => `<li><a href="${hrefOf(c)}"><span class="q-name">/${esc(c.name)}</span><span class="q-desc">${esc(c.desc)}</span></a><button class="icon-btn sm" type="button" data-copy="/${esc(c.name)} " data-copy-label="Kopyalandı: /${esc(c.name)}" aria-label="/${esc(c.name)} komutunu kopyala">${icon("copy")}</button></li>`).join("")}</ul>
+    </section>
+  </div>
+  <section class="panel">
+    <header class="panel-head"><h2>Uzman ekip</h2><a class="more" href="#/agents">${DATA.agents.length} agent ${icon("arrow")}</a></header>
+    <div class="team-grid">${DATA.agents.map((a) => `<a class="mate" href="${hrefOf(a)}">${avatar(a.name, "sm")}${esc(short(a.name))}</a>`).join("")}</div>
+  </section>
+  <section class="panel install" id="kurulum">
+    <div>
+      <h2>${ins.installed ? "Sky bu makinede kurulu" : "Kuruluma hazır"}</h2>
+      <p>${ins.installed ? `<code>${esc(ins.id)}</code> olarak etkin. Değişikliklerden sonra Claude Code'u yeniden başlatman yeterli.` : "İki komut ve bir yeniden başlatma. Ek bağımlılık yok; hook'lar yalnızca Node ile çalışır."}</p>
+    </div>
+    <ol class="steps">
+      ${step(`claude plugin marketplace add "${DATA.root}"`)}
+      ${step("claude plugin install sky@sky")}
+      <li><span>Claude Code'u yeniden başlat, sonra <code>/sky-new</code> yaz.</span></li>
+    </ol>
+  </section>`;
+}
+function mountOverview() {
+  countUp($("#main"));
+  const fig = $(".sky-map");
+  if (!fig) return;
+  const tip = $(".star-tip", fig), svg = $("svg", fig);
+  fig.addEventListener("pointerover", (e) => {
+    const star = e.target.closest(".star");
+    if (!star) return;
+    const g = star.closest(".cg");
+    svg.classList.add("dim");
+    $$(".cg.lit", svg).forEach((x) => x !== g && x.classList.remove("lit"));
+    g.classList.add("lit");
+    const fr = fig.getBoundingClientRect(), sr = $(".s", star).getBoundingClientRect();
+    tip.innerHTML = `<small>${esc(g.dataset.group)}</small>${esc(star.dataset.name)}`;
+    tip.style.left = `${sr.left + sr.width / 2 - fr.left}px`;
+    tip.style.top = `${sr.top - fr.top}px`;
+    tip.hidden = false;
+  });
+  fig.addEventListener("pointerleave", () => {
+    svg.classList.remove("dim");
+    $$(".cg.lit", svg).forEach((x) => x.classList.remove("lit"));
+    tip.hidden = true;
+  });
+}
+function countUp(root) {
+  $$("[data-count]", root).forEach((el) => {
+    const to = +el.dataset.count;
+    if (reduceMotion.matches || !to) return;
+    const t0 = performance.now(), dur = 1200;
+    const tick = (t) => {
+      const p = Math.min(1, (t - t0) / dur);
+      el.textContent = nf.format(Math.round(to * (p === 1 ? 1 : 1 - Math.pow(2, -10 * p))));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    el.textContent = "0";
+    requestAnimationFrame(tick);
+  });
+}
+
+function viewSkills() {
+  return `${pageHead("Kütüphane", "Skill'ler", DATA.skills.length, `Claude işin gerektirdiği skill'i kendisi yükler. İstersen adıyla da çağırabilirsin, örneğin <code>/sky:sky-nextjs</code>.`)}
+  <div class="toolbar" role="search">
+    ${searchBox("skills", "Skill, teknoloji ya da kelime ara…  ödeme, docker, form")}
+    <div class="chips" role="group" aria-label="Alan filtresi">${chip("skills", "g", "", "Tümü", DATA.skills.length)}${DATA.groups.map((g) => chip("skills", "g", g.name, g.name, g.count, groupHue(g.name))).join("")}</div>
+  </div>
+  <div id="results"></div>`;
+}
+function viewAgents() {
+  const models = [...new Set(DATA.agents.map((a) => a.model))];
+  return `${pageHead("Ekip", "Agent'lar", DATA.agents.length, `Her biri tek bir işte uzman. Claude işi uygun agent'a devreder; sen de adıyla isteyebilirsin: <q>sky-architect ile planla</q>.`)}
+  <div class="toolbar" role="search">
+    ${searchBox("agents", "Agent ara…  güvenlik, mobil, python")}
+    <div class="chips" role="group" aria-label="Model filtresi">${chip("agents", "m", "", "Tümü", DATA.agents.length)}${models.map((m) => chip("agents", "m", m, m, DATA.agents.filter((a) => a.model === m).length)).join("")}</div>
+  </div>
+  <div id="results"></div>`;
+}
+function viewCommands() {
+  return `${pageHead("Kısayollar", "Komutlar", DATA.commands.length, `Sık yapılan işleri tek satıra indirir. Komutu yaz, ardından ne istediğini ekle: <code>/sky-new kuaför randevu sitesi</code>.`)}
+  <div class="toolbar" role="search">${searchBox("commands", "Komut ara…  test, docker, commit")}</div>
+  <div id="results"></div>`;
+}
+function viewHooks() {
+  return `${pageHead("Koruma", "Hook'lar", DATA.hooks.length, "Sen çalışırken arka planda devreye girerler. Hiçbiri kodunu kendiliğinden değiştirmez: ya uyarır ya da onay ister.")}
+  <ol class="timeline">${DATA.events.map((ev, i) => {
+    const hs = DATA.hooks.filter((h) => h.event === ev.name);
+    return `<li class="tl-item"><div class="tl-node">${String(i + 1).padStart(2, "0")}</div><div>
+      <header class="tl-head"><h2>${esc(ev.label)}</h2><code>${esc(ev.name)}</code><span class="muted">${esc(ev.hint)}</span></header>
+      <div class="hook-grid">${hs.map(hookCard).join("")}</div></div></li>`;
+  }).join("")}</ol>
+  <section class="panel">
+    <header class="panel-head"><h2>Kapatmak istersen</h2></header>
+    ${codeBlock("# Tüm Sky hook'larını kapat\nSKY_HOOKS=off claude\n\n# Yalnızca seçtiklerini kapat\nSKY_HOOKS_DISABLE=stop,lang claude\n\n# Anahtarlar: danger, packages, env, post-edit, lang, stop, session, prompt", "sh")}
+  </section>`;
+}
+function viewRules() {
+  return `${pageHead("Felsefe", "İlkeler", null, "Sky her görevde bu döngüyle çalışır ve bu kurallardan taviz vermez.")}
+  <ol class="flow">${DATA.workflow.map((w, i) => `<li><span class="flow-n">${String(i + 1).padStart(2, "0")}</span><h3>${inline(w.title)}</h3><p>${inline(w.text)}</p></li>`).join("")}</ol>
+  <h2 class="section-title">Değişmez kurallar</h2>
+  <div class="rules">${DATA.rules.map((r) => `<article class="rule"><h3>${inline(r.title)}</h3><p>${inline(r.text)}</p></article>`).join("")}</div>`;
+}
+
+function refresh(v) {
+  const el = $("#results");
+  if (!el) return;
+  const st = state[v];
+  const tokens = tokenize(st.q);
+  if (v === "skills") {
+    let list = DATA.skills.filter((s) => !st.g || s.group === st.g);
+    if (tokens.length) list = rank(list, tokens);
+    if (!list.length) { lastResults.skills = []; el.innerHTML = emptyState(); return; }
+    if (!tokens.length && !st.g) {
+      const ordered = [];
+      el.innerHTML = DATA.groups.map((g) => {
+        const items = list.filter((s) => s.group === g.name);
+        ordered.push(...items);
+        return `<section class="group" style="--g:${groupHue(g.name)}"><header class="group-head"><h2><i class="gdot"></i>${esc(g.name)}</h2><span class="n">${items.length}</span></header><div class="grid">${items.map((s) => skillCard(s)).join("")}</div></section>`;
+      }).join("");
+      lastResults.skills = ordered.map((s) => s.name);
+    } else {
+      lastResults.skills = list.map((s) => s.name);
+      el.innerHTML = `<p class="result-meta">${list.length} sonuç</p><div class="grid">${list.map((s) => skillCard(s, tokens)).join("")}</div>`;
+    }
+  } else if (v === "agents") {
+    let list = DATA.agents.filter((a) => !st.m || a.model === st.m);
+    if (tokens.length) list = rank(list, tokens);
+    lastResults.agents = list.map((a) => a.name);
+    el.innerHTML = list.length ? `${tokens.length || st.m ? `<p class="result-meta">${list.length} sonuç</p>` : ""}<div class="grid">${list.map((a) => agentCard(a, tokens)).join("")}</div>` : emptyState();
+  } else if (v === "commands") {
+    let list = DATA.commands;
+    if (tokens.length) list = rank(list, tokens);
+    lastResults.commands = list.map((c) => c.name);
+    el.innerHTML = list.length ? `${tokens.length ? `<p class="result-meta">${list.length} sonuç</p>` : ""}<ul class="cmds">${list.map((c) => cmdRow(c, tokens)).join("")}</ul>` : emptyState();
+  }
+}
+const rank = (list, tokens) => list.map((it) => [it, score(it, tokens)]).filter((x) => x[1] > 0).sort((a, b) => b[1] - a[1]).map((x) => x[0]);
+
+/* ---------- çekmece içerikleri ---------- */
+function linksSection(item) {
+  const out = item.links.map(resolveName).filter(Boolean);
+  const back = item.backlinks.map(resolveName).filter(Boolean);
+  if (!out.length && !back.length) return "";
+  const chips = (arr) => `<div class="xrefs">${arr.map((it) => `<a class="xref-chip" href="${hrefOf(it)}"><span class="xt">${TYPE[it.type].label}</span>${esc(displayName(it))}</a>`).join("")}</div>`;
+  return section("Bağlantılar", `${out.length ? `<p class="hint">Bu sayfanın atıf yaptıkları</p>${chips(out)}` : ""}${back.length ? `<p class="hint">Buna atıf yapanlar</p>${chips(back)}` : ""}`);
+}
+const DRAWERS = {
+  skill: (s) => ({
+    crumbs: `Skill<i>/</i>${esc(s.group)}`,
+    html: `<div style="--g:${groupHue(s.group)}"><span class="tag"><i class="gdot"></i>${esc(s.group)}${s.cat && s.cat !== s.group ? ` · ${esc(s.cat)}` : ""}</span>
+      <h2 class="d-title" id="drawer-title">${esc(short(s.name))}</h2>
+      <p class="d-id">${esc(s.name)}</p>
+      <p class="d-desc">${esc(s.desc)}</p>
+      <div class="d-actions">${copyBtn("/sky:" + s.name, "Çağır", true)}${copyBtn(`skills/${s.name}/SKILL.md`, "Yol")}</div></div>
+      <dl class="facts">${fact("Okuma", readMin(s.words) + " dk")}${fact("Uzunluk", nf.format(s.words) + " kelime")}${fact("Tetikleyici", s.triggers.length || "—")}${fact("Bağlantı", s.links.length + s.backlinks.length)}</dl>
+      ${s.signals.length ? section("Ne zaman devreye girer", `<ul class="signals">${s.signals.map((x) => `<li>${inline(x)}</li>`).join("")}</ul>`) : ""}
+      ${s.triggers.length ? section("Tetikleyici kelimeler", `<p class="hint">İsteğinde bunlardan biri geçerse Sky bu skill'i önerir.</p><div class="pills">${s.triggers.map((t) => `<span class="pill">${esc(t)}</span>`).join("")}</div>`) : ""}
+      ${linksSection(s)}
+      ${section("Rehber", `<article class="prose">${md(s.body)}</article>`)}
+      ${s.refs.length ? section("Ek dosyalar", s.refs.map((r) => `<details class="ref"><summary>${icon("file")}${esc(r.path)}<span>${(r.size / 1024).toFixed(1)} KB</span></summary>${r.content != null ? codeBlock(r.content, (r.path.split(".").pop() || "")) : '<p class="hint" style="padding:12px 14px">Önizleme yok.</p>'}</details>`).join("")) : ""}`,
+  }),
+  agent: (a) => ({
+    crumbs: `Agent<i>/</i>${esc(a.model)}`,
+    html: `${avatar(a.name, "lg")}
+      <h2 class="d-title" id="drawer-title">${esc(short(a.name))}</h2>
+      <p class="d-id">${esc(a.name)}</p>
+      <p class="d-desc">${esc(a.desc)}</p>
+      <div class="d-actions">${copyBtn(`${a.name} agent'ı ile `, "İstem", true)}${copyBtn(`agents/${a.name}.md`, "Yol")}</div>
+      <dl class="facts">${fact("Model", esc(a.model), true)}${fact("Araç", a.tools.length || "hepsi")}${fact("Bağlantı", a.links.length + a.backlinks.length)}${fact("Okuma", readMin(a.words) + " dk")}</dl>
+      ${a.use ? section("Ne zaman çağrılır", `<ul class="signals"><li>${inline(a.use)}</li></ul>`) : ""}
+      ${section("Araçlar", a.tools.length ? `<div class="pills">${a.tools.map((t) => `<span class="pill mono">${esc(t)}</span>`).join("")}</div>` : '<p class="hint">Oturumdaki tüm araçları devralır.</p>')}
+      ${linksSection(a)}
+      ${section("Talimatlar", `<article class="prose">${md(a.body)}</article>`)}`,
+  }),
+  command: (c) => ({
+    crumbs: "Komut",
+    html: `<h2 class="d-title mono" id="drawer-title">/${esc(c.name)}</h2>
+      ${c.hint ? `<p class="d-id">${esc(c.hint)}</p>` : ""}
+      <p class="d-desc">${esc(c.desc)}</p>
+      <div class="d-actions">${copyBtn("/" + c.name + " ", "Kopyala", true)}${copyBtn(`commands/${c.name}.md`, "Yol")}</div>
+      <dl class="facts">${fact("Argüman", c.hint ? "alır" : "yok")}${fact("Bağlantı", c.links.length + c.backlinks.length)}${fact("Uzunluk", nf.format(c.words) + " kelime")}${fact("Okuma", readMin(c.words) + " dk")}</dl>
+      ${linksSection(c)}
+      ${section("Ne yapar", `<article class="prose">${md(c.body)}</article>`)}`,
+  }),
+  hook: (h) => {
+    const ev = EVENTS.get(h.event) || { label: h.event };
+    const off = h.key && h.key.indexOf("=") === -1 ? `SKY_HOOKS_DISABLE=${h.key.split(" · ").join(",")}` : "SKY_HOOKS=off";
+    return {
+      crumbs: `Hook<i>/</i>${esc(ev.label)}`,
+      html: `<h2 class="d-title" id="drawer-title">${esc(h.title)}</h2>
+        <p class="d-id">hooks/${esc(h.name)}</p>
+        <p class="d-desc">${esc(h.desc)}</p>
+        <div class="d-actions">${copyBtn(off, "Kapat")}${copyBtn(`hooks/${h.name}`, "Yol")}</div>
+        <dl class="facts">${fact("Olay", esc(h.event), true)}${fact("Eşleşme", esc(h.matcher || "hepsi"), true)}${fact("Zaman aşımı", h.timeout ? h.timeout + " sn" : "—")}${fact("Kod", h.lines + " satır")}</dl>
+        ${h.source ? section("Kaynak kod", codeBlock(h.source, "js")) : ""}`,
+    };
+  },
+};
+
+/* ---------- yönlendirme ---------- */
+function parseHash() {
+  let h = location.hash.replace(/^#\/?/, "");
+  const qi = h.indexOf("?");
+  const qs = qi >= 0 ? h.slice(qi + 1) : "";
+  if (qi >= 0) h = h.slice(0, qi);
+  const parts = h.split("/");
+  const view = VIEWS[parts[0]] ? parts[0] : "overview";
+  let id = parts.slice(1).join("/");
+  try { id = decodeURIComponent(id); } catch (e) { /* olduğu gibi kullan */ }
+  return { view, id, params: new URLSearchParams(qs) };
+}
+function listHash(v) {
+  const st = state[v];
+  if (!st) return "#/" + (v === "overview" ? "" : v);
+  const p = new URLSearchParams();
+  for (const [k, val] of Object.entries(st)) if (val) p.set(k, val);
+  const qs = p.toString();
+  return "#/" + v + (qs ? "?" + qs : "");
+}
+
+let curView = null, prevHadId = false, replacing = false;
+const drawer = { open: false, view: null, id: null, fromList: false, depth: 0, returnFocus: null };
+const drawerEl = $("#drawer"), scrimEl = $("#scrim"), appEl = $("#app"), palEl = $("#palette"), pq = $("#pq"), pres = $("#pres");
+let palOpen = false, palReturn = null, pItems = [], pIdx = 0;
+
+function syncModal() {
+  const modal = drawer.open || palOpen;
+  document.documentElement.classList.toggle("lock", modal);
+  appEl.inert = modal;
+  drawerEl.inert = !drawer.open || palOpen;
+  scrimEl.classList.toggle("on", drawer.open);
+}
+function setNav(v) {
+  $$("#nav a").forEach((a) => (a.dataset.view === v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current")));
+}
+function renderView(v) {
+  const main = $("#main");
+  main.innerHTML = `<div class="view">${VIEWS[v].render()}${footer()}</div>`;
+  if (VIEWS[v].mount) VIEWS[v].mount();
+  window.scrollTo(0, 0);
+}
+function route() {
+  const { view, id, params } = parseHash();
+  const prevView = curView;
+  let changed = false;
+  if (state[view]) {
+    for (const k of Object.keys(state[view])) {
+      if (params.has(k) && state[view][k] !== params.get(k)) { state[view][k] = params.get(k); changed = true; }
+    }
+  }
+  if (view !== curView) { renderView(view); curView = view; }
+  else if (changed) {
+    refresh(view);
+    const q = $("#q"); if (q && q.value !== state[view].q) q.value = state[view].q;
+    $$("[data-filter]").forEach((b) => b.setAttribute("aria-pressed", String(state[view][b.dataset.key] === b.dataset.value)));
+  }
+  setNav(view);
+  const item = id && VIEWS[view].map ? VIEWS[view].map.get(id) : null;
+  if (item) {
+    if (drawer.open && drawer.view === view) { if (!replacing) drawer.depth++; }
+    else { drawer.depth = 1; drawer.fromList = prevView === view && !prevHadId; }
+    openDrawer(view, item);
+  } else {
+    closeDrawerUI();
+    document.title = (view === "overview" ? "" : VIEWS[view].label + " · ") + "Sky Pano";
+  }
+  replacing = false;
+  prevHadId = !!item;
+}
+function drawerNav(view, item) {
+  const map = VIEWS[view].map;
+  let list = lastResults[view] || [];
+  if (!list.includes(item.name)) list = [...map.keys()];
+  const i = list.indexOf(item.name);
+  const p = i > 0 ? map.get(list[i - 1]) : null;
+  const n = i < list.length - 1 ? map.get(list[i + 1]) : null;
+  const link = (it, dir) => it ? `<a class="d-step ${dir}" href="${hrefOf(it)}" data-replace aria-label="${dir === "prev" ? "Önceki" : "Sonraki"}: ${esc(displayName(it))}">${dir === "prev" ? icon("left") : ""}<span>${esc(displayName(it))}</span>${dir === "next" ? icon("right") : ""}</a>` : '<span class="d-step"></span>';
+  return `${link(p, "prev")}<span>${i + 1} / ${list.length}</span>${link(n, "next")}`;
+}
+function openDrawer(view, item) {
+  const c = DRAWERS[item.type](item);
+  $("#d-crumbs").innerHTML = c.crumbs;
+  $("#d-body").innerHTML = c.html;
+  $("#d-body").scrollTop = 0;
+  $("#d-foot").innerHTML = drawerNav(view, item);
+  if (!drawer.open) {
+    drawer.returnFocus = document.activeElement;
+    drawer.open = true;
+    syncModal();
+    drawerEl.classList.add("open");
+    setTimeout(() => drawerEl.focus({ preventScroll: true }), 60);
+  }
+  drawer.view = view;
+  drawer.id = item.name;
+  document.title = displayName(item) + " · Sky Pano";
+}
+function closeDrawerUI() {
+  if (!drawer.open) return;
+  drawer.open = false;
+  drawerEl.classList.remove("open");
+  syncModal();
+  const rf = drawer.returnFocus;
+  if (rf && document.contains(rf) && rf !== document.body) rf.focus({ preventScroll: true });
+  else $("#main").focus({ preventScroll: true });
+}
+function requestCloseDrawer() {
+  if (!drawer.open) return;
+  if (drawer.fromList && drawer.depth === 1) history.back();
+  else location.hash = listHash(drawer.view);
+}
+function stepDrawer(dir) {
+  const a = $(`.d-step.${dir > 0 ? "next" : "prev"}[href]`);
+  if (a) { replacing = true; location.replace(a.getAttribute("href")); }
+}
+
+/* ---------- arama paleti ---------- */
+function openPalette() {
+  if (palOpen) return;
+  palReturn = document.activeElement;
+  palOpen = true;
+  palEl.classList.add("open");
+  syncModal();
+  pq.value = "";
+  renderPalette();
+  requestAnimationFrame(() => pq.focus());
+}
+function closePalette(restore = true) {
+  if (!palOpen) return;
+  palOpen = false;
+  palEl.classList.remove("open");
+  syncModal();
+  if (restore && palReturn && document.contains(palReturn)) palReturn.focus({ preventScroll: true });
+}
+function renderPalette() {
+  const tokens = tokenize(pq.value);
+  let groups;
+  if (!tokens.length) {
+    const pages = Object.entries(VIEWS).map(([k, v]) => ({ type: "page", name: v.label, href: "#/" + (k === "overview" ? "" : k), icon: v.icon, desc: v.count != null ? `${v.count} öğe` : "" }));
+    const picks = [CM.get("sky-new"), CM.get("sky-polish"), SK.get("sky-ui-craft"), AG.get("sky-architect"), HK.get("pre-bash.js")].filter(Boolean);
+    groups = [["Sayfalar", pages], ["Öne çıkanlar", picks]];
+  } else {
+    const hits = rank(ALL, tokens).slice(0, 60);
+    const by = new Map();
+    for (const it of hits) { if (!by.has(it.type)) by.set(it.type, []); by.get(it.type).push(it); }
+    groups = [...by.entries()].map(([t, items]) => [TYPE[t].plural, items]);
+  }
+  pItems = groups.flatMap((g) => g[1]);
+  pIdx = 0;
+  let k = 0;
+  pres.innerHTML = pItems.length ? groups.map(([label, items]) => `<li class="po-head" role="presentation">${esc(label)}${tokens.length ? ` · ${items.length}` : ""}</li>` + items.map((it) => {
+    const i = k++;
+    const desc = it.type === "agent" ? (it.use || it.desc) : (it.desc || it.hint || "");
+    return `<li role="option" id="po-${i}" data-i="${i}" aria-selected="${i === 0}"><a href="${hrefOf(it)}" tabindex="-1"><span class="po-ic">${icon(it.icon || TYPE[it.type].icon)}</span><span class="po-main"><span class="po-name">${hl(displayName(it), tokens)}</span>${desc ? `<span class="po-desc">${hl(desc, tokens)}</span>` : ""}</span><span class="po-type">${TYPE[it.type].label}</span></a></li>`;
+  }).join("")).join("") : `<li class="po-empty" role="presentation">“${esc(pq.value)}” için sonuç yok.</li>`;
+  if (pItems.length) pq.setAttribute("aria-activedescendant", "po-0"); else pq.removeAttribute("aria-activedescendant");
+}
+function setPal(i) {
+  if (!pItems.length) return;
+  pIdx = (i + pItems.length) % pItems.length;
+  $$("#pres [role=option]").forEach((li) => li.setAttribute("aria-selected", String(+li.dataset.i === pIdx)));
+  const el = $("#po-" + pIdx);
+  if (el) el.scrollIntoView({ block: "nearest" });
+  pq.setAttribute("aria-activedescendant", "po-" + pIdx);
+}
+function goTo(it) {
+  closePalette(false);
+  const h = hrefOf(it);
+  if ((location.hash || "#/") === h) route(); else location.hash = h;
+}
+
+/* ---------- tema, kopyalama, bildirim ---------- */
+const effectiveDark = () => { const t = document.documentElement.getAttribute("data-theme"); return t ? t === "dark" : darkQuery.matches; };
+function applyTheme(mode) {
+  if (mode === "light" || mode === "dark") document.documentElement.setAttribute("data-theme", mode);
+  else { document.documentElement.removeAttribute("data-theme"); mode = "system"; }
+  store.set("sky-theme", mode);
+  $$("[data-theme-set]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.themeSet === mode)));
+  $$("[data-theme-cycle]").forEach((b) => (b.innerHTML = icon(effectiveDark() ? "sun" : "moon")));
+}
+let toastTimer;
+function toast(msg) {
+  const t = $("#toast");
+  t.innerHTML = `${icon("check")}<span>${esc(msg)}</span>`;
+  t.classList.add("on");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("on"), 1800);
+}
+async function copyText(text, label) {
+  let ok = false;
+  try { await navigator.clipboard.writeText(text); ok = true; }
+  catch (e) {
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", ""); ta.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+    document.body.appendChild(ta); ta.select();
+    try { ok = document.execCommand("copy"); } catch (e2) { ok = false; }
+    ta.remove();
+  }
+  toast(ok ? (label || "Kopyalandı") : "Kopyalanamadı. Metni elle seç.");
+  return ok;
+}
+function flashIcon(btn) {
+  const svg = btn.querySelector("svg.i");
+  if (!svg || btn.dataset.flashing) return;
+  btn.dataset.flashing = "1";
+  const old = svg.outerHTML;
+  svg.outerHTML = icon("check", "ok");
+  setTimeout(() => { const s2 = btn.querySelector("svg.i"); if (s2) s2.outerHTML = old; delete btn.dataset.flashing; }, 1300);
+}
+
+/* ---------- kenar çubuğu ---------- */
+function buildSide() {
+  $("#ver").textContent = "v" + DATA.plugin.version;
+  $("#st-icon").innerHTML = icon("search");
+  $("#st-kbd").textContent = MOD + "K";
+  $("#pal-icon").innerHTML = icon("search");
+  $(".side-top [data-palette]").innerHTML = icon("search");
+  $("[data-close-drawer]").innerHTML = icon("x");
+  const nav = (label, keys) => `<p class="nav-label">${label}</p>` + keys.map((k) => `<a href="#/${k === "overview" ? "" : k}" data-view="${k}">${icon(VIEWS[k].icon)}<span>${VIEWS[k].label}</span>${VIEWS[k].count != null ? `<span class="n">${VIEWS[k].count}</span>` : ""}</a>`).join("");
+  $("#nav").innerHTML = nav("Keşfet", ["overview"]) + nav("Kütüphane", ["skills", "agents", "commands"]) + nav("Sistem", ["hooks", "rules"]);
+  const ins = DATA.install;
+  $("#install-pill").innerHTML = ins.installed
+    ? `<div class="status ok"><i class="led"></i><span>Kurulu<small>${esc(ins.id)}</small></span></div>`
+    : `<button class="status" type="button" data-goto-install><i class="led"></i><span>${ins.installed === false ? "Henüz kurulu değil" : "Kurulum durumu bilinmiyor"}<small>nasıl kurulur →</small></span></button>`;
+  $("#built").innerHTML = DATA.live ? `<span class="live"><i></i>Canlı</span> · değişiklikler anında yansır` : esc("Derlendi: " + builtLabel);
+}
+
+/* ---------- olaylar ---------- */
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("[data-copy],[data-copy-code],[data-palette],[data-theme-set],[data-theme-cycle],[data-close-drawer],[data-filter],[data-clear],[data-replace],[data-goto-install],[data-skip],#scrim,#pres a");
+  if (!t) { if (e.target === palEl) closePalette(); return; }
+  if (t.matches("[data-copy]")) { e.preventDefault(); copyText(t.dataset.copy, t.dataset.copyLabel); flashIcon(t); }
+  else if (t.matches("[data-copy-code]")) { const code = t.closest(".codeblock").querySelector("code"); copyText(code.textContent, "Kod kopyalandı"); flashIcon(t); }
+  else if (t.matches("[data-palette]")) openPalette();
+  else if (t.matches("[data-theme-set]")) applyTheme(t.dataset.themeSet);
+  else if (t.matches("[data-theme-cycle]")) applyTheme(effectiveDark() ? "light" : "dark");
+  else if (t.matches("[data-close-drawer]") || t.id === "scrim") requestCloseDrawer();
+  else if (t.matches("[data-filter]")) {
+    const v = t.dataset.filter;
+    state[v][t.dataset.key] = t.dataset.value;
+    $$(`[data-filter="${v}"][data-key="${t.dataset.key}"]`).forEach((b) => b.setAttribute("aria-pressed", String(b === t)));
+    refresh(v);
+    history.replaceState(null, "", listHash(v));
+  }
+  else if (t.matches("[data-clear]")) {
+    const v = curView;
+    if (state[v]) for (const k of Object.keys(state[v])) state[v][k] = "";
+    const q = $("#q"); if (q) q.value = "";
+    $$("[data-filter]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.value === "")));
+    refresh(v);
+    history.replaceState(null, "", listHash(v));
+  }
+  else if (t.matches("[data-replace]")) { e.preventDefault(); replacing = true; location.replace(t.getAttribute("href")); }
+  else if (t.matches("[data-goto-install]")) {
+    const go = () => { const k = $("#kurulum"); if (k) k.scrollIntoView({ behavior: reduceMotion.matches ? "auto" : "smooth", block: "center" }); };
+    if (curView !== "overview") { location.hash = "#/"; setTimeout(go, 120); } else go();
+  }
+  else if (t.matches("[data-skip]")) $("#main").focus();
+  else if (t.matches("#pres a")) closePalette(false);
+});
+document.addEventListener("input", (e) => {
+  if (e.target.id === "q") {
+    const v = e.target.dataset.view;
+    state[v].q = e.target.value;
+    refresh(v);
+    history.replaceState(null, "", listHash(v));
+  } else if (e.target === pq) renderPalette();
+});
+pres.addEventListener("mousemove", (e) => {
+  const li = e.target.closest("[role=option]");
+  if (li && +li.dataset.i !== pIdx) setPal(+li.dataset.i);
+});
+pq.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); setPal(pIdx + (e.key === "ArrowDown" ? 1 : -1)); }
+  else if (e.key === "Enter") { e.preventDefault(); if (pItems[pIdx]) goTo(pItems[pIdx]); }
+  else if (e.key === "Tab") e.preventDefault();
+});
+document.addEventListener("keydown", (e) => {
+  const tag = e.target.tagName;
+  const typing = tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || e.target.isContentEditable;
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); palOpen ? closePalette() : openPalette(); return; }
+  if (e.key === "Escape") {
+    if (palOpen) { e.preventDefault(); closePalette(); }
+    else if (drawer.open) { e.preventDefault(); requestCloseDrawer(); }
+    else if (typing && e.target.id === "q" && e.target.value) { e.target.value = ""; e.target.dispatchEvent(new Event("input", { bubbles: true })); }
+    return;
+  }
+  if (typing || palOpen || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key === "/") { e.preventDefault(); const q = !drawer.open && $("#q"); q ? q.focus() : openPalette(); }
+  else if (e.key === "t" || e.key === "T") applyTheme(effectiveDark() ? "light" : "dark");
+  else if (drawer.open && (e.key === "ArrowRight" || e.key === "j")) stepDrawer(1);
+  else if (drawer.open && (e.key === "ArrowLeft" || e.key === "k")) stepDrawer(-1);
+});
+document.addEventListener("pointermove", (e) => {
+  const c = e.target.closest && e.target.closest(".card");
+  if (!c) return;
+  const r = c.getBoundingClientRect();
+  c.style.setProperty("--mx", `${e.clientX - r.left}px`);
+  c.style.setProperty("--my", `${e.clientY - r.top}px`);
+}, { passive: true });
+darkQuery.addEventListener("change", () => applyTheme(store.get("sky-theme") || "system"));
+window.addEventListener("hashchange", route);
+
+buildSide();
+applyTheme(store.get("sky-theme") || "system");
+syncModal();
+route();
+if (DATA.live) {
+  try {
+    if (sessionStorage.getItem("sky-updated")) { sessionStorage.removeItem("sky-updated"); setTimeout(() => toast("Pano güncellendi"), 250); }
+  } catch (e) { /* depolama yok */ }
+}
+})();
+</script>
+</body>
+</html>

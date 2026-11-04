@@ -1,0 +1,16 @@
+{
+  "name": "sky-claude-plugin",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Sky — Türkçe, her şey dahil Claude Code eklentisi. Bu dosya yalnızca yerel Sky Pano içindir; eklentinin çalışması için gerekmez, bağımlılığı yoktur.",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dashboard/server.mjs",
+    "dev": "node dashboard/server.mjs",
+    "build": "node dashboard/build.mjs",
+    "validate": "claude plugin validate ."
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}

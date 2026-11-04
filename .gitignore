@@ -1,0 +1,8 @@
+# Bağımlılık klasörleri (Sky'ın bağımlılığı yok, yine de önlem)
+node_modules/
+
+# İşletim sistemi dosyaları
+.DS_Store
+
+# Otomatik üretilen pano: `npm run build` ile yeniden oluşturulur, yerel klasör yolunu içerir
+dashboard/index.html
