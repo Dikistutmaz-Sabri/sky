@@ -662,6 +662,8 @@ Anahtarlar: `danger`, `packages`, `env`, `post-edit`, `lang`, `stop`, `session`,
 | Sen/siz tutarlılığı, Türkçe arayüz metni | `sky-ux-writing`, `sky-turkish-proofreader` |
 | Freelance teklif, fatura, sözleşme iskeleti | `sky-freelance` |
 
+> ⚖️ Sky hukuki, mali veya vergi danışmanlığı değildir. Ayrıntılar için [Sorumluluk reddi](#️-sorumluluk-reddi) bölümüne bak.
+
 ## 📏 İlkeler
 
 Sky her görevde bu döngüyle çalışır:
@@ -761,6 +763,19 @@ Yeni bir skill eklemek üç adım:
 3. Pano açıksa yeni skill anında görünür. Claude Code için `claude plugin update sky@sky` çalıştır.
 
 Pano, yönlendirme tablosunda olmayan bir skill görürse terminalde uyarır.
+
+## ⚖️ Sorumluluk reddi
+
+Sky bir geliştirici aracıdır; **hukuki, mali veya vergi danışmanlığı değildir.**
+
+- KVKK, e-Fatura, e-Arşiv, KDV, Tüketici Kanunu, ETK ve benzeri konulardaki içerikler genel bilgi ve teknik
+  rehberlik amaçlıdır. Güncel olmayabilir, eksik ya da hatalı olabilir.
+- Sky ile geliştirilen yazılımın mevzuata uygunluğundan, o yazılımı geliştiren ve işleten taraf sorumludur.
+  Sky'ı kullanmak bir uygunluk garantisi değildir.
+- Kişisel veri işleyen, fatura kesen veya ödeme alan bir sistemi canlıya almadan önce bir hukukçuya ve mali
+  müşavire danış.
+- Sky, [MIT lisansıyla](LICENSE) "olduğu gibi" ve hiçbir garanti verilmeden sunulur; lisans metnindeki garanti ve
+  sorumluluk reddi geçerlidir.
 
 ## 📁 Proje yapısı
 
