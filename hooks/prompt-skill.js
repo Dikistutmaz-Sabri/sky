@@ -11,7 +11,8 @@ const text = prompt.toLocaleLowerCase("tr-TR") + "\n" + prompt.toLowerCase();
 
 // Kısa terimler (≤ 3 harf) kelime sınırıyla, uzunları ek alabilen alt dizgi olarak eşlenir.
 const L = "a-zçğıöşü0-9";
-const term = (t) => (t.length <= 3 ? new RegExp(`(?<![${L}])${t}(?![${L}])`) : new RegExp(t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+const esc = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const term = (t) => (t.length <= 3 ? new RegExp(`(?<![${L}])${esc(t)}(?![${L}])`) : new RegExp(esc(t)));
 
 const MAP = [
   [["randevu", "rezervasyon", "müsait saat", "booking"], ["sky-scheduling"]],
