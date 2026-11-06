@@ -6,6 +6,7 @@ description: >-
   self-host, font-display ve preload, metrik eşleşen fallback (size-adjust) ile sıfır kayma,
   karaktere göre font eşleştirme tarifleri ve OpenType özellikleri. "Font öner", "font yavaş
   yükleniyor", "Türkçe karakter bozuk", "yazı tipi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Web Font'lar

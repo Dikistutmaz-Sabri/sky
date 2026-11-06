@@ -6,6 +6,7 @@ description: >-
   tasarımı görüşmesi çerçevesi, davranışsal sorular ve STAR yöntemi, CV ve portföy, maaş
   müzakeresi, uzaktan/yurt dışı iş ve İngilizce mülakat, soru sorma ve değerlendirme, reddi
   yönetme ve sürekli hazır olma. İş arama, mülakat hazırlığı, CV veya kariyer konusunda kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Mülakat & Kariyer Hazırlığı

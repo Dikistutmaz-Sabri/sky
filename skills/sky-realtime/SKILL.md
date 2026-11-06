@@ -6,6 +6,7 @@ description: >-
   ve senkronizasyon, olay sıralama ve sürüm, optimistic UI ile uzlaşma, presence ve "yazıyor"
   göstergesi, çakışma çözümü (LWW vs CRDT/Yjs), ölçekleme (Redis pub/sub) ve test. Canlı
   liste, bildirim, sohbet, ortak düzenleme veya "anlık güncellensin" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Gerçek Zamanlı

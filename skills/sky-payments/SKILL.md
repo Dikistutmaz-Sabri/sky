@@ -1,11 +1,8 @@
 ---
 name: sky-payments
 description: >-
-  Ödeme entegrasyonu: Stripe (Checkout, abonelik, Customer Portal, webhook) ve iyzico
-  (Checkout Form, 3D Secure, taksit) kurulumu; ödeme veri modeli, webhook güvenliği ve
-  idempotency, erişim hakkının (entitlement) sunucuda türetilmesi, iade, başarısız ödeme ve
-  dunning, test modu ve Stripe CLI, PCI kapsamı, Türkiye'ye özgü notlar (e-fatura, KDV,
-  BIN/taksit). Ödeme, abonelik, fiyatlandırma veya fatura işi yaparken kullan.
+  Ödeme entegrasyonu: iyzico ve PayTR (3D Secure, taksit), Stripe, webhook güvenliği, abonelik, iade,
+  e-fatura ve KDV. Ödeme, abonelik veya fiyatlandırma işinde kullan.
 ---
 
 # Sky · Ödemeler

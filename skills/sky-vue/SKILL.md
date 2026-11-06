@@ -6,6 +6,7 @@ description: >-
   route, useFetch/useAsyncData, server routes, SSR/SSG/hibrit render, Nitro), TypeScript ile
   props/emits, bileşen kalıpları, VueUse, test (Vitest + Vue Test Utils) ve performans. Vue veya
   Nuxt projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Vue & Nuxt

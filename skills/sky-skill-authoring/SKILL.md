@@ -7,6 +7,7 @@ description: >-
   (ask, additionalContext, block), eklenti yapısı (plugin.json, marketplace.json), doğrulama
   (claude plugin validate) ve test; Sky'ı genişletme. "Skill yaz", "kendi eklentimi yapayım",
   "Sky'a yeni skill ekle", "hook yaz" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Skill & Eklenti Yazımı

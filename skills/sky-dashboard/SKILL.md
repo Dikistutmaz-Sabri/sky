@@ -7,6 +7,7 @@ description: >-
   durumlu filtreler (nuqs), komut paleti, klavye kısayolları, tarih aralığı, CSV dışa aktarma,
   yetkiye duyarlı UI ve performans. "Admin paneli", "dashboard", "tablo yap", "liste sayfası"
   dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Panel & Dashboard

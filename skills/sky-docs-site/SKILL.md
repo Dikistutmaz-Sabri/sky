@@ -6,6 +6,7 @@ description: >-
   grupları, adımlar), arama (Algolia DocSearch/Orama), kod bloklarında kopyala ve dosya adı,
   API referansı (OpenAPI), sürümleme ve çok dil, "bu sayfa yardımcı oldu mu", llms.txt ve AI
   dostu dokümantasyon. "Dokümantasyon sitesi", "docs", "yardım merkezi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Dokümantasyon Sitesi

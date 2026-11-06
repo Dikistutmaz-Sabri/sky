@@ -7,6 +7,7 @@ description: >-
   --json çıktı ve betiklenebilirlik, Ink ile TUI, npx ile çalıştırma, tek binary dağıtım,
   otomatik tamamlama ve güncelleme bildirimi. "CLI aracı yap", "komut satırı uygulaması",
   "terminal aracı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · CLI Araçları

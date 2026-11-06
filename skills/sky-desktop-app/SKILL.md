@@ -6,6 +6,7 @@ description: >-
   tepsisi, menüler ve global kısayollar, bildirimler, otomatik güncelleme, kod imzalama ve macOS
   notarization, Windows yükleyici, çok platformlu CI build. "Masaüstü uygulama", "Electron",
   "Tauri", "Windows/Mac uygulaması" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Masaüstü Uygulama

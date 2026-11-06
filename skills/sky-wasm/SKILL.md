@@ -6,6 +6,7 @@ description: >-
   maliyeti, Worker içinde çalıştırma, paket boyutu ve tembel yükleme, hazır WASM kütüphaneleri
   (SQLite, ffmpeg.wasm, görüntü işleme, PDF), WASI ve sunucu tarafı WASM (Workers, Spin),
   hata ayıklama. "WASM", "tarayıcıda hızlı hesaplama", "Rust'ı web'de çalıştır" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · WebAssembly

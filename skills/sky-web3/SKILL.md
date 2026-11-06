@@ -7,6 +7,7 @@ description: >-
   geliştirme ve test, güvenlik (reentrancy, erişim kontrolü, denetim), olayları dinleme ve
   indeksleme (The Graph), imza ile kimlik (SIWE), cüzdansız (hesap soyutlama) ve ölçek (L2).
   Blok zinciri, kripto cüzdan, NFT, akıllı sözleşme veya dapp projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Web3

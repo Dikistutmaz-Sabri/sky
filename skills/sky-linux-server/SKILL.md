@@ -6,6 +6,7 @@ description: >-
   ve zamanlayıcıları, Caddy/Nginx reverse proxy ve TLS, journalctl ve log rotasyonu, disk/
   bellek/süreç izleme, swap, yedekleme (restic), Coolify/Dokploy ile PaaS deneyimi ve sık
   sorunlar. Hetzner/DigitalOcean/Contabo vb. VPS'te bir şey kurarken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Linux Sunucu

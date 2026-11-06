@@ -6,6 +6,7 @@ description: >-
   böyle" bağlamı, mini alıştırmalar ve kontrol soruları, terim sözlüğü, yeni başlayan /
   orta / ileri seviye ayarı, öğrencilere ve yeni geliştiricilere yönelik öğrenme planı.
   "Bunu bana açıkla", "anlamadım", "nasıl çalışıyor", "öğret", "yeni başlıyorum" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Açıklama Modu
@@ -34,7 +35,7 @@ Konuşmadan ipuçları al (kullandığı terimler, sorusu); emin değilsen tek s
 2. Bir isteğin yolculuğu: "Kullanıcı 'Randevu al'a basınca: `BookingForm.tsx` → `createBooking` action → `bookingService` → DB → SMS işi kuyruğa."
 3. Önemli dosyalar listesi ve her birinin bir cümlelik görevi.
 4. Proje-özgü kurallar ve "dikkat" noktaları.
-(`sky-codebase-mapper` agent'ı CODEMAP üretir; bu skill onu insan diline çevirir.)
+(`sky-codebase-mapper` yöntemi CODEMAP üretir; bu skill onu insan diline çevirir.)
 
 ## Hata açıklama
 

@@ -54,6 +54,7 @@ const GROUPS = [
   ["Güvenlik", ["Güvenlik & kripto"]],
   ["Kariyer", ["Kariyer & topluluk"]],
   ["Claude Code", ["Claude Code"]],
+  ["Uzman rehberler", ["Uzman rehberler"]],
 ];
 const GROUP_OVERRIDE = {
   sky: "Çekirdek",

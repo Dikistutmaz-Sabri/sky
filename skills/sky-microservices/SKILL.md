@@ -7,6 +7,7 @@ description: >-
   keşfi ve API gateway, sözleşme testleri, dağıtık izleme (OpenTelemetry), veri sahipliği ve
   tutarlılık modelleri. "Mikroservise geçelim mi", "servisler arası iletişim", "event-driven"
   dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Mikroservisler & Dağıtık Sistemler

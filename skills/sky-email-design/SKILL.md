@@ -6,6 +6,7 @@ description: >-
   ve alt metin, kurşun geçirmez (bulletproof) buton, ön başlık (preheader), mobil uyum,
   işlemsel ve bülten şablonları, erişilebilirlik ve test (Litmus, Email on Acid). "E-posta
   şablonu tasarla", "bülten", "e-posta Outlook'ta bozuk", "güzel bir onay e-postası" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · E-posta Tasarımı

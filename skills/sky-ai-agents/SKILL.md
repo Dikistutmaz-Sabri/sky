@@ -7,6 +7,7 @@ description: >-
   (arka planda), ilerlemeyi kullanıcıya gösterme, MCP sunucusu ile uygulamanı dışa açma,
   güvenlik ve maliyet sınırları. "Kendi işini yapan asistan", "AI ajan", "MCP sunucusu",
   "otomatik yapsın" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · AI Ajanları

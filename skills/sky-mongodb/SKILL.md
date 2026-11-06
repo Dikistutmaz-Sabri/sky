@@ -6,6 +6,7 @@ description: >-
   indeksler (bileşik, ESR kuralı, TTL, kısmi, metin), aggregation pipeline, transaction'lar,
   sayfalama, Atlas Search ve Vector Search, performans (explain), güvenlik ve Mongoose/resmi
   sürücü kalıpları. MongoDB kullanan projede kullan.
+disable-model-invocation: true
 ---
 
 # Sky · MongoDB

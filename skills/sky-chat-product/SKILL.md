@@ -6,6 +6,7 @@ description: >-
   (reply) ve alıntı, mesaj düzenleme/silme, bildirim ve sessize alma, arama, moderasyon ve
   engelleme, müşteri destek sohbeti (widget) ve hazır servisler (Stream, Sendbird). "Mesajlaşma
   ekle", "sohbet", "müşteriyle yazışma", "WhatsApp gibi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Sohbet Ürünü

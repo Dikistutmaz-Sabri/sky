@@ -6,6 +6,7 @@ description: >-
   (TanStack Virtual), kaydırma konumunu geri yükleme, "yeni gönderiler var" balonu, yukarı
   çekip yenileme, yukarı dön butonu, sohbet geçmişi ve iskelet/hata durumları. Feed, ürün
   listesi, mesaj geçmişi veya "sonsuz scroll" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Uzun Listeler & Akışlar

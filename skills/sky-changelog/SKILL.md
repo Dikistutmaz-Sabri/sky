@@ -6,6 +6,7 @@ description: >-
   fayda), semver ve sürümleme, Conventional Commits'ten otomatik CHANGELOG, e-posta ile duyuru,
   RSS ve yol haritası (roadmap) / özellik oylama sayfası. "Changelog", "yenilikler", "sürüm
   notları", "roadmap sayfası" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Changelog & Yenilikler

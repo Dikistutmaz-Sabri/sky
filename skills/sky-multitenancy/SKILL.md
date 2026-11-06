@@ -6,6 +6,7 @@ description: >-
   org'u URL'de/alt alan adında taşıma, kiracı izolasyonu (RLS, repository filtresi), sahiplik
   devri, üye çıkarma, org bazlı faturalandırma, özel alan adı ve org silme. "Takım özelliği",
   "çalışma alanı", "ekibini davet et", "çok kiracılı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Çok Kiracılı (Org/Takım)

@@ -6,6 +6,7 @@ description: >-
   gerçek zamanlı), Queues, Cron Triggers, Workers AI, Turnstile (CAPTCHA alternatifi), DNS/SSL/
   önbellek kuralları, WAF ve rate limiting, wrangler ile geliştirme ve dağıtım, Next.js'i
   Workers'ta çalıştırma ve sınırlar. Cloudflare kullanırken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Cloudflare

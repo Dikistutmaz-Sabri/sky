@@ -1,12 +1,9 @@
 ---
 name: sky-tr-integrations
 description: >-
-  Türkiye'ye özgü entegrasyonlar: e-Fatura/e-Arşiv entegratörleri (Paraşüt, BizimHesap, Logo,
-  Uyumsoft, Foriba), kargo firmaları ve agregatörler (Yurtiçi, Aras, MNG, Sürat, PTT; Geliver),
-  SMS sağlayıcıları (Netgsm, İleti Merkezi, Verimor) ve İYS, ödeme (iyzico, PayTR, Param),
-  WhatsApp Business API, TC kimlik ve VKN doğrulama, il-ilçe-mahalle verisi, IBAN doğrulama,
-  resmi tatiller, TL biçimlendirme ve KDV hesapları. Türkiye'de çalışan bir işletme uygulamasında
-  "fatura kes", "kargo", "SMS", "TC kimlik", "IBAN" dendiğinde kullan.
+  Türkiye entegrasyonları: e-Fatura/e-Arşiv, kargo (Yurtiçi, Aras, MNG, PTT), SMS ve İYS,
+  iyzico/PayTR, TC kimlik, VKN, IBAN, il-ilçe, KDV. "Fatura kes", "kargo", "TC kimlik" dendiğinde
+  kullan.
 ---
 
 # Sky · Türkiye Entegrasyonları

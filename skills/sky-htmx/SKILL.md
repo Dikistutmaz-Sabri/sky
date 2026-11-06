@@ -6,6 +6,7 @@ description: >-
   hx-boost, form doğrulama, CSRF, out-of-band güncellemeler, Alpine.js ile istemci durumu,
   Django/Laravel/Rails/Go/FastAPI şablonlarıyla kullanım, ne zaman SPA yerine tercih edilir ve
   sınırları. "SPA istemiyorum", "HTMX", "Alpine", "server-rendered" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · HTMX & Alpine

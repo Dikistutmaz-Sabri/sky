@@ -5,6 +5,7 @@ description: >-
   coroutines ve Flow, Room, Retrofit/Ktor ile ağ, Hilt ile DI, Navigation Compose tip güvenli
   rotalar, Material 3 ve dinamik renk, edge-to-edge, izinler, WorkManager, testler (Compose UI,
   Turbine, screenshot), R8 ve Play Console yayını. Android projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Android

@@ -6,6 +6,7 @@ description: >-
   sık darboğazlar (senkron JSON/crypto/fs, regex felaketi, büyük JSON, N+1, bağlantı havuzu),
   önbellek, stream kullanımı, cluster/çoklu süreç, Fastify/Hono serileştirme, GC ayarları ve
   yük altında doğrulama. "API yavaş", "bellek sürekli artıyor", "CPU %100" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Node Performansı

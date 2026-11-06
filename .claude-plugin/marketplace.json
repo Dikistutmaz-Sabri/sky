@@ -11,8 +11,8 @@
     {
       "name": "sky",
       "source": "./",
-      "description": "Web/fullstack geliştirme ve UI tasarımı için kapsamlı eklenti",
-      "version": "4.0.0",
+      "description": "Claude Code için Türkçe, Türkiye'ye odaklı yalın eklenti",
+      "version": "5.0.0",
       "category": "development"
     }
   ]

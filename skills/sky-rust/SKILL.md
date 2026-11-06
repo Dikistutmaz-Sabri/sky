@@ -6,6 +6,7 @@ description: >-
   enum/pattern matching ile durum modelleme, async (tokio), axum ile web API, sqlx, serde,
   tracing, clippy ve rustfmt, testler, unsafe'den kaçınma ve release ayarları. Rust kodu
   yazarken veya "borrow checker hatası" alındığında kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Rust

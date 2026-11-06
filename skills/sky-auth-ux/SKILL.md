@@ -6,6 +6,7 @@ description: >-
   OTP kod girişi (otomatik doldurma, yapıştırma, 6 kutu), parola alanı (göster/gizle, güç
   göstergesi), hata metinleri, "beni hatırla", parola sıfırlama akışı, kayıt sonrası yönlendirme
   ve güven unsurları. "Giriş sayfası tasarla", "kayıt formu", "OTP ekranı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Giriş & Kayıt UX'i

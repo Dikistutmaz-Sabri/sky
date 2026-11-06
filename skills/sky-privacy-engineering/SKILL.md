@@ -1,12 +1,8 @@
 ---
 name: sky-privacy-engineering
 description: >-
-  KVKK/GDPR'ın mühendislik tarafı: kişisel veri envanteri ve sınıflandırma, veri minimizasyonu,
-  saklama süreleri ve otomatik silme işleri, ilgili kişi hakları için "verilerimi indir" ve
-  "hesabımı sil" uç noktaları, anonimleştirme/takma adlandırma, rıza kayıtları, çerez envanteri
-  ve onay yönetimi, loglarda/analitikte PII temizliği, yurt dışı aktarım (alt işleyiciler
-  listesi), veri ihlali müdahale planı. "KVKK uyumu", "verilerimi silin", "çerez onayı",
-  "kişisel veri" dendiğinde kullan. Hukuki metinler için avukata yönlendir.
+  KVKK'nın mühendislik tarafı: kişisel veri envanteri, açık rıza kaydı, saklama ve silme, çerez onayı,
+  "verilerimi sil". "KVKK", "kişisel veri" dendiğinde kullan. Hukuki metin için hukukçuya yönlendir.
 ---
 
 # Sky · Gizlilik Mühendisliği

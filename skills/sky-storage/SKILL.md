@@ -6,6 +6,7 @@ description: >-
   için imzalı URL), dosya meta veri tablosu, MIME/boyut doğrulama, virüs taraması, yaşam döngüsü
   kuralları ve geçici yüklemelerin temizlenmesi, CDN, yedek ve maliyet. "Dosya yükleme",
   "belge saklama", "S3", "R2" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Dosya Depolama

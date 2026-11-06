@@ -6,6 +6,7 @@ description: >-
   klavye kısayolu, depolama ve mesajlaşma, minimum izinler, kendi web uygulamanla oturum,
   Chrome Web Store yayını ve red tuzakları. "Chrome eklentisi yap", "tarayıcı uzantısı",
   "sayfaya buton ekleyen eklenti" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Tarayıcı Eklentisi

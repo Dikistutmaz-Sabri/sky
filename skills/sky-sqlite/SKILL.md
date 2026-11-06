@@ -6,6 +6,7 @@ description: >-
   Cloudflare D1 ile dağıtık SQLite, Litestream ile sürekli yedek, Drizzle/better-sqlite3/
   bun:sqlite kullanımı, FTS5 tam metin arama, JSON fonksiyonları, gömülü uygulamalar
   (masaüstü, mobil, tarayıcı — OPFS/WASM) ve sınırlar. SQLite kullanırken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · SQLite

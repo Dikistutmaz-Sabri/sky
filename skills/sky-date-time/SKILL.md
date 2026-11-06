@@ -1,11 +1,8 @@
 ---
 name: sky-date-time
 description: >-
-  Tarih ve saat mühendisliği: saklama (timestamptz, UTC, date-only), saat dilimleri, Temporal ve
-  date-fns, göreli zaman ("3 dk önce"), tarih/saat seçici UI, takvim görünümleri, tekrarlayan
-  olaylar (RRULE), çalışma saatleri ve "şimdi açık" rozeti, Türkiye resmi tatilleri, geri
-  sayım, .ics / "Takvime ekle" bağlantıları ve sık hatalar. "Tarih seçici", "takvim", "saat
-  dilimi", "takvime ekle", "geri sayım" dendiğinde kullan.
+  Tarih ve saat: Türkiye saati, resmi tatiller, Türkçe tarih biçimi, saat dilimi, takvim, "şimdi açık"
+  rozeti, takvime ekle. "Tarih seçici", "takvim", "saat dilimi" dendiğinde kullan.
 ---
 
 # Sky · Tarih & Saat

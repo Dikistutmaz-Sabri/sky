@@ -7,6 +7,7 @@ description: >-
   düzeltici hata mesajları), sayfalama ve büyük çıktılar, güvenlik (en az yetki, onay gerektiren
   işlemler, prompt injection), MCP Inspector ile test ve Claude Code / Claude Desktop'a ekleme.
   "MCP sunucusu yaz", "uygulamamı Claude'a bağla" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · MCP Sunucusu

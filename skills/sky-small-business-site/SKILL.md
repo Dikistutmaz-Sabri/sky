@@ -1,12 +1,8 @@
 ---
 name: sky-small-business-site
 description: >-
-  Küçük işletme siteleri (klinik, diş hekimi, kuaför, güzellik salonu, restoran/kafe, avukat,
-  emlakçı, oto servis, spor salonu): sektöre göre sayfa yapısı, hizmet ve fiyat listesi, online
-  randevu/rezervasyon, menü (QR menü), çalışma saatleri ve "şimdi açık" rozeti, harita ve yol
-  tarifi, WhatsApp/telefon butonları, Google İşletme profili ve yorumlar, galeri, ekip, yerel
-  SEO, hızlı ve ucuz barındırma, müşterinin kendi içeriğini düzenlemesi. "Kuaför sitesi",
-  "klinik web sitesi", "restoran sitesi", "esnafa site" dendiğinde kullan.
+  Türk küçük işletme siteleri (kuaför, klinik, restoran, emlakçı): randevu, QR menü, çalışma saatleri,
+  WhatsApp butonu, yerel SEO. "Kuaför sitesi", "esnafa site" dendiğinde kullan.
 ---
 
 # Sky · Küçük İşletme Sitesi

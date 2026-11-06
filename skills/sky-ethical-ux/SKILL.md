@@ -1,12 +1,8 @@
 ---
 name: sky-ethical-ux
 description: >-
-  Etik ve güven veren tasarım: karanlık kalıplardan (dark patterns) kaçınma — gizli ücretler,
-  zorlaştırılmış abonelik iptali, ön işaretli onaylar, sahte kıtlık/aciliyet, utandırma
-  (confirmshaming), gizlenen reddet butonu; dürüst çerez onayı, kolay iptal akışı, şeffaf
-  fiyat, adil bildirim izinleri, Türkiye mevzuatı (Tüketici Kanunu, KVKK, ETK) açısından
-  riskli kalıplar ve güven inşa eden alternatifler. "İptal akışı", "çerez bandı", "dönüşüm
-  artırma ama dürüst", "dark pattern mi" dendiğinde kullan.
+  Dürüst tasarım: dark pattern'lerden kaçınma, kolay iptal, dürüst çerez bandı; Tüketici Kanunu, KVKK
+  ve ETK açısından riskli kalıplar. "İptal akışı", "çerez bandı" dendiğinde kullan.
 ---
 
 # Sky · Etik UX

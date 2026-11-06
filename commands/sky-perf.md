@@ -1,6 +1,7 @@
 ---
 description: Sky performans turu — ölç, darboğazı bul, düzelt, tekrar ölç; önce/sonra Core Web Vitals ve bundle tablosu üretir.
 argument-hint: "[route veya URL]"
+disable-model-invocation: true
 ---
 
 # /sky-perf

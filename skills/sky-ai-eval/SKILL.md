@@ -6,6 +6,7 @@ description: >-
   prompt/model değişikliğinde regresyon testi, CI'da eval, üretim geri bildirimi (👍/👎) ve
   izleme (Langfuse, Braintrust), A/B karşılaştırma ve maliyet/gecikme ölçümü. "AI cevapları
   kötü", "prompt'u değiştirdim bozuldu mu", "AI kalitesini ölç" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · AI Değerlendirme

@@ -6,6 +6,7 @@ description: >-
   (jestler, haptik, safe area, bottom sheet), push bildirim, derin bağlantılar (universal links),
   EAS Build/Update ile yayın ve OTA güncelleme, App Store / Google Play reddi tuzakları.
   "Mobil uygulama da olsun", "App Store'a koy", "React Native" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Mobil Uygulama

@@ -5,6 +5,7 @@ description: >-
   durum yönetimi (Riverpod, Bloc), go_router, dio ve freezed/json_serializable, drift ve güvenli
   depolama, Material 3 tema, ARB ile yerelleştirme, platform kanalları (pigeon), widget/golden/
   integration testleri ve mağaza yayını. Flutter projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Flutter

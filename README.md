@@ -11,8 +11,8 @@ Web'den mobile, altyapıdan tasarıma kadar tek kurulum, sıfır bağımlılık.
 
 <br>
 
-<img alt="182 skill" src="https://img.shields.io/badge/skill-182-8db4ff?style=for-the-badge&labelColor=0e1016">
-<img alt="35 agent" src="https://img.shields.io/badge/agent-35-c4a9ff?style=for-the-badge&labelColor=0e1016">
+<img alt="214 skill" src="https://img.shields.io/badge/skill-214-8db4ff?style=for-the-badge&labelColor=0e1016">
+<img alt="3 agent" src="https://img.shields.io/badge/agent-3-c4a9ff?style=for-the-badge&labelColor=0e1016">
 <img alt="25 komut" src="https://img.shields.io/badge/komut-25-ffb38f?style=for-the-badge&labelColor=0e1016">
 <img alt="8 hook" src="https://img.shields.io/badge/hook-8-4ade80?style=for-the-badge&labelColor=0e1016">
 <br>
@@ -38,8 +38,8 @@ Web'den mobile, altyapıdan tasarıma kadar tek kurulum, sıfır bağımlılık.
 
 <table align="center">
 <tr>
-<td align="center" width="16%"><h3>182</h3><sub>skill</sub></td>
-<td align="center" width="16%"><h3>35</h3><sub>uzman agent</sub></td>
+<td align="center" width="16%"><h3>214</h3><sub>skill</sub></td>
+<td align="center" width="16%"><h3>3</h3><sub>Türkçe agent</sub></td>
 <td align="center" width="16%"><h3>25</h3><sub>komut</sub></td>
 <td align="center" width="16%"><h3>8</h3><sub>koruyucu hook</sub></td>
 <td align="center" width="16%"><h3>90 bin</h3><sub>kelimelik rehber</sub></td>
@@ -50,21 +50,21 @@ Web'den mobile, altyapıdan tasarıma kadar tek kurulum, sıfır bağımlılık.
 ## ✦ Neden Sky?
 
 Claude Code tek başına zaten güçlü. Sky ona **ne zaman neyi nasıl yapacağını bilen bir ekip** ekler: her alan için
-yazılmış rehberler, işi devralan uzman agent'lar, tek satırlık komutlar ve arkanı kollayan otomatik kontroller.
+yazılmış rehberler, uzman denetim rehberleri, tek satırlık komutlar ve arkanı kollayan otomatik kontroller.
 Sky'ı kuran bir geliştiricinin başka bir eklenti aramasına gerek kalmaz.
 
 <table>
 <tr>
 <td width="33%" valign="top">
 
-**🧠 182 skill**<br>
-<sub>Next.js'ten Kubernetes'e, renk biliminden ödeme akışına kadar her konu için ayrıntılı, Türkçe rehber. Claude gerektiğinde kendisi yükler.</sub>
+**🧠 214 skill**<br>
+<sub>Türkiye'ye özgü 17 skill'i Claude gerektiğinde kendisi yükler. Next.js'ten Kubernetes'e diğer rehberler, bağlamı şişirmesin diye <code>/sky:</code> ile elle açılır.</sub>
 
 </td>
 <td width="33%" valign="top">
 
-**🤖 35 uzman agent**<br>
-<sub>Mimar, güvenlik denetçisi, test yazarı, hata ayıklayıcı, Türkçe düzeltmen… Her biri tek bir işte uzman.</sub>
+**🤖 3 Türkçe agent**<br>
+<sub>Türkçe düzeltmen, çevirmen ve metin yazarı. Mimar, güvenlik denetçisi, test yazarı gibi 32 uzman rehber <code>/sky:</code> ile elle açılır.</sub>
 
 </td>
 <td width="33%" valign="top">
@@ -116,8 +116,8 @@ Claude Code'u yeniden başlat ve ilk komutunu yaz:
 **Günlük kullanım**
 
 - `/sky:sky <görev>` her şeyin giriş noktasıdır. Görevi doğru skill'lere yönlendirir.
-- Skill'ler ilgili isteklerde kendiliğinden devreye girer. İstediğin bir skill'i adıyla da çağırabilirsin: `/sky:sky-nextjs`.
-- Agent'ları adıyla iste: “**sky-architect** ile bu özelliği planla”, “**sky-security-reviewer** ile denetle”.
+- Türkiye'ye özgü skill'ler ilgili isteklerde kendiliğinden devreye girer. Diğerlerini adıyla açarsın: `/sky:sky-nextjs`.
+- Uzman rehberleri de komutla açarsın: `/sky:sky-architect` ile planla, `/sky:sky-security-reviewer` ile denetle.
 
 ## 🌌 Sky Pano
 
@@ -133,12 +133,12 @@ npm start
 Tarayıcında **http://localhost:4242** açılır. `npm install` gerekmez, yalnızca Node 18 veya üstü yeter.
 
 ```text
-  ✦ Sky Pano v4.0.0
+  ✦ Sky Pano v5.0.0
 
   ➜  Yerel:  http://localhost:4242
   ➜  Veri:   http://localhost:4242/api/data.json
 
-  182 skill · 35 agent · 25 komut · 8 hook · 89.851 kelime
+  214 skill · 3 agent · 25 komut · 8 hook · 90.842 kelime
   Dosyalar anlık izleniyor; değişince sayfa kendini yeniler. Durdurmak için Ctrl+C.
 ```
 
@@ -174,7 +174,7 @@ Tarayıcında **http://localhost:4242** açılır. `npm install` gerekmez, yaln�
 <tr>
 <td valign="top">
 <img src="docs/gorseller/agentlar.jpg" alt="Agent ekibi ekranı, açık tema">
-<br><sub><b>Uzman ekip.</b> Her agent'ın modeli, araçları ve ne zaman çağrıldığı.</sub>
+<br><sub><b>Uzman ekip.</b> Sky 4'ün agent ekranı. Sky 5'te bu ekibin 32'si elle açılan uzman rehberlere dönüştü.</sub>
 </td>
 <td valign="top">
 <img src="docs/gorseller/ilkeler.jpg" alt="İlkeler ekranı, açık tema">
@@ -222,20 +222,44 @@ flowchart TB
     A["💬 Sen yazarsın<br/>“ödeme sayfası ekle”"] --> B{{"Skill önerisi<br/>prompt-skill hook'u"}}
     B --> C["🧭 sky yönlendiricisi<br/>görevi alanlara eşler"]
     C --> D["📚 Skill'ler yüklenir<br/>payments · checkout-ux · forms"]
-    D --> E["🤖 Claude uygular<br/>gerekirse agent'a devreder"]
+    D --> E["🤖 Claude uygular<br/>gerekirse uzman rehberi önerir"]
     E --> F{{"Hook'lar kollar<br/>komut · .env · kalite"}}
     F --> G["✅ Doğrular ve raporlar<br/>tip · test · tarayıcı"]
 ```
 
 1. **Bağlam:** Oturum açılınca Sky projeni tanır (Next.js mi, Laravel mi, Docker var mı) ve ilgili skill'leri hatırlatır.
 2. **Yönlendirme:** İsteğindeki kelimelerden doğru skill'ler seçilir. Türkçe ve İngilizce kelimeler birlikte tanınır.
-3. **Uygulama:** Claude rehbere göre çalışır. Büyük işlerde mimar, test yazarı ya da denetçi agent'lara devreder.
+3. **Uygulama:** Claude rehbere göre çalışır. Gerekirse sana ilgili uzman rehberi önerir, örneğin `/sky:sky-architect`.
 4. **Koruma:** Yıkıcı bir komut, şüpheli bir paket ya da `.env` yazımı onayından geçmeden çalışmaz.
 5. **Doğrulama:** Tip kontrolü, test ve tarayıcıda deneme yapılır. Ne doğrulandığı ve ne doğrulanmadığı dürüstçe söylenir.
 
+## 🪶 Yalın yapı
+
+Sky, her oturumda Claude'un bağlamına gereksiz yük bindirmemek için iki tür skill kullanır.
+
+| Tür | Ne zaman yüklenir | Hangileri |
+|---|---|---|
+| **Otomatik** | Claude ilgili bir istek görünce kendisi yükler | Türkiye'ye özgü 17 skill ve `sky` yönlendiricisi |
+| **Elle çağrılan** | Yalnızca sen `/sky:<ad>` yazınca açılır, o zamana kadar bağlama girmez | Diğer 196 skill ve 25 komut |
+
+Otomatik olanlar: `sky-tr-integrations`, `sky-payments`, `sky-checkout-ux`, `sky-ecommerce`, `sky-pricing-page`,
+`sky-notifications`, `sky-privacy-engineering`, `sky-ethical-ux`, `sky-forms`, `sky-regex`, `sky-maps-geo`, `sky-date-time`,
+`sky-i18n`, `sky-ux-writing`, `sky-freelance`, `sky-small-business-site`, `sky-seo`.
+
+Sky 4'teki 35 agent'tan 32'si elle açılan uzman rehberlere dönüştü; Türkçe metin işleri için 3 agent kaldı. Öneri hook'u
+ilgili bir elle çağrılan rehber bulursa Claude bunu sana komut olarak önerir.
+
+Aynı 6 görevle (Sonnet, koşul başına 3 tekrar) yapılan ölçüm:
+
+| | Sky'sız | Sky 4 | Sky 5 |
+|---|---|---|---|
+| Boş bir istekte Sky'ın ek yükü | — | 14.072 token | 2.627 token |
+| Görev başına ortalama maliyet | $0.078 | $0.142 | $0.093 |
+| Görev sırasında kendiliğinden yüklenen skill | — | 0 | 6, hepsi ilgili |
+
 ## 📚 Neler var?
 
-Skill'ler alanlara göre gruplu. Başlığa tıklayınca liste açılır. Tam yönlendirme tablosu:
+Türkiye'ye özgü 17 skill otomatik yüklenir; bu listedeki diğer skill'leri `/sky:<ad>` ile açarsın. Skill'ler alanlara göre gruplu. Başlığa tıklayınca liste açılır. Tam yönlendirme tablosu:
 [skills/sky/SKILL.md](skills/sky/SKILL.md).
 
 <details>
@@ -540,50 +564,55 @@ Skill'ler alanlara göre gruplu. Başlığa tıklayınca liste açılır. Tam y�
 
 </details>
 
-### 🤖 Agent'lar
+### 🤖 Agent'lar ve uzman rehberler
+
+Agent aracıyla çalışan 3 Türkçe agent:
+
+| Agent | Ne zaman çağrılır |
+|---|---|
+| `sky-copywriter` | Türkçe arayüz ve pazarlama metni |
+| `sky-translator` | i18n mesaj dosyalarını çevirme |
+| `sky-turkish-proofreader` | Türkçe yazım, İ/ı, ekler, sen/siz |
 
 <details>
-<summary><b>35 uzman agent</b> · listeyi aç</summary>
+<summary><b>32 uzman rehber</b> · Sky 4'te agent'tı, artık elle açılır · listeyi aç</summary>
 
 <br>
 
-| Agent | Model | Ne zaman çağrılır |
-|---|---|---|
-| `sky-a11y-auditor` | sonnet | UI ve erişilebilirlik denetimi |
-| `sky-api-reviewer` | sonnet | backend, veritabanı, güvenlik denetimi |
-| `sky-architect` | opus | kod yazmadan önce mimari plan |
-| `sky-browser-qa` | sonnet | tarayıcıda akışları gerçekten deneme |
-| `sky-build-fixer` | sonnet | kırık build/tip hatası, en küçük düzeltme |
-| `sky-builder` | sonnet | net görevi uçtan uca uygulama |
-| `sky-code-reviewer` | opus | genel kod incelemesi (her dil) |
-| `sky-codebase-mapper` | sonnet | dokümantasyon ve kod haritası |
-| `sky-copywriter` | sonnet | metin, Türkçe düzelti, çeviri |
-| `sky-critic` | opus | büyük karardan önce itiraz/risk turu |
-| `sky-db-reviewer` | sonnet | backend, veritabanı, güvenlik denetimi |
-| `sky-debugger` | opus | kök neden bulma + regresyon testi |
-| `sky-designer` | opus | tasarım yönü ve token seti |
-| `sky-devops-engineer` | sonnet | Docker, K8s, Terraform, Ansible, GCP/Azure, CI, sunucu yapılandırması |
-| `sky-doc-writer` | sonnet | dokümantasyon ve kod haritası |
-| `sky-explainer` | sonnet | seviyeye uygun Türkçe açıklama |
-| `sky-frontend-reviewer` | sonnet | Vue/Svelte/Angular/Astro inceleme |
-| `sky-go-reviewer` | sonnet | dile özgü inceleme |
-| `sky-iot-engineer` | sonnet | ESP32/Arduino/Pi firmware ve bağlantı |
-| `sky-java-reviewer` | sonnet | Java/Kotlin ve PHP/Laravel inceleme |
-| `sky-ml-engineer` | opus | ML/RAG görevi kurma ve değerlendirme |
-| `sky-mobile-reviewer` | sonnet | iOS / Android / Flutter / React Native inceleme |
-| `sky-perf-auditor` | sonnet | performans ve SEO denetimi |
-| `sky-php-reviewer` | sonnet | Java/Kotlin ve PHP/Laravel inceleme |
-| `sky-product-manager` | opus | fikri PRD'ye çevirme |
-| `sky-python-reviewer` | sonnet | dile özgü inceleme |
-| `sky-refactorer` | sonnet | davranışı koruyarak sadeleştirme |
-| `sky-release-manager` | sonnet | yayın hazırlığı, changelog, geri alma planı |
-| `sky-rust-reviewer` | sonnet | dile özgü inceleme |
-| `sky-security-reviewer` | opus | backend, veritabanı, güvenlik denetimi |
-| `sky-seo-auditor` | sonnet | performans ve SEO denetimi |
-| `sky-tester` | sonnet | test boşluklarını doldurma |
-| `sky-translator` | sonnet | metin, Türkçe düzelti, çeviri |
-| `sky-turkish-proofreader` | sonnet | metin, Türkçe düzelti, çeviri |
-| `sky-ui-reviewer` | sonnet | UI ve erişilebilirlik denetimi |
+| Komut | Ne zaman |
+|---|---|
+| `/sky:sky-a11y-auditor` | UI ve erişilebilirlik denetimi |
+| `/sky:sky-api-reviewer` | backend, veritabanı, güvenlik denetimi |
+| `/sky:sky-architect` | kod yazmadan önce mimari plan |
+| `/sky:sky-browser-qa` | tarayıcıda akışları gerçekten deneme |
+| `/sky:sky-build-fixer` | kırık build/tip hatası, en küçük düzeltme |
+| `/sky:sky-builder` | net görevi uçtan uca uygulama |
+| `/sky:sky-code-reviewer` | genel kod incelemesi (her dil) |
+| `/sky:sky-codebase-mapper` | dokümantasyon ve kod haritası |
+| `/sky:sky-critic` | büyük karardan önce itiraz/risk turu |
+| `/sky:sky-db-reviewer` | backend, veritabanı, güvenlik denetimi |
+| `/sky:sky-debugger` | kök neden bulma + regresyon testi |
+| `/sky:sky-designer` | tasarım yönü ve token seti |
+| `/sky:sky-devops-engineer` | Docker, K8s, Terraform, Ansible, GCP/Azure, CI, sunucu yapılandırması |
+| `/sky:sky-doc-writer` | dokümantasyon ve kod haritası |
+| `/sky:sky-explainer` | seviyeye uygun Türkçe açıklama |
+| `/sky:sky-frontend-reviewer` | Vue/Svelte/Angular/Astro inceleme |
+| `/sky:sky-go-reviewer` | dile özgü inceleme |
+| `/sky:sky-iot-engineer` | ESP32/Arduino/Pi firmware ve bağlantı |
+| `/sky:sky-java-reviewer` | Java/Kotlin ve PHP/Laravel inceleme |
+| `/sky:sky-ml-engineer` | ML/RAG görevi kurma ve değerlendirme |
+| `/sky:sky-mobile-reviewer` | iOS / Android / Flutter / React Native inceleme |
+| `/sky:sky-perf-auditor` | performans ve SEO denetimi |
+| `/sky:sky-php-reviewer` | Java/Kotlin ve PHP/Laravel inceleme |
+| `/sky:sky-product-manager` | fikri PRD'ye çevirme |
+| `/sky:sky-python-reviewer` | dile özgü inceleme |
+| `/sky:sky-refactorer` | davranışı koruyarak sadeleştirme |
+| `/sky:sky-release-manager` | yayın hazırlığı, changelog, geri alma planı |
+| `/sky:sky-rust-reviewer` | dile özgü inceleme |
+| `/sky:sky-security-reviewer` | backend, veritabanı, güvenlik denetimi |
+| `/sky:sky-seo-auditor` | performans ve SEO denetimi |
+| `/sky:sky-tester` | test boşluklarını doldurma |
+| `/sky:sky-ui-reviewer` | UI ve erişilebilirlik denetimi |
 
 </details>
 
@@ -616,7 +645,7 @@ Komutu yaz, ardından ne istediğini ekle. Örnek: `/sky:sky-new kuaför randevu
 | `/sky:sky-review` | Sky kod incelemesi — mevcut değişiklikleri (veya verilen PR/dalı) öncelik sırasıyla inceler, dil/alan denetçilerini devreye sokar ve… |
 | `/sky:sky-seo-audit` | Sky SEO denetimi — teknik SEO, metadata, JSON-LD, sitemap/robots, slug/yönlendirme, hreflang ve yerel SEO kontrolü; öncelikli düzeltme… |
 | `/sky:sky-tdd` | Bir özelliği veya hata düzeltmesini TDD ile uygula — önce davranış listesi, sonra başarısız testler (kullanıcıya gösterilir), sonra en… |
-| `/sky:sky-ui-audit` | Sky UI + erişilebilirlik denetimi — sky-ui-reviewer agent'ı ve otomatik axe taramasıyla önem sıralı rapor üretir, kod değiştirmez. |
+| `/sky:sky-ui-audit` | Sky UI + erişilebilirlik denetimi — sky-ui-reviewer yöntemi ve otomatik axe taramasıyla önem sıralı rapor üretir, kod değiştirmez. |
 | `/sky:sky-upgrade` | Bir bağımlılığı, framework'ü veya dil sürümünü güvenle yükselt — resmi codemod, adım adım göç, kırılma noktaları ve doğrulama… |
 
 ## 🛡️ Koruyucu hook'lar
@@ -782,8 +811,8 @@ Sky bir geliştirici aracıdır; **hukuki, mali veya vergi danışmanlığı de�
 ```text
 sky/
 ├── .claude-plugin/     eklenti ve pazar tanımı
-├── skills/             182 skill; her biri bir klasör ve SKILL.md
-├── agents/             35 uzman agent
+├── skills/             214 skill (17'si otomatik); her biri bir klasör ve SKILL.md
+├── agents/             3 Türkçe agent
 ├── commands/           25 /sky komutu
 ├── hooks/              8 koruyucu hook ve hooks.json
 ├── dashboard/          Sky Pano: sunucu, derleyici ve sayfa şablonu
@@ -798,7 +827,7 @@ sky/
 
 <img src="docs/gorseller/logo.svg" width="40" height="40" alt="">
 
-<sub><b>Sky</b> · v4.0.0 · <a href="LICENSE">MIT lisansı</a> · Türkiye'de, Türkçe yazıldı.</sub>
+<sub><b>Sky</b> · v5.0.0 · <a href="LICENSE">MIT lisansı</a> · Türkiye'de, Türkçe yazıldı.</sub>
 
 <sub>Sky işine yaradıysa bir ⭐ bırak; daha çok geliştiriciye ulaşmasına yardım eder.</sub>
 

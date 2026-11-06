@@ -6,6 +6,7 @@ description: >-
   gözlemlenebilirlik → yayın; her adımda hangi Sky skill'inin yükleneceği, MVP kesme kuralları,
   "1 hafta / 1 ay" kapsam şablonları ve yayın öncesi kontrol listesi. "SaaS yapacağım",
   "sıfırdan ürün", "MVP", "abonelikli uygulama" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · SaaS Yol Haritası
@@ -18,7 +19,7 @@ Her adımın sonunda çalışan, deploy edilmiş bir uygulama olsun (dikey dilim
 - Tek cümle: "**[kime]** için **[ne sorunu]** **[nasıl]** çözen ürün."
 - Aha anı (bkz. `sky-onboarding`), ilk 3 çekirdek özellik, fiyat hipotezi.
 - Stack: Next.js + Postgres (Supabase/Neon) + Drizzle + Better Auth / Supabase Auth + Tailwind/shadcn (bkz. `sky-web-stack`).
-- `sky-architect` agent'ı ile 1 sayfalık plan.
+- `sky-architect` yöntemi ile 1 sayfalık plan.
 
 ## Sıra
 

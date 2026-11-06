@@ -7,6 +7,7 @@ description: >-
   sır yönetimi ve rotasyonu, şifreleme (at rest/in transit, alan bazlı), güvenlik testleri ve
   sızma testi öncesi kontrol listesi, güvenlik açığı bildirimi (security.txt). "Güvenlik
   denetimi", "CSP", "hacklenir mi", "pentest öncesi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Güvenlik

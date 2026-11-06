@@ -7,6 +7,7 @@ description: >-
   metrikleri ve doğrulama, PyTorch temelleri ve ince ayar, deney takibi (MLflow/W&B), model
   servis etme (FastAPI, ONNX, BentoML), izleme ve kayma (drift), ne zaman ML yerine kural/LLM.
   "Tahmin modeli", "makine öğrenmesi", "model eğit", "öneri sistemi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Makine Öğrenmesi

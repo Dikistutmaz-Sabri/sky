@@ -6,6 +6,7 @@ description: >-
   hata sınırları, nested layout'lar, SSR/SPA/prerender modları, oturum ve auth, streaming
   (defer/Await), dağıtım ve Remix v2'den geçiş; ayrıca kütüphane modunda (SPA) router kullanımı.
   React Router / Remix projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · React Router (framework modu)

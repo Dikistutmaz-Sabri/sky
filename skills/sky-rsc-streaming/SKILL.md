@@ -6,6 +6,7 @@ description: >-
   Partial Prerendering (PPR) kabuk/delik ayrımı, iskelet tasarımı, hata sınırları ve sayfanın
   "anında açılıyormuş" hissettirmesi. "Sayfa geç açılıyor", "waterfall", "Suspense nereye",
   "loading.tsx yetmiyor" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · RSC & Streaming

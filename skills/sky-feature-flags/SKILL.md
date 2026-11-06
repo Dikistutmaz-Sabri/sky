@@ -6,6 +6,7 @@ description: >-
   hedefleme, sunucuda değerlendirme ve SSR'da titreme olmaması, A/B testi tasarımı (hipotez,
   metrik, örneklem, süre), istatistiksel tuzaklar, kill switch, bayrak borcu temizliği ve beta
   programı. "Önce birkaç kullanıcıda deneyelim", "A/B testi", "feature flag", "beta" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Özellik Bayrakları & Deneyler

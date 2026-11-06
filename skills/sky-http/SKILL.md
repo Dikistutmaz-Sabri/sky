@@ -7,6 +7,7 @@ description: >-
   yayılım, TLS ve sertifikalar, yönlendirmeler, sıkıştırma, range istekleri, curl ile teşhis ve
   tarayıcı ağ sekmesini okuma. "CORS anlamadım", "cache neden çalışmıyor", "DNS", "SSL hatası",
   "hangi durum kodu" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · HTTP & Ağ

@@ -7,6 +7,7 @@ description: >-
   ses oynatıcı (podcast/müzik — Media Session API ile kilit ekranı kontrolleri), düşük gecikme,
   AudioWorklet ve erişilebilirlik. Müzik/ses uygulaması, oynatıcı, sesli not veya ses
   efektleri gerektiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Web Ses

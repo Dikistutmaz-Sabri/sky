@@ -6,6 +6,7 @@ description: >-
   lazy loading, open-in-view), Flyway migration, Spring Security (JWT, metot güvenliği), global
   hata yönetimi (ProblemDetail), Testcontainers ile testler, Actuator, virtual thread'ler ve
   dağıtım. Spring Boot projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Spring Boot

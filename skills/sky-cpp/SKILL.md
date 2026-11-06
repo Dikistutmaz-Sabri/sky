@@ -7,6 +7,7 @@ description: >-
   (std::thread, jthread, atomic, mutex), şablonlar ve concepts, derleyici uyarıları, clang-tidy
   ve clang-format, testler (GoogleTest, Catch2), gömülü sistemlerde C/C++ notları. C veya C++
   kodu yazarken/incelerken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · C++ / C

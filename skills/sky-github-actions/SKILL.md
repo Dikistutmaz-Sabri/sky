@@ -6,6 +6,7 @@ description: >-
   akışları ve composite action'lar, ortamlar ve onay kapıları, OIDC ile bulut kimliği (anahtarsız),
   sırlar ve izinler (en az yetki, SHA ile sabitleme), concurrency, path filtreleri, artifact ve
   sürüm yayınlama, Dependabot, hızlandırma ve sık hatalar. CI/CD iş akışı yazarken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · GitHub Actions

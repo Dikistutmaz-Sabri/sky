@@ -7,6 +7,7 @@ description: >-
   atlas, ses (Web Audio, mobilde kilit açma), kayıt (localStorage/IndexedDB), skor tablosu,
   mobil uyum ve tam ekran, performans (nesne havuzu), juice (ekran sarsıntısı, parçacık) ve
   itch.io / web yayını. Oyun yaparken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Web Oyunları

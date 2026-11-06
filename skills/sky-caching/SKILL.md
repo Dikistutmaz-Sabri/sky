@@ -6,6 +6,7 @@ description: >-
   anahtar tasarımı ve sürümleme, TTL seçimi, etiket bazlı invalidation, stampede (thundering
   herd) koruması, HTTP Cache-Control başlıkları, kişisel veriyi cache'lememe ve ölçüm.
   "Cache ekle", "Redis", "her istekte DB'ye gidiyor", "yavaş API" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Önbellekleme

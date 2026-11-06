@@ -7,6 +7,7 @@ description: >-
   sonuçları okuma ve darboğaz bulma (DB, bağlantı havuzu, CPU, harici API), CI'da performans
   regresyonu ve üretimi yanlışlıkla yıkmamak. "Kaç kullanıcı kaldırır", "yük testi",
   "lansmanda çöker mi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Yük Testi

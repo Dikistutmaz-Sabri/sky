@@ -6,6 +6,7 @@ description: >-
   seçimi (fetch + cheerio, Playwright, Crawlee), dinamik sayfalar, sayfalama ve kuyruk, veri
   temizleme ve doğrulama, değişiklik izleme, zamanlama, kırılganlığı azaltma ve neyin yapılmaması
   gerektiği. "Siteden veri çek", "scraper yaz", "fiyat takibi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Web Kazıma

@@ -6,6 +6,7 @@ description: >-
   derinlik kuralı (3 tık), arama ve komut paleti ile gezinme, aktif durum, URL tasarımı ve
   boş/kayıp sayfa önleme. "Menü nasıl olmalı", "sayfalar dağınık", "kullanıcı aradığını
   bulamıyor", "site haritası" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Bilgi Mimarisi & Navigasyon

@@ -1,11 +1,8 @@
 ---
 name: sky-notifications
 description: >-
-  Bildirim sistemleri: işlemsel e-posta (Resend + react-email, alan doğrulama SPF/DKIM/DMARC,
-  şablonlar, teslim edilebilirlik), SMS (Türkiye sağlayıcıları, OTP, İYS zorunluluğu), web push
-  ve FCM, uygulama içi bildirimler, kullanıcı tercihleri, kuyruk ve yeniden deneme, idempotency,
-  çok dilli şablonlar, teslim takibi ve test. E-posta/SMS/push gönderimi, bildirim merkezi veya
-  "hoş geldin e-postası", "OTP SMS" dendiğinde kullan.
+  Bildirim: işlemsel e-posta, Türkiye SMS sağlayıcıları (Netgsm, Verimor), OTP, İYS zorunluluğu, push.
+  "OTP SMS", "hoş geldin e-postası", "bildirim" dendiğinde kullan.
 ---
 
 # Sky · Bildirimler

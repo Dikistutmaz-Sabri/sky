@@ -5,6 +5,7 @@ description: >-
   hata modeli, kimlik doğrulama ve yetkilendirme, oturum, güvenlik başlıkları, CORS, rate limit,
   webhook, dosya yükleme ve gizli anahtar yönetimi. API yazarken, auth eklerken veya backend
   güvenliğini gözden geçirirken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Backend & API

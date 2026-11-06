@@ -1,11 +1,8 @@
 ---
 name: sky-i18n
 description: >-
-  Çok dilli web uygulaması (öncelikle Türkçe/İngilizce): next-intl ile locale routing, mesaj
-  dosyaları ve ICU biçimi, çoğul/cinsiyet/seçim, Intl API ile tarih/sayı/para/göreli zaman
-  biçimlendirme, Türkçe'ye özgü tuzaklar (İ/ı, ekler, sıralama), locale değiştirici, hreflang,
-  RTL hazırlığı ve çeviri iş akışı. "Çok dilli yap", "İngilizce ekle", "tarih formatı",
-  "Türkçe büyük harf sorunu" dendiğinde kullan.
+  Çok dillilik, öncelikle Türkçe/İngilizce: Türkçe İ/ı ve büyük harf tuzakları, ekler, Türkçe
+  sıralama, Intl ile tarih/para biçimi. "Çok dilli yap", "Türkçe büyük harf sorunu" dendiğinde kullan.
 ---
 
 # Sky · Uluslararasılaştırma (i18n)

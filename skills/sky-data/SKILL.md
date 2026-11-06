@@ -4,6 +4,7 @@ description: >-
   Veritabanı katmanı: şema tasarımı, ilişkiler, migration, indeksleme, sorgu performansı, N+1,
   transaction, soft delete, çok kiracılı (multi-tenant) veri, Prisma/Drizzle/Supabase/Postgres/
   SQLite kalıpları. Tablo/model eklerken, migration yazarken veya yavaş sorguları incelerken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Veri

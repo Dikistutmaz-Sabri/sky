@@ -7,6 +7,7 @@ description: >-
   güvenlik (nonce, yetki, kaçış, sanitize, SQL prepare), performans (önbellek, sorgu, görsel),
   çok dillilik (WPML/Polylang), yerel geliştirme (wp-env, LocalWP), WP-CLI ve güvenli güncelleme.
   WordPress/WooCommerce projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · WordPress

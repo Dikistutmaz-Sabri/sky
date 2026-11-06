@@ -6,6 +6,7 @@ description: >-
   çevirme, bileşen ve varyant eşlemesi (Code Connect), Figma MCP ile tasarımdan kod üretme,
   tasarımı birebir uygulama ve sapma kontrolü, handoff kontrol listesi ve tasarımcıyla iş
   akışı. "Figma tasarımını koda dök", "pixel perfect", "token'ları Figma'dan al" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Figma → Kod

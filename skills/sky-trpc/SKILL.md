@@ -6,6 +6,7 @@ description: >-
   TanStack Query entegrasyonu (optimistic, invalidate), Next.js App Router ile sunucu tarafı
   çağrı (server caller, RSC prefetch + hydrate), abonelikler, batching ve ne zaman tRPC
   kullanılmamalı. "tRPC", "tip güvenli API", "frontend-backend tipleri" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · tRPC

@@ -5,6 +5,7 @@ description: >-
   proje yapısı, Zod doğrulama, merkezi hata yönetimi, env doğrulama, pino log, graceful
   shutdown, güvenlik middleware'leri, OpenAPI üretimi, WebSocket, testler, TypeScript çalıştırma
   (tsx, Node yerleşik TS, Bun, Deno) ve dağıtım. Next.js dışında ayrı API/servis yazarken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Node Backend

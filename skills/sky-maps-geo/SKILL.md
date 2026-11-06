@@ -1,11 +1,8 @@
 ---
 name: sky-maps-geo
 description: >-
-  Harita ve konum: MapLibre / Leaflet / Google Maps seçimi, ücretsiz karo sağlayıcıları,
-  işaretçi kümeleme, "bana en yakın" sorguları (PostGIS, mesafe sıralama), geocoding ve adres
-  otomatik tamamlama, Türkiye il-ilçe-mahalle yapısı, konum izni UX'i, yol tarifi bağlantıları
-  (Google/Apple/Yandex), mağaza/şube bulucu ve harita performansı. "Harita ekle", "yakınımdaki",
-  "şube bulucu", "adres seçimi" dendiğinde kullan.
+  Harita ve konum: Türkiye il-ilçe-mahalle yapısı, adres seçimi, "bana en yakın" sorguları, şube
+  bulucu, yol tarifi. "Harita ekle", "yakınımdaki", "adres seçimi" dendiğinde kullan.
 ---
 
 # Sky · Harita & Konum

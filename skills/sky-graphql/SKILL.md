@@ -6,6 +6,7 @@ description: >-
   Apollo Server, DataLoader ile N+1 çözümü, yetkilendirme (alan/kaynak seviyesi), sorgu
   karmaşıklığı ve derinlik sınırı, persisted queries, istemci tarafı (urql, Apollo Client,
   graphql-codegen), abonelikler, önbellek ve güvenlik. GraphQL ile çalışırken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · GraphQL

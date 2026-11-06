@@ -6,6 +6,7 @@ description: >-
   sallama dostu tasarım (sideEffects), semver ve changesets ile sürümleme, provenance ile
   güvenli yayın (GitHub Actions + OIDC), README ve örnekler, publint/arethetypeswrong ile
   doğrulama, monorepoda paket ve kırıcı değişiklik yönetimi. "npm paketi yap", "kütüphane yayınla" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · npm Kütüphanesi

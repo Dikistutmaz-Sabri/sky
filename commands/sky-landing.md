@@ -1,6 +1,7 @@
 ---
 description: Sky ile dönüşüm odaklı bir landing sayfası oluştur — bölüm iskeleti, metin, token'lı tasarım, SEO meta ve JSON-LD dahil.
 argument-hint: "<ürün/işletme ve hedef kitle>"
+disable-model-invocation: true
 ---
 
 # /sky-landing

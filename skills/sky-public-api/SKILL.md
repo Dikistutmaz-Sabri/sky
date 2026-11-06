@@ -6,6 +6,7 @@ description: >-
   (Scalar), SDK üretimi, tutarlı hata ve sayfalama, idempotency, kullanım ölçümü ve geliştirici
   portalı (anahtar yönetimi, kullanım grafiği, örnekler). "API'mizi dışarı açalım", "geliştirici
   dokümantasyonu", "API key" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Dışa Açık API

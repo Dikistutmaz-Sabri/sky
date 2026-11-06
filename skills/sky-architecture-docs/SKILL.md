@@ -5,6 +5,7 @@ description: >-
   C4 modeli ile Mermaid diyagramları (bağlam, konteyner, bileşen), veri akışı ve sıra
   diyagramları, CODEMAP (klasör haritası), çalışma kitapları (runbook) ve dokümanı kodla
   güncel tutma. "Mimariyi dokümante et", "ADR yaz", "diyagram çiz", "README düzenle" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Mimari Dokümanlar
@@ -60,7 +61,7 @@ flowchart LR
 ## CODEMAP
 
 `docs/CODEMAP.md`: klasör → sorumluluk → giriş noktaları → "şunu değiştirmek istersen buraya bak". 1 ekran.
-Yeni geliştirici ve AI için en hızlı yönlendirme (`sky-codebase-mapper` agent'ı üretebilir).
+Yeni geliştirici ve AI için en hızlı yönlendirme (`sky-codebase-mapper` yöntemi üretebilir).
 
 ## Güncel tutma
 

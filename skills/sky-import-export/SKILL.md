@@ -6,6 +6,7 @@ description: >-
   virgüllü ondalık, gg.aa.yyyy tarih), satır bazlı hata raporu, kısmi başarı, tekrar eden kayıt
   tespiti, büyük dosyalarda stream ve arka plan işi, dışa aktarma (filtreli CSV/Excel), şablon
   dosya indirme. "Excel'den müşteri yükle", "CSV içe aktar", "dışa aktar" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · İçe / Dışa Aktarım

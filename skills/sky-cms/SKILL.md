@@ -6,6 +6,7 @@ description: >-
   önizleme (draft mode) ve canlı düzenleme, webhook ile anında yayın (revalidate), görsel
   yönetimi, çok dilli içerik, editör deneyimi ve rol yetkileri, Git tabanlı MDX alternatifi.
   "Müşteri içeriği kendisi düzenlesin", "CMS", "blog yönetimi", "admin'den sayfa ekle" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · İçerik Yönetimi (CMS)

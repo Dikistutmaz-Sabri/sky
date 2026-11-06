@@ -7,6 +7,7 @@ description: >-
   ile paralel oturumlar, bağlam yönetimi (/compact, /clear), başsız mod (claude -p) ve CI/GitHub
   entegrasyonu, maliyet ve hız ipuçları. "Claude Code'u nasıl daha iyi kullanırım", "workflow",
   "hook nasıl yazılır" dendiğinde kullan. Güncel ayrıntılar için resmi dokümana/claude-code-guide'a bak.
+disable-model-invocation: true
 ---
 
 # Sky · Claude Code İş Akışı

@@ -1,12 +1,8 @@
 ---
 name: sky-ux-writing
 description: >-
-  Arayüz metni (mikro metin) yazımı, Türkçe odaklı: ses ve ton, sen/siz kararı, buton
-  etiketleri, hata ve doğrulama mesajları, boş durumlar, onay ve yıkıcı işlem diyalogları,
-  yükleniyor/başarı bildirimleri, form etiketleri ve yardım metinleri, onboarding, bildirim ve
-  e-posta konu satırları, 404/izin sayfaları, Türkçe dil bilgisi tuzakları (ekler, çoğul,
-  büyük harf, kesme işareti), uzunluk sınırları ve kontrol listesi. Arayüz metni yazarken,
-  "ne yazsın bu buton", "hata mesajını düzelt", "boş durum metni" dendiğinde kullan.
+  Türkçe arayüz metni: sen/siz tutarlılığı, buton, hata, boş durum ve onay metinleri, Türkçe ek ve
+  kesme işareti kuralları. "Ne yazsın bu buton", "hata mesajını düzelt" dendiğinde kullan.
 ---
 
 # Sky · UX Metni

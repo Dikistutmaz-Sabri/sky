@@ -6,6 +6,7 @@ description: >-
   servis testleri, veritabanı testleri, Playwright E2E (fixture, auth durumu, sayfa nesneleri),
   görsel regresyon, kapsam hedefleri, kararsız (flaky) test tedavisi ve CI'da çalıştırma.
   Test yazarken, "nasıl test edeyim", "test kırılıyor" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Test

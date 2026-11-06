@@ -7,6 +7,7 @@ description: >-
   GraphQL API, webhook'lar, Polaris, app extensions — theme app extension, checkout UI
   extensions), Shopify Functions (indirim, kargo, ödeme özelleştirme), Türkiye satışı notları.
   Shopify mağazası veya uygulaması geliştirirken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Shopify

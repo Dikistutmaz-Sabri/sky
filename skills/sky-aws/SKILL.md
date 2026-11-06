@@ -6,6 +6,7 @@ description: >-
   Lambda, ECS Fargate, App Runner, RDS/Aurora, DynamoDB, SQS/SNS/EventBridge, SES, Secrets
   Manager, CloudWatch), bölge seçimi, maliyet tuzakları ve bütçe alarmları, CLI ve SDK
   kullanımı. AWS üzerinde bir şey kurarken veya "AWS faturası arttı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · AWS

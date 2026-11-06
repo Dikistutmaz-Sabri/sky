@@ -1,10 +1,8 @@
 ---
 name: sky-forms
 description: >-
-  Form mimarisi ve UX'i: React Hook Form + Zod, Server Actions ile form, istemci+sunucu
-  doğrulama, hata mesajı yazımı, alan düzeni, çok adımlı (wizard) formlar, dosya yükleme,
-  optimistic UI ve gönderim durumları. Kayıt, giriş, iletişim, ödeme, randevu veya ayar
-  formu yazarken kullan.
+  Form mimarisi: doğrulama, hata mesajı, çok adımlı form; TCKN ve IBAN doğrulama, Türkçe adres
+  alanları. Kayıt, iletişim, ödeme veya randevu formu yazarken kullan.
 ---
 
 # Sky · Formlar

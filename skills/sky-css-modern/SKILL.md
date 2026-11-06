@@ -6,6 +6,7 @@ description: >-
   oklch/color-mix/light-dark renk fonksiyonları, CSS nesting, text-wrap balance/pretty,
   field-sizing, scroll-snap carousel ve interpolate-size. "Bunu CSS ile yapabilir miyiz",
   "modern CSS", "JS'siz", "carousel", "scroll animasyonu" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Modern CSS

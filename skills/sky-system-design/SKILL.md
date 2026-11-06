@@ -8,6 +8,7 @@ description: >-
   limiting, tekil ID üretimi, klasik tasarımlar (URL kısaltıcı, haber akışı, sohbet, bildirim,
   randevu sistemi) ve mülakat yapısı. "Sistem tasarımı", "nasıl ölçeklenir", "system design
   mülakatı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Sistem Tasarımı

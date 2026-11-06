@@ -6,6 +6,7 @@ description: >-
   ve sıkıştırma (Meshopt, KTX2), Spline gömme, shader gradyan arka planlar, scroll ile senkron
   3D, performans bütçesi, düşük güçlü cihaz fallback'i ve erişilebilirlik. "3D ekle",
   "etkileyici hero", "ürünü döndürülebilir göster", "Three.js" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · 3D

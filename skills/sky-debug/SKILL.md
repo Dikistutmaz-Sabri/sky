@@ -7,6 +7,7 @@ description: >-
   env undefined, bayat cache, çerez set edilmiyor, build geçmiyor ama dev çalışıyor, bellek
   sızıntısı, yavaş sorgu, kararsız test, Türkçe karakter ve saat dilimi hataları için adım
   adım tanı. "Neden çalışmıyor", "hata alıyorum", "bozuldu", "debug" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Hata Ayıklama

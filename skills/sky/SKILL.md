@@ -1,12 +1,8 @@
 ---
 name: sky
 description: >-
-  Sky ana yönlendiricisi — web/fullstack geliştirme, UI tasarımı ve ürün işleri için giriş
-  noktası. Kullanıcı "sky", "/sky" derse veya bir web projesi/özellik/sayfa/tasarım/deploy/hata
-  ayıklama, altyapı, mobil veya herhangi bir dilde (Python, Go, Rust, PHP, Java, C#, Ruby, Kotlin,
-  Swift, Dart, C++, Java, Elixir) veya herhangi bir framework/platformda (Vue, Svelte, Angular, Astro,
-  WordPress, Shopify, Firebase) yazılım işi başlatırsa kullan. Görevi 181 alan skill'inden doğru
-  olanlara, 35 uzman agent'a ve 25 /sky komutuna yönlendirir ve Sky'ın değişmez kurallarını uygular.
+  Sky ana yönlendiricisi. Kullanıcı "sky" derse ya da Türkçe bir yazılım işi başlatırsa kullan; özellikle
+  ödeme, fatura, KVKK, Türkçe arayüz gibi Türkiye'ye özgü işlerde doğru Sky skill'ini ve rehberini seçer.
 argument-hint: "[görev açıklaması]"
 ---
 
@@ -17,6 +13,12 @@ yüklendiğinde Sky'ın orkestratörüsün: görevi anla, doğru alan skill'leri
 
 Kullanıcının `/sky` sonrasında yazdığı: `$ARGUMENTS`
 Boşsa görevi konuşmadan çıkar.
+
+## 0. Otomatik ve elle çağrılan skill'ler
+
+Bağlamı küçük tutmak için Sky'da yalnızca Türkiye'ye özgü skill'ler otomatik yüklenir: `sky-checkout-ux`, `sky-date-time`, `sky-ecommerce`, `sky-ethical-ux`, `sky-forms`, `sky-freelance`, `sky-i18n`, `sky-maps-geo`, `sky-notifications`, `sky-payments`, `sky-pricing-page`, `sky-privacy-engineering`, `sky-regex`, `sky-seo`, `sky-small-business-site`, `sky-tr-integrations`, `sky-ux-writing`.
+
+Aşağıdaki tablolardaki diğer bütün skill'ler ve eski agent'lar **elle çağrılır**: Claude bunları Skill aracıyla yükleyemez, yalnızca kullanıcı `/sky:<skill-adı>` yazarak açabilir. Tabloda ilgili skill elle çağrılan bir skill ise işi Sky'ın kurallarıyla doğrudan yap ve kullanıcıya ayrıntılı rehber için o komutu öner. Örnek: "Go tarafı için ayrıntılı rehberi `/sky:sky-go` ile açabilirsin."
 
 ## 1. Yönlendirme
 
@@ -133,7 +135,7 @@ kesişiyorsa hepsini yükle; çakışmada **daha özel** olan kazanır (`sky-nex
 
 ### Operasyon & mühendislik
 
-| Sinyal | Skill | Komut / agent |
+| Sinyal | Skill | Komut / rehber |
 |---|---|---|
 | Yavaşlık, Core Web Vitals | `sky-perf` | `/sky-perf`, `sky-perf-auditor` |
 | SEO | `sky-seo` | `/sky-seo-audit`, `sky-seo-auditor` |
@@ -180,7 +182,7 @@ kesişiyorsa hepsini yükle; çakışmada **daha özel** olan kazanır (`sky-nex
 | HTTP, durum kodları, CORS, DNS, TLS, curl | `sky-http` |
 | Yük testi, k6 | `sky-load-testing` |
 | Mikroservis, olaylar, outbox, saga | `sky-microservices` |
-Yapılandırma yazma/denetim için `sky-devops-engineer` agent'ı.
+Yapılandırma yazma/denetim için `sky-devops-engineer` yöntemi.
 
 ### Veri katmanları
 
@@ -193,7 +195,7 @@ Yapılandırma yazma/denetim için `sky-devops-engineer` agent'ı.
 
 ### İş akışı & mühendislik
 
-| Sinyal | Skill | Komut / agent |
+| Sinyal | Skill | Komut / rehber |
 |---|---|---|
 | Git, commit, rebase, kurtarma | `sky-git` | `/sky-commit` |
 | Kod incelemesi | `sky-code-review` | `/sky-review`, `sky-code-reviewer` |
@@ -298,9 +300,44 @@ Yapılandırma yazma/denetim için `sky-devops-engineer` agent'ı.
 | Skill/komut/agent/hook/eklenti yazma, Sky'ı genişletme | `sky-skill-authoring` |
 | MCP sunucusu yazma | `sky-mcp-server` |
 
-## 2. Agent'lar (Agent aracıyla)
+### Uzman rehberler
 
-| Agent | Ne zaman |
+Elle çağrılır; ilgiliyse kullanıcıya `/sky:<ad>` öner.
+
+| Sinyal | Skill |
+|---|---|
+| kod yazmadan önce mimari plan | `sky-architect` |
+| fikri PRD'ye çevirme | `sky-product-manager` |
+| büyük karardan önce itiraz/risk turu | `sky-critic` |
+| tasarım yönü ve token seti | `sky-designer` |
+| net görevi uçtan uca uygulama | `sky-builder` |
+| test boşluklarını doldurma | `sky-tester` |
+| kök neden bulma + regresyon testi | `sky-debugger` |
+| davranışı koruyarak sadeleştirme | `sky-refactorer` |
+| UI ve erişilebilirlik denetimi | `sky-ui-reviewer`, `sky-a11y-auditor` |
+| backend, veritabanı, güvenlik denetimi | `sky-api-reviewer`, `sky-db-reviewer`, `sky-security-reviewer` |
+| performans ve SEO denetimi | `sky-perf-auditor`, `sky-seo-auditor` |
+| tarayıcıda akışları gerçekten deneme | `sky-browser-qa` |
+| dokümantasyon ve kod haritası | `sky-doc-writer`, `sky-codebase-mapper` |
+| yayın hazırlığı, changelog, geri alma planı | `sky-release-manager` |
+| genel kod incelemesi (her dil) | `sky-code-reviewer` |
+| kırık build/tip hatası, en küçük düzeltme | `sky-build-fixer` |
+| dile özgü inceleme | `sky-python-reviewer`, `sky-go-reviewer`, `sky-rust-reviewer` |
+| iOS / Android / Flutter / React Native inceleme | `sky-mobile-reviewer` |
+| Docker, K8s, Terraform, Ansible, GCP/Azure, CI, sunucu yapılandırması | `sky-devops-engineer` |
+| seviyeye uygun Türkçe açıklama | `sky-explainer` |
+| Vue/Svelte/Angular/Astro inceleme | `sky-frontend-reviewer` |
+| Java/Kotlin ve PHP/Laravel inceleme | `sky-java-reviewer`, `sky-php-reviewer` |
+| ML/RAG görevi kurma ve değerlendirme | `sky-ml-engineer` |
+| ESP32/Arduino/Pi firmware ve bağlantı | `sky-iot-engineer` |
+
+## 2. Agent'lar ve uzman rehberler
+
+Agent aracıyla kullanılabilen üç agent var: `sky-turkish-proofreader` (Türkçe yazım ve düzelti), `sky-translator` (i18n çevirisi), `sky-copywriter` (Türkçe arayüz ve pazarlama metni).
+
+Aşağıdakiler Sky 4'te agent'tı; Sky 5'te elle çağrılan uzman rehberlerdir. Kullanıcı `/sky:<ad>` ile açar.
+
+| Rehber | Ne zaman |
 |---|---|
 | `sky-architect` | kod yazmadan önce mimari plan |
 | `sky-product-manager` | fikri PRD'ye çevirme |
@@ -314,7 +351,6 @@ Yapılandırma yazma/denetim için `sky-devops-engineer` agent'ı.
 | `sky-api-reviewer`, `sky-db-reviewer`, `sky-security-reviewer` | backend, veritabanı, güvenlik denetimi |
 | `sky-perf-auditor`, `sky-seo-auditor` | performans ve SEO denetimi |
 | `sky-browser-qa` | tarayıcıda akışları gerçekten deneme |
-| `sky-copywriter`, `sky-turkish-proofreader`, `sky-translator` | metin, Türkçe düzelti, çeviri |
 | `sky-doc-writer`, `sky-codebase-mapper` | dokümantasyon ve kod haritası |
 | `sky-release-manager` | yayın hazırlığı, changelog, geri alma planı |
 | `sky-code-reviewer` | genel kod incelemesi (her dil) |
@@ -329,6 +365,8 @@ Yapılandırma yazma/denetim için `sky-devops-engineer` agent'ı.
 | `sky-iot-engineer` | ESP32/Arduino/Pi firmware ve bağlantı |
 
 ## 3. Komutlar
+
+Komutların hepsi elle çağrılır; kullanıcı `/sky:<komut>` yazarak çalıştırır.
 
 `/sky-new` · `/sky-page` · `/sky-component` · `/sky-api` · `/sky-ai` · `/sky-brand` · `/sky-landing` ·
 `/sky-polish` · `/sky-ui-audit` · `/sky-perf` · `/sky-seo-audit` · `/sky-debug` · `/sky-check` ·

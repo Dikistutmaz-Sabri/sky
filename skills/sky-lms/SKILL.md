@@ -6,6 +6,7 @@ description: >-
   oranı, sertifika (QR doğrulamalı PDF), kurs satışı ve kupon, öğrenci paneli, eğitmen paneli,
   yorumlar ve soru-cevap, damla (drip) içerik, oyunlaştırma ve video içerik korumasının
   gerçekçi sınırları. "Kurs sitesi", "online eğitim", "Udemy gibi", "eğitim platformu" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Kurs Platformu

@@ -5,6 +5,7 @@ description: >-
   eşleşmesi, ses tonu, logo kullanım kuralları, favicon/app ikonu/OG görsel seti, sosyal medya
   şablonları, marka sayfası (brand guidelines) ve logo yoksa hızlı wordmark üretimi. "Marka
   kimliği", "logomuza göre renk", "favicon seti", "marka rehberi", "yeni marka" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Marka

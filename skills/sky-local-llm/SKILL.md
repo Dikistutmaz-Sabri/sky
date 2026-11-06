@@ -7,6 +7,7 @@ description: >-
   tarayıcıda model (Transformers.js, WebLLM), Türkçe performansı, gizlilik avantajları,
   maliyet/kalite karşılaştırması ve ne zaman bulut API daha iyi. "Yerel model", "Ollama",
   "internetsiz AI", "veriler dışarı çıkmasın" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Yerel LLM'ler

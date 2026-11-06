@@ -1,6 +1,7 @@
 ---
 description: Sky kod incelemesi — mevcut değişiklikleri (veya verilen PR/dalı) öncelik sırasıyla inceler, dil/alan denetçilerini devreye sokar ve etiketli bulgular raporlar. Kod değiştirmez.
 argument-hint: "[dal | PR numarası | dosya yolu]"
+disable-model-invocation: true
 ---
 
 # /sky-review

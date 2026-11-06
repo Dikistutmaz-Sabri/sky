@@ -6,6 +6,7 @@ description: >-
   yumuşak ve sert limit, aşım davranışı (engelle, ücretlendir, yükselt önerisi), kullanıma
   dayalı faturalandırma (Stripe meters), kullanım paneli UI ve "planını yükselt" anları.
   "Free planda 50 randevu limiti", "kota", "kullanım bazlı ücret", "plan limitleri" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Kotalar & Ölçüm

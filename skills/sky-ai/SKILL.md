@@ -7,6 +7,7 @@ description: >-
   prompt tasarımı ve sistem promptu, prompt caching ile maliyet düşürme, model seçimi, hız
   sınırı ve kota, prompt injection savunması, KVKK ve kullanıcı verisi. "AI ekle", "chatbot",
   "belgelerimle konuşsun", "özetlesin", "LLM" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · AI Özellikleri

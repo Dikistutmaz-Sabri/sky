@@ -6,6 +6,7 @@ description: >-
   HPA ile otomatik ölçekleme, sıfır kesintili rolling update, Helm ve Kustomize, migration'ları
   Job ile çalıştırma, gizli bilgi yönetimi, ağ politikaları, gözlem ve hata ayıklama (kubectl
   komutları), yönetilen kümeler ve daha basit alternatifler. Kubernetes işlerinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Kubernetes

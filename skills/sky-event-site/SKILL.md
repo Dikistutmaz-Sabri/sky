@@ -6,6 +6,7 @@ description: >-
   tercihi, not), misafir listesi paneli, takvime ekle, QR bilet ve girişte okutma, fotoğraf
   yükleme galerisi, hediye/IBAN bilgisi, müzik, çok dilli ve paylaşım önizlemesi. "Düğün
   davetiyesi sitesi", "etkinlik sayfası", "RSVP", "konferans sitesi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Etkinlik & Davet Sitesi

@@ -6,6 +6,7 @@ description: >-
   kuralları, issue/PR şablonları, iyi ilk issue'lar), sürümleme ve yayın otomasyonu, topluluk
   yönetimi ve tükenmişlikten kaçınma, güvenlik politikası (SECURITY.md), sürdürülebilirlik ve
   sponsorluk, açık çekirdek iş modelleri. Bir projeyi açık kaynak yapmak veya sürdürmek için kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Açık Kaynak

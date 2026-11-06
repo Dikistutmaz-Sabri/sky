@@ -6,6 +6,7 @@ description: >-
   ve erişilebilirlik, özel ikon çizme kuralları (24px grid), SVGO optimizasyonu, sprite ve
   ağaç sallama, animasyonlu ikonlar ve marka/ödeme logoları. "İkon seç", "ikonlar uyumsuz",
   "özel ikon", "ikon butonu" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · İkonlar

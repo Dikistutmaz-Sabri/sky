@@ -1,6 +1,7 @@
 ---
 description: Sky ile yeni bir sayfa/route oluştur — veri çekme, metadata (SEO/OG), loading/error/boş durumlar, yetki, responsive düzen ve testle birlikte.
 argument-hint: "<route ve amaç, ör. '/o/[slug]/raporlar — aylık gelir ve randevu raporu'>"
+disable-model-invocation: true
 ---
 
 # /sky-page

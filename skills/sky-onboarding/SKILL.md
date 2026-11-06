@@ -6,6 +6,7 @@ description: >-
   bağlamsal ipuçları ve ürün turu, ilerleme kutlamaları, hoş geldin e-posta dizisi, aktivasyon
   metrikleri ve terk noktaları. "Kullanıcılar kayıt olup gidiyor", "onboarding", "ilk kullanım",
   "kurulum sihirbazı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Onboarding

@@ -6,6 +6,7 @@ description: >-
   yükleme, bağlantı önizleme, yapıştırma temizliği, JSON/HTML saklama, sanitize ve render,
   ortak düzenleme (Yjs), karakter sayacı ve otomatik kayıt. "Editör ekle", "Notion gibi",
   "blog yazma ekranı", "rich text" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Zengin Metin Editörü

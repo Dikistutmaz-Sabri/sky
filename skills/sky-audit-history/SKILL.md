@@ -6,6 +6,7 @@ description: >-
   akışı (activity feed) UI, Postgres trigger ile otomatik geçmiş, event sourcing ne zaman,
   saklama ve performans. "Kim değiştirdi", "geçmiş", "eski haline getir", "aktivite akışı",
   "audit log" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Geçmiş & Denetim

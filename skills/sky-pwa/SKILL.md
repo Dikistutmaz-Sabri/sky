@@ -6,6 +6,7 @@ description: >-
   veri, kurulum (install) butonu, iOS kısıtları, push bildirimine hazırlık, güncelleme akışı
   ("yeni sürüm var, yenile"). "Uygulama gibi olsun", "ana ekrana ekle", "çevrimdışı çalışsın"
   dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · PWA

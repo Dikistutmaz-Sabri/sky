@@ -6,6 +6,7 @@ description: >-
   404/500), başarı (toast, satır içi, tam ekran), çevrimdışı, bakım, kilitli özellik ve kısmi
   veri durumları için hazır bileşen kalıpları, illüstrasyon stili ve metinleri. "Boş ekran
   çirkin", "yükleniyor durumu", "hata sayfası", "404 tasarla" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Durumlar Kütüphanesi

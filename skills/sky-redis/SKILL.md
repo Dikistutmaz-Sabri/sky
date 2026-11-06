@@ -6,6 +6,7 @@ description: >-
   atomik işlemler ve Lua betikleri, dağıtık kilit (doğru ve yanlış yolları), rate limiting
   algoritmaları, pub/sub vs Streams (tüketici grupları), oturum deposu, lider tablosu, bellek ve
   tahliye politikaları, kalıcılık (RDB/AOF), kümeleme ve sunucusuz Redis. Redis ile çalışırken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Redis

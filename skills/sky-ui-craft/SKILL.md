@@ -6,6 +6,7 @@ description: >-
   hissettiren" detaylar. UI tasarlarken, bir ekranı güzelleştirirken, "daha profesyonel
   görünsün", "tasarımı düzelt", "dark mode ekle" dendiğinde kullan. Ayrıntılı token
   şablonu için references/tokens.css dosyasına bak.
+disable-model-invocation: true
 ---
 
 # Sky · UI Zanaatı
@@ -90,4 +91,4 @@ veya rastgele `box-shadow` görürsen token'a çevir.
 ## Doğrulama
 
 Tarayıcıda aç; 375px ve 1280px genişlikte, açık ve koyu temada ekran görüntüsü al ve
-yukarıdaki tabloya göre kontrol et. Gerekirse `sky-ui-reviewer` agent'ını çalıştır.
+yukarıdaki tabloya göre kontrol et. Gerekirse `sky-ui-reviewer` yöntemini çalıştır.

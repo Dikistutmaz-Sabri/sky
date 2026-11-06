@@ -6,6 +6,7 @@ description: >-
   net/http (Go 1.22+ yönlendirme) ile API, slog ile log, pgx/sqlc ile veritabanı, tablo
   tabanlı testler ve httptest, golangci-lint, generics ölçüsü, graceful shutdown ve dağıtım.
   Go kodu yazarken veya gözden geçirirken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Go

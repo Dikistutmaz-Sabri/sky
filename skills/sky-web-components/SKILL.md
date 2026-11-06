@@ -6,6 +6,7 @@ description: >-
   bütünleşme (ElementInternals, form-associated), erişilebilirlik, olaylar, SSR (Declarative
   Shadow DOM), React/Vue içinde kullanım, gömülebilir widget dağıtımı (tek script) ve tasarım
   sistemi paylaşımı. "Her siteye gömülebilir widget", "framework bağımsız bileşen" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Web Components

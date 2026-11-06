@@ -6,6 +6,7 @@ description: >-
   User modeli, admin özelleştirme, DRF serializer/viewset/izinler, Celery ile arka plan işleri,
   güvenlik kontrol listesi (check --deploy), pytest-django ile testler ve dağıtım. Django
   projesinde çalışırken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Django

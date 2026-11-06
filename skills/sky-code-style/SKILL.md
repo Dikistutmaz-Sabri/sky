@@ -6,6 +6,7 @@ description: >-
   husky + lint-staged ile commit öncesi kontroller, commitlint, VS Code ayarları, Python (ruff),
   Go (gofmt, golangci-lint), Rust (rustfmt, clippy), isimlendirme ve dosya düzeni kuralları,
   mevcut projeye kademeli ekleme. "Lint kur", "Prettier", "Biome", "kod stili", "pre-commit" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Kod Stili & Araçlar

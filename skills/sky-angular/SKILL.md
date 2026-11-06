@@ -6,6 +6,7 @@ description: >-
   HttpClient ve interceptor'lar, router (lazy loading, guard'lar, resolver'lar), reactive forms ve
   typed forms, RxJS ile sinyal birlikteliği, SSR ve hydration, zoneless, test ve performans.
   Angular projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Angular

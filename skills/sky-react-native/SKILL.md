@@ -6,6 +6,7 @@ description: >-
   (Reanimated, Gesture Handler), formlar ve klavye, durum ve veri (TanStack Query, Zustand,
   MMKV), kimlik doğrulama ve SecureStore, native modüller ve config plugin'leri, development
   build, hata ayıklama, test (Jest, Maestro) ve EAS ile yayın. Expo/React Native projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · React Native (Expo)

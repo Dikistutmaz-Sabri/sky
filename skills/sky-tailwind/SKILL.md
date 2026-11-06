@@ -6,6 +6,7 @@ description: >-
   container queries ve yeni varyantlar, özel yardımcılar ve eklentiler, sınıf sıralama ve
   okunurluk (cn, cva, prettier-plugin-tailwindcss), keyfi değerlerden kaçınma, v3'ten geçiş,
   performans ve sık hatalar. Tailwind kullanan projede kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Tailwind CSS v4

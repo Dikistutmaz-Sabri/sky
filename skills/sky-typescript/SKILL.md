@@ -6,6 +6,7 @@ description: >-
   ölçüsü, satisfies/as const, enum yerine union, exhaustive switch, utility tipler, tip
   daraltma, modül sınırları ve sık tip hataları. Tip tasarlarken, "any'den kurtul", "tip
   hatası alıyorum", "bu tipi nasıl yazarım" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · TypeScript

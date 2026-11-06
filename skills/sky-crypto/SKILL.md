@@ -6,6 +6,7 @@ description: >-
   şifreleme (AES-GCM, alan şifreleme), açık anahtar temelleri, JWT/PASETO doğru kullanımı, sabit
   zamanlı karşılaştırma, anahtar türetme ve yönetimi, TLS'e güven, yaygın hatalar ve "kendi
   kripton yok" kuralı. Parola, token, şifreleme, imza veya hash gerektiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Uygulamalı Kriptografi

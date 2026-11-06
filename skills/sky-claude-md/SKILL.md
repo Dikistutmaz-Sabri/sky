@@ -6,6 +6,7 @@ description: >-
   skill'lerine bağlama, kısa ve güncel tutma, alt klasör CLAUDE.md'leri, takım kuralları ve
   yaygın hatalar. "CLAUDE.md yaz", "Claude projeyi anlamıyor", "proje kuralları", "AI için
   proje dokümanı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · CLAUDE.md

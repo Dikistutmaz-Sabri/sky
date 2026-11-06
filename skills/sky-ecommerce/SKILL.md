@@ -1,11 +1,8 @@
 ---
 name: sky-ecommerce
 description: >-
-  E-ticaret: ürün/varyant/seçenek modeli, stok ve rezervasyon, sepet (misafir + giriş yapmış
-  birleştirme), ödeme akışı, sipariş durum makinesi, kupon/kampanya motoru, kargo ücreti ve
-  Türkiye kargo entegrasyonları, iade/değişim, fatura, ürün arama ve filtre, ürün sayfası
-  dönüşüm detayları, terk edilmiş sepet e-postası ve hazır çözümler (Shopify Hydrogen, Medusa,
-  Saleor). "Online mağaza", "e-ticaret sitesi", "sepet", "ürün varyantları" dendiğinde kullan.
+  E-ticaret: ürün/varyant, stok, sepet, sipariş durumu, kupon, Türkiye kargo entegrasyonları, iade ve
+  fatura. "Online mağaza", "e-ticaret sitesi", "sepet" dendiğinde kullan.
 ---
 
 # Sky · E-Ticaret

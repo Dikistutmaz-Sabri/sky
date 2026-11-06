@@ -6,6 +6,7 @@ description: >-
   süreç → sonuç), CV/özgeçmiş sayfası ve PDF, blog/notlar, "şu an" (now) sayfası, iletişim,
   OG kartları, küçük etkileşimli sürprizler (easter egg), koyu/açık tema, hız ve SEO. "Portfolyo
   sitesi", "kişisel web sitesi", "CV sitesi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Portfolyo

@@ -7,6 +7,7 @@ description: >-
   adlandırma, uptime ve sağlık uç noktası, alarm tasarımı ve yorgunluğu, panolar, denetim
   kayıtları, runbook. "Sentry ekle", "log", "analytics", "izleme", "neden çöktüğünü
   göremiyoruz" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Gözlemlenebilirlik

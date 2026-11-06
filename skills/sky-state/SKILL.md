@@ -6,6 +6,7 @@ description: >-
   zaman, nuqs ile URL state, optimistic güncelleme ve "prop drilling mi context mi" kararları.
   "State nerede tutulsun", "her şey yeniden render oluyor", "Redux gerekir mi", "global state"
   dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · State Mimarisi

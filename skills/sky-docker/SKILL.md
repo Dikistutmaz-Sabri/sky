@@ -6,6 +6,7 @@ description: >-
   güvenli imajlar (distroless, non-root, .dockerignore), healthcheck, yerel geliştirme için
   docker compose (Postgres, Redis, MinIO, Mailpit, watch), imaj tarama, etiketleme ve kayıt
   defteri, sık hatalar. "Dockerize et", "Dockerfile yaz", "compose", "imaj çok büyük" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Docker

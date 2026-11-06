@@ -6,6 +6,7 @@ description: >-
   Functions, Storage ve politikaları, Realtime, veritabanı tipleri üretme, migration ve
   branching, auth hook'ları, pg_cron, maliyet ve sık güvenlik hataları. Supabase kullanan her
   projede, "RLS yazamıyorum", "veri gelmiyor", "service role" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Supabase

@@ -6,6 +6,7 @@ description: >-
   derlenmiş), paylaşılan tsconfig/eslint/tailwind ayarları, bağımlılık sürüm tutarlılığı
   (catalog, syncpack), CI'da yalnızca etkilenen paketler, changesets ile sürümleme, Nx
   alternatifi ve sık sorunlar. "Monorepo", "web ve mobil aynı repoda", "Turborepo" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Monorepo

@@ -6,6 +6,7 @@ description: >-
   bağlantı, Firestore, Cloud Storage, Pub/Sub, Cloud Tasks ve Scheduler, Secret Manager,
   Artifact Registry, Cloud Build, Logging/Monitoring, bölge seçimi ve maliyet/bütçe
   alarmları. GCP üzerinde bir şey kurarken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Google Cloud

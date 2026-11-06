@@ -6,6 +6,7 @@ description: >-
   mikro kutlama animasyonları, yükleme/başarı/boş durum animasyonları, dosya boyutu ve
   performans, tembel yükleme, reduced-motion karşılıkları ve kaynak siteler. "Lottie ekle",
   "Rive", "animasyonlu illüstrasyon", "hareketli ikon", "başarı animasyonu" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Animasyon Varlıkları

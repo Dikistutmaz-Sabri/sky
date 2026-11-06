@@ -5,6 +5,7 @@ description: >-
   geçişleri, liste animasyonları, kaydırma tetikli animasyon, Framer Motion (motion/react),
   CSS transitions, View Transitions API ve prefers-reduced-motion. Animasyon eklerken veya
   "daha canlı hissettirsin", "geçiş ekle" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Hareket

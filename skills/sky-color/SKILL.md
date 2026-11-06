@@ -6,6 +6,7 @@ description: >-
   dozu, gradyanlar (oklch ile çamursuz), renk körlüğü simülasyonu, grafik paletleri ve
   marka renginin UI'a uyarlanması. "Renk paleti oluştur", "kontrast yetmiyor", "dark mode
   renkleri", "renkler soluk/çamurlu" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Renk

@@ -1,6 +1,7 @@
 ---
 description: Bir özelliği veya hata düzeltmesini TDD ile uygula — önce davranış listesi, sonra başarısız testler (kullanıcıya gösterilir), sonra en küçük uygulama ve refactor.
 argument-hint: "<davranış veya hata açıklaması>"
+disable-model-invocation: true
 ---
 
 # /sky-tdd

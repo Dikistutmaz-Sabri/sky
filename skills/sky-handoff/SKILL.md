@@ -6,6 +6,7 @@ description: >-
   sırların güvenli devri, içerik düzenleme rehberi ve kısa eğitim videosu, bakım planı ve
   SLA, garanti süresi, son kontrol listesi ve kabul tutanağı. "Projeyi müşteriye teslim
   edeceğim", "devir", "bakım anlaşması", "freelance proje bitti" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Teslim

@@ -6,6 +6,7 @@ description: >-
   API Resource'lar, Sanctum, kuyruklar ve Horizon, zamanlanmış görevler, Pest testleri,
   Livewire/Inertia/Filament seçimi, Pint ve Larastan, güvenlik ve dağıtım. Laravel/PHP
   projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Laravel

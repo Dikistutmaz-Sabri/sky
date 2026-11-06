@@ -132,11 +132,21 @@ if (!stack.length) process.exit(0);
 
 const notes = [];
 if (!fs.existsSync(path.join(cwd, "CLAUDE.md")) && !fs.existsSync(path.join(cwd, ".claude", "CLAUDE.md")))
-  notes.push("Projede CLAUDE.md yok — uygun bir anda sky-claude-md ile oluşturmayı öner.");
+  notes.push("Projede CLAUDE.md yok — uygun bir anda kullanıcıya /sky:sky-claude-md ile oluşturmayı öner.");
 
+// Sky 5: yalnızca Türkiye'ye özgü skill'ler otomatik; diğerleri disable-model-invocation ile elle çağrılır.
+const elle = (s) => {
+  try {
+    const t = fs.readFileSync(path.join(__dirname, "..", "skills", s, "SKILL.md"), "utf8");
+    return /^disable-model-invocation:\s*true\s*$/m.test(t.split(/\n---/)[0]);
+  } catch { return false; }
+};
+const secili = [...skills].slice(0, 10), oto = secili.filter((s) => !elle(s)), man = secili.filter(elle);
 addContext(
   "SessionStart",
-  `Sky: proje stack'i ${stack.join(", ")}. Bu projede öne çıkan Sky skill'leri: ${[...skills].slice(0, 10).map((s) => "sky:" + s).join(", ")}. ` +
-    `Genel giriş noktası: sky:sky.` + (notes.length ? " " + notes.join(" ") : "")
+  `Sky: proje stack'i ${stack.join(", ")}.` +
+    (oto.length ? ` Bu projede öne çıkan Sky skill'leri: ${oto.map((s) => "sky:" + s).join(", ")}.` : "") +
+    (man.length ? ` İlgili elle çağrılan Sky rehberleri (sen yükleyemezsin, gerekirse kullanıcıya öner): ${man.map((s) => "/sky:" + s).join(", ")}.` : "") +
+    ` Genel giriş noktası: sky:sky.` + (notes.length ? " " + notes.join(" ") : "")
 );
 process.exit(0);

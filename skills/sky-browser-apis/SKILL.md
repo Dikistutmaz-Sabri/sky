@@ -6,6 +6,7 @@ description: >-
   Visibility, Badging, Wake Lock, Vibration, File System Access, Web Workers, passkey
   (WebAuthn), Web Speech (sesle yazma) ve EyeDropper; özellik algılama ve fallback'ler.
   "Paylaş butonu", "kopyala", "sekmeler arası senkron", "passkey", "sesle yazma" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Tarayıcı API'leri

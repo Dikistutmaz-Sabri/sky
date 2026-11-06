@@ -1,6 +1,7 @@
 ---
 description: Teslim öncesi Sky kontrolü — typecheck, lint, test, build, güvenlik taraması, UI kontrolü ve diff incelemesi; GEÇTİ/KALDI raporu.
 argument-hint: "[--hizli]"
+disable-model-invocation: true
 ---
 
 # /sky-check

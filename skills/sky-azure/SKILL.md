@@ -6,6 +6,7 @@ description: >-
   for PostgreSQL, Blob Storage, Service Bus ve Queue Storage, Key Vault, Azure OpenAI erişimi,
   Application Insights, Bicep/Terraform, kurumsal müşteri gereksinimleri (SSO, uyumluluk) ve
   maliyet yönetimi. Azure kullanan veya kurumsal (Microsoft ekosistemi) müşteri projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Azure

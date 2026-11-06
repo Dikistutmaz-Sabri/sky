@@ -7,6 +7,7 @@ description: >-
   runtime'da yükleme, rotasyon ve iptal, sızıntı tespiti (gitleaks, secret scanning) ve sızıntı
   müdahale planı, ekip içi paylaşım ve ayrılan çalışan süreci. "API anahtarı nerede tutulmalı",
   ".env", "sır sızdı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Sır Yönetimi

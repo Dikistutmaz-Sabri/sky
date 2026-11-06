@@ -1,6 +1,7 @@
 ---
 description: Sahnelenmiş değişikliklerden Conventional Commits uyumlu commit mesajı hazırla, kalıntı kontrolü yap ve onayla commit'le; gerekirse değişikliği mantıklı commit'lere bölmeyi öner.
 argument-hint: "[--yes] [ek bağlam]"
+disable-model-invocation: true
 ---
 
 # /sky-commit

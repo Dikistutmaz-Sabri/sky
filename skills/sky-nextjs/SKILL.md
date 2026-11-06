@@ -6,6 +6,7 @@ description: >-
   route handler, paralel ve kesen (intercepting) route'lar, streaming, metadata, görsel/font,
   dağıtım notları ve sık hatalar. Next.js'e özgü bir soru, "neden yeniden render/fetch oluyor",
   "cache temizlenmiyor", "use client nereye" gibi durumlarda kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Next.js

@@ -6,6 +6,7 @@ description: >-
   enum, pathlib, logging, async/await (asyncio, TaskGroup), pytest (fixture, parametrize,
   mock), paketleme ve CLI (Typer), performans ipuçları ve sık hatalar. Python kodu yazarken,
   gözden geçirirken veya "Python projesi kur" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Python

@@ -6,6 +6,7 @@ description: >-
   animasyonları, dokunmatik destek, klavye ile sürükleme ve Türkçe ekran okuyucu duyuruları,
   sırayı kalıcılaştırma (fractional indexing) ve optimistic UI. "Sürükle bırak", "kanban",
   "sıralanabilir liste", "Trello gibi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Sürükle-Bırak

@@ -7,6 +7,7 @@ description: >-
   kuralları, tooltip ve etkileşim, yükleniyor/boş/hata durumları, responsive ve performans,
   Türkçe biçimlendirme ve sık hatalar. Grafik, chart, sparkline, ısı haritası veya "veriyi
   görselleştir" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Veri Görselleştirme

@@ -1,6 +1,7 @@
 ---
 description: Uygulamaya bir AI özelliği ekle — kullanım senaryosu, model seçimi, streaming/structured output/tool use/RAG mimarisi, güvenlik, maliyet, UX ve eval seti ile.
 argument-hint: "<AI özelliği, ör. 'serbest metinden randevu formu doldurma'>"
+disable-model-invocation: true
 ---
 
 # /sky-ai

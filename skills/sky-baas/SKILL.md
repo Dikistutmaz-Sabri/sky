@@ -7,6 +7,7 @@ description: >-
   ne zaman kendi backend'in, veri modelleme (doküman vs ilişkisel), güvenlik kuralları ile yetki,
   maliyet tuzakları ve kilitlenme (vendor lock-in) riski. "Firebase", "Convex", "PocketBase",
   "backend yazmadan", "hazır backend" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · BaaS (hazır backend)

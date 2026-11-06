@@ -1,11 +1,8 @@
 ---
 name: sky-regex
 description: >-
-  Düzenli ifadeler: okunur regex yazma (adlandırılmış gruplar, x/verbose biçimi yerine parçalama),
-  sık kalıplar (Türk telefon numarası, e-posta, IBAN, TCKN biçimi, posta kodu, plaka, tarih,
-  slug, URL), Unicode ve Türkçe karakterler (u ve v bayrakları, \p{L}), lookahead/lookbehind,
-  açgözlü vs tembel, felaket geri izlemeyi (ReDoS) önleme, test etme ve ne zaman regex
-  kullanmamalı (HTML, JSON, karmaşık dil). "Regex yaz", "bu deseni eşleştir", "regex çalışmıyor" dendiğinde kullan.
+  Düzenli ifadeler: Türk telefon numarası, TCKN, IBAN, plaka, posta kodu kalıpları, Türkçe karakterler
+  (\p{L}, u bayrağı), ReDoS'tan kaçınma. "Regex yaz", "desen eşleştir" dendiğinde kullan.
 ---
 
 # Sky · Regex

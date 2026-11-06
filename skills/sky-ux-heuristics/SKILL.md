@@ -6,6 +6,7 @@ description: >-
   ilerleme ve geri bildirim süreleri (0.1/1/10 sn), hata önleme, varsayılanların gücü,
   progressive disclosure ve 30 dakikalık sezgisel denetim şablonu. "UX'i değerlendir",
   "kullanımı zor", "kullanıcı deneyimi nasıl", "neden kafa karıştırıyor" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · UX Sezgileri
@@ -62,4 +63,4 @@ description: >-
 3. Bulguları kaydet: `[ciddiyet 1–4] ekran — sorun — hangi sezgi — öneri`.
 4. Ciddiyet: 4 = görev tamamlanamıyor, 3 = büyük sürtünme, 2 = küçük sürtünme, 1 = kozmetik.
 5. İlk 5 bulguyu (ciddiyet × sıklık) düzeltme listesine koy.
-Bulgular için `sky-ui-reviewer` agent'ı da kullanılabilir; gerçek kullanıcı testi (5 kişi, sesli düşünme) her zaman daha değerli.
+Bulgular için `sky-ui-reviewer` yöntemi da kullanılabilir; gerçek kullanıcı testi (5 kişi, sesli düşünme) her zaman daha değerli.

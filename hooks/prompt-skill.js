@@ -201,8 +201,18 @@ for (const [terms, skills] of MAP) {
 }
 if (!found.length) process.exit(0);
 
-addContext(
-  "UserPromptSubmit",
-  `Sky önerisi: bu istekle ilgili olabilecek skill'ler — ${found.slice(0, 4).map((s) => "sky:" + s).join(", ")}. Uygunsa Skill aracıyla yükle; ilgisizse yok say.`
-);
+// Sky 5: yalnızca Türkiye'ye özgü skill'ler otomatik; diğerleri disable-model-invocation ile elle çağrılır.
+const path = require("path");
+const fs = require("fs");
+const elle = (s) => {
+  try {
+    const t = fs.readFileSync(path.join(__dirname, "..", "skills", s, "SKILL.md"), "utf8");
+    return /^disable-model-invocation:\s*true\s*$/m.test(t.split(/\n---/)[0]);
+  } catch { return false; }
+};
+const sec = found.slice(0, 4), oto = sec.filter((s) => !elle(s)), man = sec.filter(elle);
+const parcalar = [];
+if (oto.length) parcalar.push(`bu istekle ilgili olabilecek skill'ler — ${oto.map((s) => "sky:" + s).join(", ")}. Uygunsa Skill aracıyla yükle; ilgisizse yok say.`);
+if (man.length) parcalar.push(`elle çağrılan ilgili rehberler — ${man.map((s) => "/sky:" + s).join(", ")}. Bunları sen yükleyemezsin; gerekiyorsa kullanıcıya öner.`);
+addContext("UserPromptSubmit", "Sky önerisi: " + parcalar.join(" Ayrıca "));
 process.exit(0);

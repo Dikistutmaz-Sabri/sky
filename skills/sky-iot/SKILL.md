@@ -7,6 +7,7 @@ description: >-
   ve gerçek zamanlı grafik, OTA güncelleme, cihaz güvenliği, veri kaydı (zaman serisi), prototipten
   ürüne ve TÜBİTAK/okul projeleri için pratik tavsiyeler. Donanım, sensör, ESP32, Arduino,
   "akıllı ev", "IoT" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · IoT & Gömülü

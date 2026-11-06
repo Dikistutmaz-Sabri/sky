@@ -6,6 +6,7 @@ description: >-
   iş akışı ve CI'da plan yorumu, drift tespiti, import ile mevcut kaynakları alma, güvenli
   değişiklik (prevent_destroy, lifecycle), etiketleme ve maliyet, sık hatalar. "Terraform",
   "altyapıyı kodla", "IaC", "AWS kaynaklarını otomatikleştir" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Altyapı Kod Olarak (IaC)

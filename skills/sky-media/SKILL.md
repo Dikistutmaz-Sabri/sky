@@ -6,6 +6,7 @@ description: >-
   EXIF temizliği (konum gizliliği), görsel CDN'leri, video (HLS, Mux, poster, otomatik
   oynatma kuralları), galeri/lightbox ve Instagram tarzı deneyimler. "Fotoğraf yükleme",
   "avatar", "galeri", "video oynatıcı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Görsel & Video

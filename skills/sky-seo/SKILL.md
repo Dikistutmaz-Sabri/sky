@@ -1,12 +1,8 @@
 ---
 name: sky-seo
 description: >-
-  Teknik ve içerik SEO'su: taranabilirlik (robots, sitemap, canonical, noindex), render
-  stratejisi, Next.js metadata ve dosya tabanlı OG/sitemap/robots, başlık ve açıklama
-  kuralları, yapılandırılmış veri (JSON-LD türleri), URL ve slug (Türkçe karakter), 301
-  yönlendirmeler, hreflang, Core Web Vitals, görsel/başlık/iç bağlantı hijyeni, blog ve içerik
-  mimarisi, yerel SEO (Türkiye), ölçüm (Search Console) ve kaçınılacaklar. "SEO", "Google'da
-  çıksın", "meta etiketleri", "sitemap", "blog yapısı" dendiğinde kullan.
+  SEO: Türkçe karakterli slug, yerel SEO (Türkiye), metadata, JSON-LD, sitemap, hreflang, Core Web
+  Vitals. "SEO", "Google'da çıksın", "meta etiketleri" dendiğinde kullan.
 ---
 
 # Sky · SEO

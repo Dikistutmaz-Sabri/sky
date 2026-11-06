@@ -7,6 +7,7 @@ description: >-
   macrotask), unhandled rejection, async iterator ve stream'ler (Web Streams, Node streams),
   Web Worker/worker_threads, debounce/throttle ve yarış durumları. Async kod, "bu neden sırayla
   çalışıyor", "istek iptal edilmiyor" durumlarında kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Asenkron JavaScript

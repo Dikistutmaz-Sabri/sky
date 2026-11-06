@@ -5,6 +5,7 @@ description: >-
   özellik ızgarası, sosyal kanıt, fiyat tablosu, SSS, CTA, SEO meta/OG etiketleri ve
   yapılandırılmış veri. Ürün tanıtım sayfası, portfolyo, ajans/klinik/işletme sitesi veya
   "landing page yap" isteğinde sky-ui-craft ile birlikte kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Landing Sayfaları

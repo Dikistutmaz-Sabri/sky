@@ -1,12 +1,8 @@
 ---
 name: sky-freelance
 description: >-
-  Serbest yazılım geliştiriciliği ve küçük ajans işleri (Türkiye bağlamı dahil): müşteri bulma
-  ve niş, kapsam belirleme ve kapsam kayması (scope creep) yönetimi, fiyatlandırma (saatlik vs
-  sabit vs değer bazlı vs retainer), teklif ve sözleşme (ödeme planı, fikri mülkiyet, revizyon
-  sınırı, bakım), gereksinim toplama, proje yönetimi ve iletişim, teslim ve devir, fatura ve
-  vergi (Türkiye'de serbest meslek/şahıs şirketi genel notları), portföy ve itibar. Freelance,
-  müşteri işi, teklif, fiyatlandırma veya sözleşme konusunda kullan.
+  Türkiye'de serbest yazılımcılık: teklif, fiyatlandırma, sözleşme, kapsam yönetimi, fatura ve vergi
+  (serbest meslek, şahıs şirketi). Freelance, teklif veya müşteri sözleşmesi işinde kullan.
 ---
 
 # Sky · Freelance & Müşteri İşleri

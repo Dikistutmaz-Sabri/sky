@@ -6,6 +6,7 @@ description: >-
   çipleri ve boş durum promptları, kaynak gösterme ve güven göstergeleri, iptal/yeniden üret,
   geri bildirim (👍/👎), sohbet geçmişi, hata ve sınır durumları, AI etiketleme ve beklenti
   yönetimi. "AI arayüzü", "chat UI", "AI çıktısını nasıl gösterelim" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · AI Arayüzü

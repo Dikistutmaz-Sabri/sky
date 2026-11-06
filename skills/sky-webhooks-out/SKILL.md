@@ -6,6 +6,7 @@ description: >-
   kuyruğu, yeniden deneme ve otomatik devre dışı bırakma, teslimat günlüğü ve "tekrar gönder",
   test olayı gönderme, idempotency anahtarı, sürümleme ve Svix gibi hazır servisler. "Webhook
   gönderelim", "Zapier/Make entegrasyonu", "ortaklarımıza olay bildirelim" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Giden Webhook'lar

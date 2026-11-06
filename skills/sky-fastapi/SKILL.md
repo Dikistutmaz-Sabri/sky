@@ -6,6 +6,7 @@ description: >-
   SQLAlchemy 2.0 ve Alembic migration, JWT/OAuth2 auth, hata yönetimi ve tutarlı hata gövdesi,
   arka plan işleri, CORS, sayfalama, OpenAPI dokümantasyonu, httpx ile testler ve uvicorn ile
   dağıtım. FastAPI projesinde veya "Python API yaz" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · FastAPI

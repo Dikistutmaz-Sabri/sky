@@ -6,6 +6,7 @@ description: >-
   geçmiş düzeltme (fixup, autosquash), çakışma çözme, stash, worktree, bisect ile hatalı
   commit'i bulma, reflog ile kayıp işi kurtarma, geri alma (revert/reset farkları), .gitignore,
   büyük dosyalar (LFS), imzalı commit ve PR açıklaması yazma. Git ile ilgili her işte kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Git

@@ -7,6 +7,7 @@ description: >-
   hibrit arama (vektör + tam metin, RRF), yeniden sıralama (rerank), parçalama ile ilişkisi,
   yeniden embed etme ve sürümleme, maliyet ve ölçek. RAG, semantik arama, benzer ürün/içerik
   önerisi yaparken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Vektör Veritabanları

@@ -1,11 +1,8 @@
 ---
 name: sky-checkout-ux
 description: >-
-  Ödeme akışı UX'i ve dönüşüm: tek sayfa vs adımlı checkout, misafir ödeme, adres formu
-  (TR il/ilçe), kargo seçenekleri, sipariş özeti, kupon alanı, ödeme yöntemi seçimi (kart,
-  taksit, havale, kapıda ödeme), 3D Secure beklemesi, güven işaretleri, hata kurtarma
-  (kart reddedildi), mobil ödeme, başarı sayfası ve sepet terkini azaltma. "Ödeme sayfası",
-  "checkout", "sepet terk ediliyor", "satın alma akışı" dendiğinde kullan.
+  Türkiye'ye uygun ödeme akışı: il/ilçe adres formu, taksit, havale, kapıda ödeme, 3D Secure
+  beklemesi, sepet terki. "Ödeme sayfası", "checkout" dendiğinde kullan.
 ---
 
 # Sky · Checkout UX

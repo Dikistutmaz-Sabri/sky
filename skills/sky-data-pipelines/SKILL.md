@@ -6,6 +6,7 @@ description: >-
   DuckDB/MotherDuck), dbt ile SQL dönüşümleri ve testler, orkestrasyon (Dagster, Airflow,
   Prefect, basit cron), veri kalitesi kontrolleri, olay verisi şeması, Parquet ve nesne
   depolama, maliyet ve KVKK. "Raporlama altyapısı", "veri ambarı", "ETL", "dbt" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Veri Hatları

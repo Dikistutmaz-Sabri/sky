@@ -6,11 +6,12 @@ description: >-
   (aralıklarla, belirsizlik payıyla), MVP kesme, spike (keşif) ile belirsizliği azaltma,
   plan dosyası şablonu ve planı güncel tutma. "Nasıl başlayayım", "planla", "bu ne kadar sürer",
   "işi böl" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Planlama
 
-Ürün düzeyinde PRD için `sky-product-manager` agent'ı, mimari için `sky-architect`. Bu skill **uygulama planı** içindir.
+Ürün düzeyinde PRD için `sky-product-manager` yöntemi, mimari için `sky-architect`. Bu skill **uygulama planı** içindir.
 
 ## 1. Netleştir (5 soru)
 

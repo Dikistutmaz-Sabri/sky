@@ -7,6 +7,7 @@ description: >-
   durum saklama, imza doğrulama, rate limit, barındırma (sunucusuz/konteyner), AI destekli bot
   ve kötüye kullanım önleme. "Telegram botu", "Discord botu", "Slack uygulaması", "WhatsApp
   botu" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Botlar

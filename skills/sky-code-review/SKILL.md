@@ -6,6 +6,7 @@ description: >-
   (blocker/öneri/nit), küçük PR kültürü, kendi PR'ını gözden geçirme listesi, otomatik
   kontrollere bırakılacaklar, AI ile üretilmiş kodu inceleme ve geri bildirimi karşılama.
   "Kodu incele", "PR review", "bu değişiklik iyi mi" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Kod İncelemesi

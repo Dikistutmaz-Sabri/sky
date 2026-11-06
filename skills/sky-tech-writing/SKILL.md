@@ -6,6 +6,7 @@ description: >-
   tam, güvenli), API ve README yazımı, blog yazısı ve teknik makale yapısı, sürüm notları ve
   hata mesajı metni, görsel/diyagram kullanımı, Türkçe teknik yazım ve terim tutarlılığı,
   AI ile taslak ve düzenleme. Dokümantasyon, blog, rehber veya teknik metin yazarken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Teknik Yazım

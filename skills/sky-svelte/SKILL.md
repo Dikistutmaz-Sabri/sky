@@ -6,6 +6,7 @@ description: >-
   evrensel), form actions ve ilerlemeli geliştirme (use:enhance), hook'lar ve auth, adaptörler
   (Vercel, Node, Cloudflare), prerender/SSR ayarları, store'lardan rünlere geçiş, test ve
   performans. Svelte/SvelteKit projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Svelte & SvelteKit

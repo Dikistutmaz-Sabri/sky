@@ -6,6 +6,7 @@ description: >-
   generate_series ile boşluksuz zaman serileri, lateral join ile "her grubun son N kaydı",
   partial/expression indeksler, EXPLAIN ANALYZE okuma, Türkçe collation ve ORM'den kaçış
   kapakları. "Bu sorguyu yaz", "rapor sorgusu", "SQL yavaş", "ORM ile yapamıyorum" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · SQL Ustalığı

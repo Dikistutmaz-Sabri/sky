@@ -1,6 +1,7 @@
 ---
 description: Bir bağımlılığı, framework'ü veya dil sürümünü güvenle yükselt — resmi codemod, adım adım göç, kırılma noktaları ve doğrulama (typecheck/lint/test/build/E2E) ile.
 argument-hint: "<ne, ör. 'Next 15'e', 'Tailwind v4', 'React 19', 'TypeScript'e geç'>"
+disable-model-invocation: true
 ---
 
 # /sky-upgrade

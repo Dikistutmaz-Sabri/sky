@@ -7,6 +7,7 @@ description: >-
   form akışı, pull-to-refresh, yatay kaydırmalı listeler, iOS/Android farkları ve gerçek cihaz
   testi. "Mobilde kötü görünüyor", "telefonda kullanımı zor", "klavye ekranı kapatıyor"
   dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Mobil UX

@@ -6,6 +6,7 @@ description: >-
   test, dıştan içe (outside-in) ve içten dışa yaklaşımlar, sahte nesne ölçüsü, TDD'nin işe
   yaradığı ve yaramadığı yerler, AI ile TDD (önce testi yazdırıp onaylatmak). "TDD ile yap",
   "önce test yaz", "test-first" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · TDD

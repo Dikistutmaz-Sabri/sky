@@ -7,6 +7,7 @@ description: >-
   Dockerfile (standalone, çok aşamalı), reverse proxy ve TLS (Caddy), sıfır kesinti ve geri
   alma, alan adı/DNS, yedekleme, yayın kontrol listesi. "Deploy et", "canlıya al", "CI kur",
   "Dockerize", "VPS'e kur" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Dağıtım

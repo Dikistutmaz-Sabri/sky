@@ -7,6 +7,7 @@ description: >-
   onay/iptal/erteleme politikaları, hatırlatmalar (SMS/e-posta/WhatsApp), gelmeyen (no-show)
   takibi, bekleme listesi, Google Calendar senkronu ve personel takvimi UI. "Randevu sistemi",
   "rezervasyon", "müsait saatler", "klinik/kuaför randevu" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Randevu Motoru

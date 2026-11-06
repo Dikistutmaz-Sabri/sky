@@ -6,6 +6,7 @@ description: >-
   keşifsel analiz, gruplama/pivot/zaman serisi, görselleştirme (matplotlib, seaborn, plotly),
   ürün metrikleri (huni, cohort, retention), tekrar üretilebilirlik ve sonuçları paylaşma.
   "Bu CSV'yi analiz et", "rapor çıkar", "pandas", "veriden içgörü" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Veri Analizi

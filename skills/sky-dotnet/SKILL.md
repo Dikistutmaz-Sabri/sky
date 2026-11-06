@@ -6,6 +6,7 @@ description: >-
   FluentValidation, JWT/Identity, ProblemDetails ile hatalar, async/await kuralları, nullable
   reference types, xUnit + WebApplicationFactory + Testcontainers, OpenTelemetry ve dağıtım.
   .NET projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · .NET

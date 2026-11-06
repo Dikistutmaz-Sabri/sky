@@ -6,6 +6,7 @@ description: >-
   hazırlığı, lansman sayfası ve OG kartları, basın kiti, durum sayfası, destek kanalı,
   analitik huniler, ilk 100 kullanıcı taktikleri ve lansman sonrası ilk hafta. "Lansman
   yapacağız", "bekleme listesi", "Product Hunt", "yayına çıkıyoruz" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Lansman

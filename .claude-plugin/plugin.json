@@ -1,7 +1,7 @@
 {
   "name": "sky",
-  "version": "4.0.0",
-  "description": "Sky — Türkçe, her şey dahil geliştirici eklentisi: 182 skill (web ve tüm büyük framework'ler, backend, AI/ML, tasarım/UX, Python/Go/Rust/PHP/Java/.NET/Ruby/C++/Elixir, mobil, masaüstü, WordPress/Shopify, Docker/K8s/Terraform/Ansible/AWS/GCP/Azure/Cloudflare, IoT, git/review/TDD/sistem tasarımı, açık kaynak/freelance/kariyer, Claude Code; Türkiye entegrasyonları dahil), 35 uzman agent, 25 /sky komutu, yerel Sky Pano ve çok dilli güvenlik/kalite hook'ları.",
+  "version": "5.0.0",
+  "description": "Sky — Claude Code için Türkçe eklenti. Türkiye'ye özgü 17 otomatik skill (iyzico, PayTR, e-Fatura, KVKK, TCKN, IBAN, Türkçe arayüz metni…), /sky: ile elle açılan 196 uzman rehber, 3 Türkçe agent, 25 komut ve koruyucu hook'lar. Bağlamı şişirmemek için yalın tasarlandı.",
   "author": {
     "name": "vSkyfall",
     "url": "https://github.com/vSkyfall"
@@ -28,41 +28,9 @@
     "./commands/"
   ],
   "agents": [
-    "./agents/sky-architect.md",
-    "./agents/sky-ui-reviewer.md",
-    "./agents/sky-api-reviewer.md",
-    "./agents/sky-builder.md",
-    "./agents/sky-tester.md",
-    "./agents/sky-security-reviewer.md",
-    "./agents/sky-db-reviewer.md",
-    "./agents/sky-perf-auditor.md",
-    "./agents/sky-a11y-auditor.md",
-    "./agents/sky-seo-auditor.md",
-    "./agents/sky-debugger.md",
-    "./agents/sky-refactorer.md",
     "./agents/sky-copywriter.md",
     "./agents/sky-turkish-proofreader.md",
-    "./agents/sky-designer.md",
-    "./agents/sky-translator.md",
-    "./agents/sky-doc-writer.md",
-    "./agents/sky-release-manager.md",
-    "./agents/sky-product-manager.md",
-    "./agents/sky-codebase-mapper.md",
-    "./agents/sky-browser-qa.md",
-    "./agents/sky-critic.md",
-    "./agents/sky-code-reviewer.md",
-    "./agents/sky-build-fixer.md",
-    "./agents/sky-python-reviewer.md",
-    "./agents/sky-go-reviewer.md",
-    "./agents/sky-rust-reviewer.md",
-    "./agents/sky-mobile-reviewer.md",
-    "./agents/sky-devops-engineer.md",
-    "./agents/sky-explainer.md",
-    "./agents/sky-frontend-reviewer.md",
-    "./agents/sky-java-reviewer.md",
-    "./agents/sky-php-reviewer.md",
-    "./agents/sky-ml-engineer.md",
-    "./agents/sky-iot-engineer.md"
+    "./agents/sky-translator.md"
   ],
   "hooks": "./hooks/hooks.json"
 }

@@ -1,6 +1,7 @@
 ---
 description: Sky Pano'yu aç — tüm skill, agent, komut ve hook'ları gösteren yerel, aranabilir sayfayı derleyip tarayıcıda açar.
 argument-hint: "[--out <dosya.html>]"
+disable-model-invocation: true
 ---
 
 # /sky-pano

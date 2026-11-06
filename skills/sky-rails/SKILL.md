@@ -5,6 +5,7 @@ description: >-
   migration ve DB kısıtları, strong parameters, servis nesneleri, Hotwire (Turbo + Stimulus),
   Active Job + Solid Queue, Action Mailer, Rails 8 auth generator ve Pundit, RSpec/Minitest,
   RuboCop, Brakeman ve Kamal ile dağıtım. Rails projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Rails

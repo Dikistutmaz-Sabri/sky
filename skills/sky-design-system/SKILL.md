@@ -7,6 +7,7 @@ description: >-
   bileşen API ilkeleri, erişilebilirlik tabanı, dokümantasyon (Storybook veya /design route),
   görsel regresyon, sürümleme ve yeni bileşen kontrol listesi. "Tasarım sistemi kur",
   "bileşen kütüphanesi", "Button varyantları", "shadcn'i özelleştir" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Tasarım Sistemi

@@ -6,6 +6,7 @@ description: >-
   ölçekleme, pointer events ve kalem basıncı (perfect-freehand), geri al/yinele, hizalama
   kılavuzları, PNG/SVG/PDF dışa aktarım, konfeti kutlama anları ve OffscreenCanvas.
   "İmza alanı", "çizim tahtası", "görsel üzerine yazı", "konfeti", "whiteboard" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Canvas & Çizim

@@ -1,6 +1,7 @@
 ---
 description: Sky ile yeni bir web projesi başlat — stack seç, iskeleti kur, token'ları, env doğrulamayı, temel layout'u ve test altyapısını ekle.
 argument-hint: "<proje adı ve kısa açıklama>"
+disable-model-invocation: true
 ---
 
 # /sky-new

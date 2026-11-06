@@ -7,6 +7,7 @@ description: >-
   cron/systemd zamanlama, makefile ve justfile ile görev çalıştırıcılar, zsh/oh-my-zsh ve
   alias'lar, macOS ve Linux farkları, ShellCheck. "Script yaz", "terminal komutu", "bash",
   "otomatikleştir" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Shell

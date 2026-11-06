@@ -6,6 +6,7 @@ description: >-
   duyarsızlığı), autocomplete/typeahead UI, ⌘K arama, sonuç vurgulama, filtre+facet, sıralama,
   "sonuç yok" deneyimi, arama analitiği ve semantik/vektör arama. "Arama ekle", "arama çalışmıyor",
   "Türkçe arama", "autocomplete" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Arama

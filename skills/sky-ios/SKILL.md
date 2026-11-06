@@ -5,6 +5,7 @@ description: >-
   strict concurrency (Sendable, actor, @MainActor), URLSession + Codable, SwiftData, Keychain,
   NavigationStack, widget ve Live Activities, App Intents, Swift Testing, erişilebilirlik ve
   App Store yayını. iOS/Swift projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · iOS

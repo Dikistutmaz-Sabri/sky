@@ -6,6 +6,7 @@ description: >-
   parola, SMS OTP, parola sıfırlama, e-posta doğrulama, 2FA (TOTP), RBAC ve kaynak bazlı yetki,
   çok kiracılı üyelik, oturum iptali, hesap güvenliği ve KVKK rızası. Giriş/kayıt sistemi
   kurarken, rol eklerken veya auth güvenliğini gözden geçirirken kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Auth

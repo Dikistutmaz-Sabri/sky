@@ -7,6 +7,7 @@ description: >-
   enjeksiyonu, sık kullanılan tasarım kalıpları (strategy, adapter, factory, observer, state,
   builder, decorator) TypeScript örnekleriyle, SOLID'in aşırıya kaçmayan yorumu ve
   anti-kalıplar. "Mimari nasıl olmalı", "kod nasıl organize edilir", "design pattern" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Mimari Kalıplar

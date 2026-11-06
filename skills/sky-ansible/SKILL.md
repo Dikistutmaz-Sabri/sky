@@ -6,6 +6,7 @@ description: >-
   modüller (apt, user, copy, template, systemd, ufw, docker), check ve diff modu ile güvenli
   çalıştırma, Galaxy rolleri, Molecule ile test ve Terraform ile birlikte kullanım. Birden çok
   sunucuyu tekrarlanabilir şekilde kurmak/yapılandırmak gerektiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Ansible

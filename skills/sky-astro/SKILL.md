@@ -6,6 +6,7 @@ description: >-
   server islands, Actions, View Transitions, entegrasyonlar (React/Vue/Svelte, Tailwind, MDX,
   sitemap), görsel optimizasyonu, i18n routing, Starlight doküman sitesi ve dağıtım. Blog,
   portfolyo, doküman, pazarlama sitesi veya Astro projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Astro

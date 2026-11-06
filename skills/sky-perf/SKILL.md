@@ -5,6 +5,7 @@ description: >-
   font optimizasyonu, React render maliyeti, önbellekleme, sunucu yanıt süresi ve ölçüm
   (Lighthouse, Web Vitals, performance trace). Site yavaşsa, bundle büyükse, "hızlandır",
   "optimize et", "Lighthouse puanı düşük" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Performans

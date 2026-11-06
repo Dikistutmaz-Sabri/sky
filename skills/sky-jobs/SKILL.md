@@ -6,6 +6,7 @@ description: >-
   üstel geri çekilme, dead letter, eşzamanlılık ve hız sınırı, uzun süren iş akışları (adım
   adım, bekle, olay bekle), cron ifadeleri ve saat dilimi, ilerleme bildirimi ve iş paneli.
   "Arka planda çalışsın", "her gece", "kuyruk", "cron", "uzun süren işlem" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Arka Plan İşleri

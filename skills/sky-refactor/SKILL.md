@@ -6,6 +6,7 @@ description: >-
   soyutlamadan kaçınma), ölü kod temizliği (knip), adlandırma iyileştirme, strangler fig ile
   kademeli yeniden yazım, codemod (jscodeshift/ts-morph) ile toplu değişiklik ve refactor PR'ı
   yazımı. "Kod karışık", "bu dosya çok büyük", "temizle", "yeniden düzenle" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Refactor

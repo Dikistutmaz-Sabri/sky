@@ -1,6 +1,7 @@
 ---
 description: Bir ekranı veya bileşeni Sky UI standartlarına göre cilala — token'lar, tipografi, boşluk, durumlar, dark mode, hareket ve responsive.
 argument-hint: "[dosya, route veya bileşen adı]"
+disable-model-invocation: true
 ---
 
 # /sky-polish

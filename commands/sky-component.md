@@ -1,6 +1,7 @@
 ---
 description: Sky tasarım sistemine uygun yeni bir UI bileşeni oluştur — cva varyantları, tüm durumlar, erişilebilirlik, test ve örnek/story ile.
 argument-hint: "<bileşen adı ve amacı, ör. 'Stepper — çok adımlı form ilerlemesi'>"
+disable-model-invocation: true
 ---
 
 # /sky-component

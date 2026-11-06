@@ -6,6 +6,7 @@ description: >-
   koleksiyonlar, virtual thread'ler ve structured concurrency, CompletableFuture, istisna
   yönetimi, java.time, null güvenliği, testler (JUnit 5, AssertJ, Mockito), statik analiz
   (Error Prone, SpotBugs), performans ve JVM ayarları. Java kodu yazarken; Spring için ayrıca sky-spring.
+disable-model-invocation: true
 ---
 
 # Sky · Modern Java

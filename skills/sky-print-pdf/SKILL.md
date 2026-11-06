@@ -6,6 +6,7 @@ description: >-
   sayfa düzeni (A4, kenar boşluğu, sayfa sonu, başlık/altbilgi, sayfa numarası), QR kod ve
   barkod, print CSS (@media print, @page), "yazdır" butonu ve büyük PDF'leri arka planda
   üretme. "PDF oluştur", "fatura çıktısı", "sertifika", "yazdırılabilir sayfa" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · PDF & Yazdırma

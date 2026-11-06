@@ -1,6 +1,7 @@
 ---
 description: Projeyi Dockerize et — dile uygun çok aşamalı Dockerfile, .dockerignore, healthcheck, yerel geliştirme için docker compose (DB, Redis, Mailpit, MinIO) ve build doğrulaması.
 argument-hint: "[servis veya klasör]"
+disable-model-invocation: true
 ---
 
 # /sky-docker

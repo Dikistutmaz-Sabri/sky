@@ -6,6 +6,7 @@ description: >-
   sorgular, migration), Phoenix LiveView ile JS'siz gerçek zamanlı arayüzler, PubSub ve
   Presence, Oban ile arka plan işleri, test (ExUnit), dağıtım (releases, Fly) ve ne zaman
   Elixir doğru seçim. Elixir/Phoenix projesinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Elixir & Phoenix

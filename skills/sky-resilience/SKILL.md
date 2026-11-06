@@ -6,6 +6,7 @@ description: >-
   (izolasyon), fallback ve zarif bozulma (graceful degradation), kuyrukla tamponlama, sağlık
   kontrolleri, kaos denemeleri ve "üçüncü parti çökerse ne olur" haritası. "SMS servisi
   çökünce her şey duruyor", "dış API yavaş", "sistem kırılgan" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Dayanıklılık

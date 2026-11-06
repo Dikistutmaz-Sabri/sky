@@ -6,6 +6,7 @@ description: >-
   anları, sürpriz ödüller ve haftalık özetler; ne zaman işe yarar ne zaman zarar verir
   (içsel vs dışsal motivasyon), veri modeli ve suistimal önleme. "Kullanıcıları motive
   edelim", "rozet sistemi", "seri", "puan", "oyunlaştırma" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Oyunlaştırma

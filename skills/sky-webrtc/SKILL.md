@@ -6,6 +6,7 @@ description: >-
   mediasoup, Daily) seçimi, cihaz seçimi ve önizleme, bağlantı kalitesi ve yeniden bağlanma,
   kayıt, DataChannel, mobil tarayıcı tuhaflıkları, güvenlik ve gizlilik. "Görüntülü görüşme",
   "online muayene", "canlı yayın", "ekran paylaşımı" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · WebRTC

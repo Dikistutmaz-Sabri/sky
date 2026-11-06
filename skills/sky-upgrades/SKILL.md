@@ -6,6 +6,7 @@ description: >-
   Prisma ↔ Drizzle, Node sürüm yükseltme, resmi codemod'lar, adım adım göç planı, kırılma
   noktaları ve doğrulama. "Next'i güncelle", "Tailwind 4'e geç", "TypeScript'e çevir",
   "eski proje", "upgrade" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Yükseltmeler & Göçler

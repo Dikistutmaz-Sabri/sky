@@ -1,11 +1,8 @@
 ---
 name: sky-pricing-page
 description: >-
-  Fiyatlandırma sayfası tasarımı ve psikolojisi: plan sayısı (3 kuralı), önerilen plan
-  vurgusu, çapa (anchor) fiyat, aylık/yıllık geçişi ve tasarruf gösterimi, özellik
-  karşılaştırma tablosu, değer metrikleri (koltuk, kullanım), ücretsiz plan / deneme, TL ve
-  KDV gösterimi, SSS ve itiraz giderme, kurumsal "Bize ulaşın", fiyat hesaplayıcı ve A/B
-  testleri. "Fiyatlandırma sayfası yap", "planları nasıl sunalım", "pricing" dendiğinde kullan.
+  Fiyatlandırma sayfası: plan yapısı, aylık/yıllık, karşılaştırma tablosu, TL ve KDV dahil fiyat
+  gösterimi. "Fiyatlandırma sayfası", "pricing" dendiğinde kullan.
 ---
 
 # Sky · Fiyatlandırma Sayfası

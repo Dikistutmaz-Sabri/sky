@@ -5,6 +5,7 @@ description: >-
   TypeScript, klasör yapısı, state yönetimi, veri çekme (TanStack Query, Server Components),
   routing ve proje iskeleti. Yeni proje kurulurken, React bileşeni/hook yazılırken veya
   "hangi stack", "proje yapısı", "state nerede tutulmalı" sorularında kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Web Stack

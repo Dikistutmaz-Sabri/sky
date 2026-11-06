@@ -7,6 +7,7 @@ description: >-
   geri izleme, dinamik programlama, açgözlü, aralık birleştirme), gerçek uygulama örnekleri
   (slot üretimi, öneri, arama) ve kodlama mülakatı yaklaşımı. Algoritma sorusu, performans
   problemi veya "LeetCode" sorusunda kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Algoritmalar & Veri Yapıları

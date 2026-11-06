@@ -5,6 +5,7 @@ description: >-
   ARIA kalıpları (dialog, menu, tabs, combobox), form etiketleri, kontrast, ekran okuyucu
   duyuruları, hareket tercihleri ve otomatik test (axe, Playwright). Bileşen yazarken,
   erişilebilirlik denetimi yaparken veya "a11y", "erişilebilir", "klavye" dendiğinde kullan.
+disable-model-invocation: true
 ---
 
 # Sky · Erişilebilirlik
